@@ -1,0 +1,1116 @@
+{% doc %}
+  @prompt
+    generate carousel section for videos with infinite loop effect(يعني العناصر لو بتتحرك من اليمين للشمال تبقى بتتحرك الى مالا نهاية بدون اي بريك يحصل اوجليتش) 
+    also option to convert it grid with ability to scroll using touch ,pause on hover effect with no glitches
+    have option to add description for each video item (with controls to its positions horizontally and vertically)
+    add preview image for video
+    also overlay for the 50% of preview image  "starts from video play icon position to the boottom with options to have gradients" for video item  preview image
+    play icon override with custom image
+    section background color
+    items count controls(per view for each screen size and whole item count)
+    items height controls
+    preview image size controls
+    use best practices for loading performance
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-video-carousel-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    background-color: {{ block.settings.section_background_color }};
+    padding: 20px 0;
+    overflow: hidden;
+  }
+
+  .ai-video-carousel-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: {{ block.settings.item_height }}px;
+  }
+
+  .ai-video-carousel-track-{{ ai_gen_id }} {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+
+  .ai-video-carousel-track-{{ ai_gen_id }}.infinite-scroll {
+    animation: ai-infinite-scroll-{{ ai_gen_id }} {{ block.settings.scroll_speed }}s linear infinite;
+  }
+
+  .ai-video-carousel-track-{{ ai_gen_id }}.paused {
+    animation-play-state: paused;
+  }
+
+  .ai-video-carousel-item-{{ ai_gen_id }} {
+    position: relative;
+    flex-shrink: 0;
+    margin-right: 20px;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-video-carousel-item-{{ ai_gen_id }}:hover {
+    transform: scale(1.05);
+  }
+
+  .ai-video-preview-{{ ai_gen_id }} {
+    position: relative;
+    width: {{ block.settings.preview_width }}px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .ai-video-preview-image-{{ ai_gen_id }} {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-video-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: {{ block.settings.overlay_gradient }};
+    pointer-events: none;
+  }
+
+  .ai-video-play-icon-{{ ai_gen_id }} {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+
+  .ai-video-play-icon-{{ ai_gen_id }}:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .ai-video-play-icon-{{ ai_gen_id }} img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+  }
+
+  .ai-video-play-icon-{{ ai_gen_id }} svg {
+    width: 30px;
+    height: 30px;
+    fill: #333;
+  }
+
+  .ai-video-description-{{ ai_gen_id }} {
+    position: absolute;
+    z-index: 3;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .ai-video-description-{{ ai_gen_id }}.position-top-left {
+    top: 10px;
+    left: 10px;
+  }
+
+  .ai-video-description-{{ ai_gen_id }}.position-top-center {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ai-video-description-{{ ai_gen_id }}.position-top-right {
+    top: 10px;
+    right: 10px;
+  }
+
+  .ai-video-description-{{ ai_gen_id }}.position-center-left {
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+  }
+
+  .ai-video-description-{{ ai_gen_id }}.position-center-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .ai-video-description-{{ ai_gen_id }}.position-center-right {
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+
+  .ai-video-description-{{ ai_gen_id }}.position-bottom-left {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .ai-video-description-{{ ai_gen_id }}.position-bottom-center {
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ai-video-description-{{ ai_gen_id }}.position-bottom-right {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .ai-video-modal-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .ai-video-modal-content-{{ ai_gen_id }} {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .ai-video-modal-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10000;
+    padding: 5px;
+  }
+
+  .ai-video-modal-video-{{ ai_gen_id }} {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+  }
+
+  .ai-video-grid-{{ ai_gen_id }} {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+
+  .ai-video-grid-{{ ai_gen_id }}.desktop-1 { grid-template-columns: 1fr; }
+  .ai-video-grid-{{ ai_gen_id }}.desktop-2 { grid-template-columns: repeat(2, 1fr); }
+  .ai-video-grid-{{ ai_gen_id }}.desktop-3 { grid-template-columns: repeat(3, 1fr); }
+  .ai-video-grid-{{ ai_gen_id }}.desktop-4 { grid-template-columns: repeat(4, 1fr); }
+  .ai-video-grid-{{ ai_gen_id }}.desktop-5 { grid-template-columns: repeat(5, 1fr); }
+  .ai-video-grid-{{ ai_gen_id }}.desktop-6 { grid-template-columns: repeat(6, 1fr); }
+
+  .ai-video-grid-item-{{ ai_gen_id }} {
+    position: relative;
+    height: {{ block.settings.item_height }}px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-video-grid-item-{{ ai_gen_id }}:hover {
+    transform: scale(1.05);
+  }
+
+  @keyframes ai-infinite-scroll-{{ ai_gen_id }} {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .ai-video-grid-{{ ai_gen_id }}.tablet-1 { grid-template-columns: 1fr; }
+    .ai-video-grid-{{ ai_gen_id }}.tablet-2 { grid-template-columns: repeat(2, 1fr); }
+    .ai-video-grid-{{ ai_gen_id }}.tablet-3 { grid-template-columns: repeat(3, 1fr); }
+    .ai-video-grid-{{ ai_gen_id }}.tablet-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .ai-video-carousel-item-{{ ai_gen_id }} {
+      margin-right: 15px;
+    }
+
+    .ai-video-preview-{{ ai_gen_id }} {
+      width: {{ block.settings.preview_width | times: 0.8 }}px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ai-video-grid-{{ ai_gen_id }}.mobile-1 { grid-template-columns: 1fr; }
+    .ai-video-grid-{{ ai_gen_id }}.mobile-2 { grid-template-columns: repeat(2, 1fr); }
+    .ai-video-grid-{{ ai_gen_id }}.mobile-3 { grid-template-columns: repeat(3, 1fr); }
+
+    .ai-video-carousel-item-{{ ai_gen_id }} {
+      margin-right: 10px;
+    }
+
+    .ai-video-preview-{{ ai_gen_id }} {
+      width: {{ block.settings.preview_width | times: 0.6 }}px;
+    }
+
+    .ai-video-carousel-container-{{ ai_gen_id }} {
+      height: {{ block.settings.item_height | times: 0.8 }}px;
+    }
+
+    .ai-video-grid-item-{{ ai_gen_id }} {
+      height: {{ block.settings.item_height | times: 0.8 }}px;
+    }
+  }
+
+  .ai-video-controls-{{ ai_gen_id }} {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    display: flex;
+    gap: 10px;
+  }
+
+  .ai-video-control-btn-{{ ai_gen_id }} {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.3s ease;
+  }
+
+  .ai-video-control-btn-{{ ai_gen_id }}:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  .ai-video-control-btn-{{ ai_gen_id }}.active {
+    background: #333;
+    color: white;
+  }
+{% endstyle %}
+
+<video-carousel-{{ ai_gen_id }}
+  class="ai-video-carousel-{{ ai_gen_id }}"
+  data-layout="{{ block.settings.layout_mode }}"
+  data-desktop-items="{{ block.settings.desktop_items }}"
+  data-tablet-items="{{ block.settings.tablet_items }}"
+  data-mobile-items="{{ block.settings.mobile_items }}"
+  data-infinite="{{ block.settings.enable_infinite_scroll }}"
+  data-pause-hover="{{ block.settings.pause_on_hover }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-video-controls-{{ ai_gen_id }}">
+    <button class="ai-video-control-btn-{{ ai_gen_id }} layout-btn active" data-layout="carousel">
+      Carousel
+    </button>
+    <button class="ai-video-control-btn-{{ ai_gen_id }} layout-btn" data-layout="grid">
+      Grid
+    </button>
+  </div>
+
+  <div class="ai-video-carousel-container-{{ ai_gen_id }}" id="carousel-view-{{ ai_gen_id }}">
+    <div class="ai-video-carousel-track-{{ ai_gen_id }}">
+      {% for i in (1..block.settings.total_items) %}
+        {% liquid
+          assign video_key = 'video_' | append: i
+          assign preview_key = 'preview_image_' | append: i
+          assign description_key = 'description_' | append: i
+          assign video = block.settings[video_key]
+          assign preview_image = block.settings[preview_key]
+          assign description = block.settings[description_key]
+        %}
+
+        {% if video != blank %}
+          <div class="ai-video-carousel-item-{{ ai_gen_id }}" data-video-index="{{ i }}">
+            <div class="ai-video-preview-{{ ai_gen_id }}">
+              {% if preview_image %}
+                <img
+                  src="{{ preview_image | image_url: width: block.settings.preview_width }}"
+                  alt="Video {{ i }} preview"
+                  class="ai-video-preview-image-{{ ai_gen_id }}"
+                  loading="lazy"
+                  width="{{ block.settings.preview_width }}"
+                  height="{{ block.settings.item_height }}"
+                >
+              {% else %}
+                <div class="ai-video-preview-placeholder-{{ ai_gen_id }}" style="background: #f0f0f0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+                  Video {{ i }}
+                </div>
+              {% endif %}
+
+              <div class="ai-video-overlay-{{ ai_gen_id }}"></div>
+
+              <div class="ai-video-play-icon-{{ ai_gen_id }}">
+                {% if block.settings.custom_play_icon %}
+                  <img src="{{ block.settings.custom_play_icon | image_url: width: 60 }}" alt="Play">
+                {% else %}
+                  <svg viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                {% endif %}
+              </div>
+
+              {% if description != blank %}
+                <div class="ai-video-description-{{ ai_gen_id }} position-{{ block.settings.description_position_vertical }}-{{ block.settings.description_position_horizontal }}">
+                  {{ description }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      {% if block.settings.enable_infinite_scroll %}
+        {% for i in (1..block.settings.total_items) %}
+          {% liquid
+            assign video_key = 'video_' | append: i
+            assign preview_key = 'preview_image_' | append: i
+            assign description_key = 'description_' | append: i
+            assign video = block.settings[video_key]
+            assign preview_image = block.settings[preview_key]
+            assign description = block.settings[description_key]
+          %}
+
+          {% if video != blank %}
+            <div class="ai-video-carousel-item-{{ ai_gen_id }}" data-video-index="{{ i }}">
+              <div class="ai-video-preview-{{ ai_gen_id }}">
+                {% if preview_image %}
+                  <img
+                    src="{{ preview_image | image_url: width: block.settings.preview_width }}"
+                    alt="Video {{ i }} preview"
+                    class="ai-video-preview-image-{{ ai_gen_id }}"
+                    loading="lazy"
+                    width="{{ block.settings.preview_width }}"
+                    height="{{ block.settings.item_height }}"
+                  >
+                {% else %}
+                  <div class="ai-video-preview-placeholder-{{ ai_gen_id }}" style="background: #f0f0f0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+                    Video {{ i }}
+                  </div>
+                {% endif %}
+
+                <div class="ai-video-overlay-{{ ai_gen_id }}"></div>
+
+                <div class="ai-video-play-icon-{{ ai_gen_id }}">
+                  {% if block.settings.custom_play_icon %}
+                    <img src="{{ block.settings.custom_play_icon | image_url: width: 60 }}" alt="Play">
+                  {% else %}
+                    <svg viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  {% endif %}
+                </div>
+
+                {% if description != blank %}
+                  <div class="ai-video-description-{{ ai_gen_id }} position-{{ block.settings.description_position_vertical }}-{{ block.settings.description_position_horizontal }}">
+                    {{ description }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="ai-video-grid-{{ ai_gen_id }} desktop-{{ block.settings.desktop_items }} tablet-{{ block.settings.tablet_items }} mobile-{{ block.settings.mobile_items }}" id="grid-view-{{ ai_gen_id }}" style="display: none;">
+    {% for i in (1..block.settings.total_items) %}
+      {% liquid
+        assign video_key = 'video_' | append: i
+        assign preview_key = 'preview_image_' | append: i
+        assign description_key = 'description_' | append: i
+        assign video = block.settings[video_key]
+        assign preview_image = block.settings[preview_key]
+        assign description = block.settings[description_key]
+      %}
+
+      {% if video != blank %}
+        <div class="ai-video-grid-item-{{ ai_gen_id }}" data-video-index="{{ i }}">
+          <div class="ai-video-preview-{{ ai_gen_id }}" style="width: 100%;">
+            {% if preview_image %}
+              <img
+                src="{{ preview_image | image_url: width: 400 }}"
+                alt="Video {{ i }} preview"
+                class="ai-video-preview-image-{{ ai_gen_id }}"
+                loading="lazy"
+                width="400"
+                height="{{ block.settings.item_height }}"
+              >
+            {% else %}
+              <div class="ai-video-preview-placeholder-{{ ai_gen_id }}" style="background: #f0f0f0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+                Video {{ i }}
+              </div>
+            {% endif %}
+
+            <div class="ai-video-overlay-{{ ai_gen_id }}"></div>
+
+            <div class="ai-video-play-icon-{{ ai_gen_id }}">
+              {% if block.settings.custom_play_icon %}
+                <img src="{{ block.settings.custom_play_icon | image_url: width: 60 }}" alt="Play">
+              {% else %}
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              {% endif %}
+            </div>
+
+            {% if description != blank %}
+              <div class="ai-video-description-{{ ai_gen_id }} position-{{ block.settings.description_position_vertical }}-{{ block.settings.description_position_horizontal }}">
+                {{ description }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="ai-video-modal-{{ ai_gen_id }}" id="video-modal-{{ ai_gen_id }}">
+    <div class="ai-video-modal-content-{{ ai_gen_id }}">
+      <button class="ai-video-modal-close-{{ ai_gen_id }}">&times;</button>
+      <video class="ai-video-modal-video-{{ ai_gen_id }}" controls preload="metadata">
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</video-carousel-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class VideoCarousel{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.videos = [
+          {% for i in (1..block.settings.total_items) %}
+            {% liquid
+              assign video_key = 'video_' | append: i
+              assign video = block.settings[video_key]
+            %}
+            {% if video != blank %}
+              "{{ video.sources[0].url }}",
+            {% else %}
+              null,
+            {% endif %}
+          {% endfor %}
+        ];
+        this.currentLayout = 'carousel';
+        this.isInfiniteScrolling = {{ block.settings.enable_infinite_scroll }};
+        this.pauseOnHover = {{ block.settings.pause_on_hover }};
+        this.touchStartX = 0;
+        this.touchEndX = 0;
+        this.isScrolling = false;
+      }
+
+      connectedCallback() {
+        this.setupEventListeners();
+        this.initializeCarousel();
+        this.setupTouchEvents();
+      }
+
+      setupEventListeners() {
+        const layoutButtons = this.querySelectorAll('.layout-btn');
+        const videoItems = this.querySelectorAll('[data-video-index]');
+        const modal = this.querySelector('.ai-video-modal-{{ ai_gen_id }}');
+        const closeBtn = this.querySelector('.ai-video-modal-close-{{ ai_gen_id }}');
+        const track = this.querySelector('.ai-video-carousel-track-{{ ai_gen_id }}');
+
+        layoutButtons.forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            this.switchLayout(e.target.dataset.layout);
+          });
+        });
+
+        videoItems.forEach(item => {
+          item.addEventListener('click', (e) => {
+            const videoIndex = parseInt(e.currentTarget.dataset.videoIndex) - 1;
+            this.playVideo(videoIndex);
+          });
+        });
+
+        closeBtn.addEventListener('click', () => {
+          this.closeModal();
+        });
+
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            this.closeModal();
+          }
+        });
+
+        if (this.pauseOnHover && track) {
+          track.addEventListener('mouseenter', () => {
+            track.classList.add('paused');
+          });
+
+          track.addEventListener('mouseleave', () => {
+            track.classList.remove('paused');
+          });
+        }
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            this.closeModal();
+          }
+        });
+      }
+
+      setupTouchEvents() {
+        const gridView = this.querySelector('#grid-view-{{ ai_gen_id }}');
+        const carouselView = this.querySelector('#carousel-view-{{ ai_gen_id }}');
+
+        [gridView, carouselView].forEach(view => {
+          if (view) {
+            view.addEventListener('touchstart', (e) => {
+              this.touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            view.addEventListener('touchend', (e) => {
+              this.touchEndX = e.changedTouches[0].screenX;
+              this.handleSwipe();
+            }, { passive: true });
+
+            view.addEventListener('scroll', () => {
+              this.isScrolling = true;
+              clearTimeout(this.scrollTimeout);
+              this.scrollTimeout = setTimeout(() => {
+                this.isScrolling = false;
+              }, 150);
+            }, { passive: true });
+          }
+        });
+      }
+
+      handleSwipe() {
+        if (this.isScrolling) return;
+        
+        const swipeThreshold = 50;
+        const diff = this.touchStartX - this.touchEndX;
+
+        if (Math.abs(diff) > swipeThreshold) {
+          if (this.currentLayout === 'grid') {
+            const gridView = this.querySelector('#grid-view-{{ ai_gen_id }}');
+            if (gridView) {
+              const scrollAmount = gridView.clientWidth * 0.8;
+              if (diff > 0) {
+                gridView.scrollLeft += scrollAmount;
+              } else {
+                gridView.scrollLeft -= scrollAmount;
+              }
+            }
+          }
+        }
+      }
+
+      initializeCarousel() {
+        if (this.isInfiniteScrolling) {
+          const track = this.querySelector('.ai-video-carousel-track-{{ ai_gen_id }}');
+          if (track) {
+            track.classList.add('infinite-scroll');
+          }
+        }
+      }
+
+      switchLayout(layout) {
+        const carouselView = this.querySelector('#carousel-view-{{ ai_gen_id }}');
+        const gridView = this.querySelector('#grid-view-{{ ai_gen_id }}');
+        const layoutButtons = this.querySelectorAll('.layout-btn');
+
+        layoutButtons.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.layout === layout);
+        });
+
+        if (layout === 'carousel') {
+          carouselView.style.display = 'block';
+          gridView.style.display = 'none';
+          this.currentLayout = 'carousel';
+        } else {
+          carouselView.style.display = 'none';
+          gridView.style.display = 'grid';
+          this.currentLayout = 'grid';
+        }
+      }
+
+      playVideo(index) {
+        if (!this.videos[index]) return;
+
+        const modal = this.querySelector('.ai-video-modal-{{ ai_gen_id }}');
+        const video = this.querySelector('.ai-video-modal-video-{{ ai_gen_id }}');
+        
+        video.src = this.videos[index];
+        modal.style.display = 'flex';
+        
+        video.addEventListener('loadedmetadata', () => {
+          video.play().catch(e => {
+            console.log('Video autoplay prevented:', e);
+          });
+        }, { once: true });
+      }
+
+      closeModal() {
+        const modal = this.querySelector('.ai-video-modal-{{ ai_gen_id }}');
+        const video = this.querySelector('.ai-video-modal-video-{{ ai_gen_id }}');
+        
+        video.pause();
+        video.src = '';
+        modal.style.display = 'none';
+      }
+    }
+
+    customElements.define('video-carousel-{{ ai_gen_id }}', VideoCarousel{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Video carousel",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout settings"
+    },
+    {
+      "type": "select",
+      "id": "layout_mode",
+      "label": "Default layout",
+      "options": [
+        {
+          "value": "carousel",
+          "label": "Carousel"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ],
+      "default": "carousel"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Carousel settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_infinite_scroll",
+      "label": "Enable infinite scroll",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_on_hover",
+      "label": "Pause on hover",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "unit": "s",
+      "label": "Scroll speed",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Items per view"
+    },
+    {
+      "type": "range",
+      "id": "desktop_items",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Desktop items",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "tablet_items",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Tablet items",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "mobile_items",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "label": "Mobile items",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "total_items",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "label": "Total video items",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Item dimensions"
+    },
+    {
+      "type": "range",
+      "id": "item_height",
+      "min": 200,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "label": "Item height",
+      "default": 300
+    },
+    {
+      "type": "range",
+      "id": "preview_width",
+      "min": 200,
+      "max": 500,
+      "step": 20,
+      "unit": "px",
+      "label": "Preview image width",
+      "default": 300
+    },
+    {
+      "type": "header",
+      "content": "Overlay settings"
+    },
+    {
+      "type": "color_background",
+      "id": "overlay_gradient",
+      "label": "Overlay gradient",
+      "default": "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%)"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_play_icon",
+      "label": "Custom play icon"
+    },
+    {
+      "type": "header",
+      "content": "Description position"
+    },
+    {
+      "type": "select",
+      "id": "description_position_horizontal",
+      "label": "Horizontal position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "description_position_vertical",
+      "label": "Vertical position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "bottom"
+    },
+    {
+      "type": "header",
+      "content": "Video 1"
+    },
+    {
+      "type": "video",
+      "id": "video_1",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_1",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_1",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 2"
+    },
+    {
+      "type": "video",
+      "id": "video_2",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_2",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_2",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 3"
+    },
+    {
+      "type": "video",
+      "id": "video_3",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_3",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_3",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 4"
+    },
+    {
+      "type": "video",
+      "id": "video_4",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_4",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_4",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 5"
+    },
+    {
+      "type": "video",
+      "id": "video_5",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_5",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_5",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 6"
+    },
+    {
+      "type": "video",
+      "id": "video_6",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_6",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_6",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 7"
+    },
+    {
+      "type": "video",
+      "id": "video_7",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_7",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_7",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 8"
+    },
+    {
+      "type": "video",
+      "id": "video_8",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_8",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_8",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 9"
+    },
+    {
+      "type": "video",
+      "id": "video_9",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_9",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_9",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 10"
+    },
+    {
+      "type": "video",
+      "id": "video_10",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_10",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_10",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 11"
+    },
+    {
+      "type": "video",
+      "id": "video_11",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_11",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_11",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Video 12"
+    },
+    {
+      "type": "video",
+      "id": "video_12",
+      "label": "Video file"
+    },
+    {
+      "type": "image_picker",
+      "id": "preview_image_12",
+      "label": "Preview image"
+    },
+    {
+      "type": "text",
+      "id": "description_12",
+      "label": "Description"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video carousel"
+    }
+  ]
+}
+{% endschema %}

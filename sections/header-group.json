@@ -1,0 +1,209 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.name_group.header",
+  "type": "header",
+  "sections": {
+    "announcement_bar_QKnWCh": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_izeF7X": {
+          "type": "announcement",
+          "settings": {
+            "link": "",
+            "text": "Today deal sale off <strong>70%</strong>. End in[countdown].  <a href=\"/collections/all\" title=\"All products\">Hurry Up [icon_arrow]</a>",
+            "adding_border": false,
+            "countdown": "2025-12-30 15:00:00",
+            "txt_day": "days"
+          }
+        },
+        "announcement_fekMnb": {
+          "type": "announcement",
+          "settings": {
+            "link": "",
+            "text": "Welcome to our store",
+            "adding_border": false,
+            "countdown": "2024-12-30 15:00:00",
+            "txt_day": "days"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_izeF7X",
+        "announcement_fekMnb"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_line_separator": false,
+        "close_btn": "1",
+        "height": 45,
+        "fontsize": 12,
+        "design": "slider",
+        "space_item": 30,
+        "speed": 0.3,
+        "direction": "rtl",
+        "pausable": false,
+        "effect": "carousel",
+        "au_time": 5,
+        "pause_when_hover": true,
+        "colors_by_section": true,
+        "color_scheme": "scheme-6707cc8e-6558-49d9-8759-f7d934d9fe4f",
+        "background_opacity": 1,
+        "full_width": true
+      }
+    },
+    "top_bar_3qfcq8": {
+      "type": "top-bar",
+      "blocks": {
+        "info_FXxzPi": {
+          "type": "info",
+          "settings": {
+            "show_email": true,
+            "email": "kalles@domain.com",
+            "show_phone": true,
+            "phone": "+0123456789",
+            "hide": false
+          }
+        },
+        "text_yBAEgJ": {
+          "type": "text",
+          "settings": {
+            "text1": "Summer sale discount off <strong>50%</strong>! <a href=\"/collections/all\" title=\"All products\">Shop Now</a>",
+            "text2": "",
+            "text3": "",
+            "adding_border": false,
+            "countdown": "2024-12-30 15:00:00",
+            "txt_day": "days",
+            "effect": "carousel",
+            "au_time": 3,
+            "pause_when_hover": false,
+            "hide": false
+          }
+        },
+        "cur_4KAVdD": {
+          "type": "cur",
+          "settings": {
+            "show_currency": true,
+            "show_language": true,
+            "use_location": true,
+            "txt_location": "Location",
+            "url_location": "shopify://pages/contact",
+            "open_link": "_self",
+            "hide": true
+          }
+        }
+      },
+      "block_order": [
+        "info_FXxzPi",
+        "text_yBAEgJ",
+        "cur_4KAVdD"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "strong {color: #ec0101; font-weight: 400;}"
+      ],
+      "settings": {
+        "height": 41,
+        "fontsize": 12,
+        "show_line_separator": false,
+        "full_width": true,
+        "colors_by_section": true,
+        "color_scheme": "scheme-c9476b69-abc7-454f-a946-2d5a9f5f3a37",
+        "background_opacity": 1
+      }
+    },
+    "header_inline_xePFbC": {
+      "type": "header-inline",
+      "disabled": true,
+      "settings": {
+        "header_layout": "logo_left",
+        "header_fullwidth": true,
+        "header_height": 70,
+        "logo": "shopify://shop_images/logo_31556_1721544849-removebg-preview.png",
+        "logo_width": 195,
+        "header_colors": "",
+        "main_menu": "main-menu",
+        "lazy_mn": true,
+        "menu_position": "center",
+        "menu_size": "lg",
+        "menu_weight": "medium",
+        "text_transform": false,
+        "dropdown_arrow": true,
+        "spacing_nav": 30,
+        "open_event": "hover",
+        "menu_type": "default",
+        "header_menu_colors": "",
+        "search_type": "icon",
+        "enabled_user": true,
+        "enabled_wishlist": false,
+        "header_socials": false,
+        "header_height_mb": 60,
+        "logo_width_mb": 95,
+        "main_menu_mobile": "",
+        "header_categories": false,
+        "menu_categories": "",
+        "lazy_mn_mb": true,
+        "only_click_icon": false,
+        "header_mobile_colors": "",
+        "note_mobile": "<span class=\"hdt-inline-flex\" style=\"margin-bottom: 10px\">تحتاج لمساعدة ؟ </span><span class=\"hdt-flex hdt-flex-col hdt-text-sm hdt-text-secondary\" style=\"line-height: 24px;\"><span>واتساب: <b class=\"hdt-font-medium\"><a href=\"https://wa.me/96569333051\">96569333051</a></b></span></span>",
+        "header_transparent": true,
+        "header_transparent_colors": "",
+        "sticky_type": "on_scroll_up",
+        "sticky_glass": true
+      }
+    },
+    "header_inline_blocks_YbMTEe": {
+      "type": "header-inline-blocks",
+      "name": "t:sections.header.header_inline.name_new",
+      "settings": {
+        "header_layout": "logo_left",
+        "header_fullwidth": false,
+        "header_height": 85,
+        "logo": "shopify://shop_images/image_1740485994436.png",
+        "logo_width": 155,
+        "header_colors": "",
+        "main_menu": "main-menu",
+        "lazy_mn": true,
+        "menu_position": "center",
+        "menu_size": "base",
+        "menu_weight": "normal",
+        "text_transform": false,
+        "dropdown_arrow": true,
+        "spacing_nav": 30,
+        "open_event": "hover",
+        "menu_type": "default",
+        "header_menu_colors": "",
+        "search_type": "short_form",
+        "enabled_user": true,
+        "enabled_wishlist": true,
+        "header_socials": false,
+        "header_height_mb": 60,
+        "logo_width_mb": 95,
+        "main_menu_mobile": "",
+        "header_categories": false,
+        "menu_categories": "",
+        "lazy_mn_mb": true,
+        "only_click_icon": false,
+        "header_mobile_colors": "",
+        "note_mobile": "<span class=\"hdt-inline-flex\" style=\"margin-bottom: 10px\">تحتاج لمساعدة ؟ </span><span class=\"hdt-flex hdt-flex-col hdt-text-sm hdt-text-secondary\" style=\"line-height: 24px;\"><span>واتساب: <b class=\"hdt-font-medium\"><a href=\"https://wa.me/96569333051\">96569333051</a></b></span></span>",
+        "header_transparent": true,
+        "header_transparent_colors": "",
+        "sticky_type": "on_scroll_up",
+        "sticky_glass": false
+      }
+    }
+  },
+  "order": [
+    "announcement_bar_QKnWCh",
+    "top_bar_3qfcq8",
+    "header_inline_xePFbC",
+    "header_inline_blocks_YbMTEe"
+  ]
+}

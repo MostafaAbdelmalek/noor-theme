@@ -1,0 +1,232 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collections_list_simple_4yRUED": {
+      "type": "top-list-collections",
+      "settings": {
+        "show_type": "all",
+        "menu": "footer",
+        "sort": "alphabetical",
+        "hide_mobile": false,
+        "navUI": true,
+        "colors_by_section": false,
+        "color_scheme": "scheme-1",
+        "background_opacity": 1,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
+    "main_heading_PHNGje": {
+      "type": "main-heading",
+      "blocks": {
+        "heading_liquid_wcaa7G": {
+          "type": "_heading_liquid",
+          "settings": {
+            "text": "{{ collection.title }}",
+            "line_height": "",
+            "font_family": "hdt-font-1",
+            "text_size": "2xl",
+            "text_color": "hdt-s-text",
+            "italic": false,
+            "uppercase": false,
+            "font_size_text_lg": 16,
+            "font_size_text": 14,
+            "letter_spacing_text": 0
+          },
+          "blocks": {}
+        },
+        "heading_brc_pYUK78": {
+          "type": "_heading_brc",
+          "settings": {
+            "heading_title": "{{ collection.title }}"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_liquid_wcaa7G",
+        "heading_brc_pYUK78"
+      ],
+      "settings": {
+        "use_dynamic_source": false,
+        "color_scheme": "scheme-77e4ef58-56a9-4631-876a-12098ba7d57d",
+        "bg_overlay": 54,
+        "space_item": 0,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_rate": 62
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "filter_KX6bJW": {
+          "type": "filter",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "filter_KX6bJW"
+      ],
+      "settings": {
+        "show_description": false,
+        "description_position": "before",
+        "product_des": "6",
+        "image_ratio": "custom-pr",
+        "image_size": true,
+        "show_vendor": false,
+        "pr_border": "none",
+        "products_count": 24,
+        "col_dk": "4",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_items": "x",
+        "pagination_type": "links",
+        "enable_progressbar": true,
+        "paginate_pos": "center",
+        "dis_pagination": 40,
+        "btn_label": "",
+        "btn_style": "hdt-btn-outline",
+        "size": "xl",
+        "btn_fw": "medium",
+        "enable_sorting": true,
+        "enable_filtering": true,
+        "enable_num_cols_selector": true,
+        "widget_heading": "تصنيفات المنتجات",
+        "cat_source": "1",
+        "cat_link_list": "",
+        "count": false,
+        "colors_by_section": false,
+        "color_scheme": "scheme-1",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 30,
+        "padding_rate": 75,
+        "sidebar_drawer": false,
+        "sidebar_position": "left",
+        "sidebar_size": "small",
+        "colors_by_section_sb": true,
+        "color_scheme_sb": "",
+        "background_opacity_sb": 1
+      }
+    },
+    "tabs_collection_CXFtr9": {
+      "type": "tabs-collection",
+      "blocks": {
+        "tab_collection_eHm8xC": {
+          "type": "_tab-collection",
+          "settings": {
+            "title": "",
+            "collection": ""
+          },
+          "blocks": {
+            "product_grid_8eagmk": {
+              "type": "_product-grid",
+              "settings": {
+                "collection": "",
+                "products_count": 24,
+                "product_list": [
+                  "assorted-baked-goods-box-with-organic-beef-tallow-butter-organic-olive-oil-and-natural-yeast",
+                  "healthy-croissant-box",
+                  "بوكس-صمون-البرجر-وصمون-الهوت-بالقمح-الكامل-وزيت-الزيوت-العضوي-وملح-الهمالايا",
+                  "عرض-٢-زيت-زيتون-عضوي-٥٠٠-مل-١-مجانا",
+                  "collagen-box",
+                  "المجموعة-التوفيرية-لشوتات-كزبرة-زنجبيل-وكركم-شمندر-وجزر",
+                  "مجموعة-الأعسال-الطبيعية-التوفيرية-عسل-سدر-مرعى-حر-عسل-سدر-كويتي-عسل-سدر-بالحبة-السودة-عسل-أزهار-الربيع-٥٠٠-غرام-لكل-علبة",
+                  "basic-wellness-box",
+                  "نقصة-رمضان-عسل-سدر-علاجي-زعفران-هدية-بروبلس-نقي-علاجي-20-ml",
+                  "ريوق-العيد-الصحي-مع-خصم-وهدية-مجانية",
+                  "whey-protein-natural-330ml-6pcs",
+                  "شوت-الزنجبيل-والكركم-١٢-علبة-زجاجية-مفيد-الزنجبيل-والكركم-لمحاربة-الالتهابات-في-الجسم-ورفع-المناعة",
+                  "العرض-الناري-عسل-سدر-علاجي-زيت-زيتون-عضوي-علاجي-دبس-رمان-عضوي-مجانًا",
+                  "العرض-التوفيري-بقلاوة-شعير-عضوي-محلاة-بالعسل-800-غرام-١١٥٠-امر-مجدول-عضوي-محشي-بحشوات-لذيذة-بصن",
+                  "مجموعة-عسل-الكورديسيبس-عسل-الجنسنج-الأحمر-خلطة-نور-بالمكسرات-البرازيلية",
+                  "عرض-رمضان-لزبدة-الشحم-البقري-بالمستكة-اليونانية-٤٠٠-غرام-٣-حبات",
+                  "happiness-savings-box-organic-barley-coffee-organic-talbina-2-cups-in-a-gift-box-for-you-and-yo",
+                  "natural-jam-saving-box",
+                  "شوت-الشمندر-والجزر-١٢-علبة-مصنوعة-من-ألياف-الذرة-الشمندر-والجزر-مفيد-للدم-وتقوية-الجهاز-الهضمي-والإمساك",
+                  "goat-milk-with-natural-mango-180-ml-5-pieces-made-in-kuwait",
+                  "مجموعة-الكاتشاب-والمايونيز-والكايين-التوفيرية",
+                  "natural-strawberry-goat-milk-180-ml-5-pieces-made-in-kuwait",
+                  "مجموعه-العسل-الريشي-عسل-الجنسنج-الأحمر-الكوري-خلطة-نور-بالمكسرات-البرازيلية"
+                ],
+                "pr_border": "none",
+                "product_des": "6",
+                "image_ratio": "custom-pr",
+                "image_size": true,
+                "show_vendor": false,
+                "col_dk": "4",
+                "col_tb": "3",
+                "col_mb": "2",
+                "space_items": "x",
+                "pagination": false,
+                "pagination_type": "view_all",
+                "paginate_pos": "center",
+                "dis_pagination": 30,
+                "btn_label": "",
+                "btn_style": "hdt-btn-link",
+                "endable_btn_icon": false,
+                "size": "m",
+                "btn_fw": "medium"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "product_grid_8eagmk"
+          ]
+        },
+        "tabs-collection-heading": {
+          "type": "section-heading",
+          "disabled": true,
+          "static": true,
+          "settings": {
+            "design_heading": "1",
+            "horizontal": false,
+            "alignment": "left",
+            "heading_gap": 15,
+            "margin_bottom": 30
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "tab_collection_eHm8xC"
+      ],
+      "name": "t:sections.tabs_collections.grid_name",
+      "settings": {
+        "tabs_des": "base",
+        "tabs_list_pos": "center",
+        "tab_item_size": "lg",
+        "tab_item_border": "solid",
+        "border_width": 2,
+        "spacing_tabs_items": 30,
+        "tabs_head_spacing": 30,
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    }
+  },
+  "order": [
+    "collections_list_simple_4yRUED",
+    "main_heading_PHNGje",
+    "main-collection",
+    "tabs_collection_CXFtr9"
+  ]
+}

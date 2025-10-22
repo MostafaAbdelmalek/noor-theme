@@ -1,0 +1,64 @@
+@media only screen and (max-width: 600px) {
+    button.backbutton {
+        left: 10px !important;
+        top: 100px !important;
+    }
+}
+div:has(div div [aria-label="Go to whatsapp"]) {
+    bottom: 66px !important;
+    right: 16px !important;
+  left:unset !important;
+}
+.baDropdownStyle.top_right {
+    top: 120px !important;
+
+}
+.cvc-switcher-btn {
+    border: 1px solid #ddd !important;
+}
+body.template-index button.backbutton {
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+ body#noororganicq8-com .baDropdownStyle.mobile_top_right:not(.hideOnMobile) {
+    top: 110px !important;
+}
+/* section#shopify-section-template--17826361704639__banner_parallax_eFAiqE {
+    padding-top: 70px;
+      background-image: url(https://noororganicfood.com/cdn/shop/files/banner_2_b0ea2902-8e9f-4c07-a7b3-db62553c2740.png?v=1739096683&width=900);
+      background-size: cover;
+} */
+  .t4s_cover .t4s_bg {
+    background-size: cover;
+    padding-top: 20px;
+    background-position: center;
+}
+  .t4s-section-header, #shopify-section-top-bar {
+    --h-space-tr: 3px !important;
+}
+.cvc-switcher-btn {
+    bottom: 120px!important;
+    left: 10px!important;
+    top: unset!important;
+    right: unset!important;
+
+}
+}
+.t4s-pr-style10 .t4s-product-inner .t4s-product-img {
+    border-radius: 5px !important;
+
+}
+
+
+/* start collection page edits based on the winning test */
+.header-banner { --bg-cl: white !important; } 
+
+.title-head { --text-cl: #000 !important; } 
+
+.breadcrumbs__list { display: none !important; } 
+
+.page-head { padding: 5px !important; margin-bottom: -10px !important; margin-top: 20px !important; } 
+
+.t4s-collection-header { margin: 20px 0 !important; }
+
+/* End of collection page edits based on the winning test */
