@@ -229,7 +229,7 @@
     "portfolio": {
       "category": "الفئة:",
       "author": "المؤلف:",
-      "tags": "ضمن:"
+      "tags": "العلامات:"
     }
   },
   "onboarding": {
@@ -243,7 +243,7 @@
     "open_sidebar": "فتح الشريط الجانبي",
     "header_sidebar": "الشريط الجانبي"
   },
-  "collections": {
+  "collections":{
     "pagination": {
       "bar_with_count_html": "لقد شاهدت <span data-current-bar>{{ current_count }}<\/span> من {{ total_count }} منتج"
     }
@@ -296,7 +296,7 @@
       "vendor": "البائع:",
       "type": "النوع:",
       "category": "الفئات:",
-      "tag": "ضمن:",
+      "tag": "العلامات:",
       "variant_sold_out": "المتغير غير متوفر",
       "video_exit_message": "{{ title }} يفتح فيديو بملء الشاشة في نفس النافذة.",
       "view_full_details": "عرض التفاصيل الكاملة",
