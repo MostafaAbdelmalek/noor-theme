@@ -2660,9 +2660,23 @@ hdt-slider-thumb.stagger-finished .hdt-thumbnail__media:not(.is-thumb-selected) 
 }
 .hdt-product__meta .hdt-collections-wrapper>a:not(:last-child):after,
 .hdt-product__meta .hdt-tags-wrapper>a:not(:last-child):after {
-  content: ", ";
+  content: "- ";
   display: inline-block;
 }
+
+.hdt-tags-wrapper {
+  background-color: #F7F8F7;
+    padding: 8px 12px;
+    width: fit-content;
+    color: #2E3430;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.hdt-tags-wrapper a{
+  color: #2E3430;
+}
+
 .hdt-product__sold,
 .hdt-product__live-review{width: 100%;}
 
