@@ -1,0 +1,386 @@
+{% comment %}
+  Video Gallery Section
+  - Responsive grid or carousel layout
+  - Customizable heading and text blocks
+  - Full video playback control
+  - Accessible and performant
+{% endcomment %}
+
+{% liquid
+  assign layout_style = section.settings.layout_style | default: 'grid'
+  assign columns_desktop = section.settings.columns_desktop | default: 3
+  assign columns_mobile = section.settings.columns_mobile | default: 1
+  assign heading_size = section.settings.heading_size | default: 'medium'
+  assign heading_weight = section.settings.heading_weight | default: 'bold'
+  assign heading_color = section.settings.heading_color | default: '#222'
+  assign text_alignment = section.settings.text_alignment | default: 'center'
+  assign background_color = section.settings.background_color | default: '#fff'
+  assign padding_top = section.settings.padding_top | default: 40
+  assign padding_bottom = section.settings.padding_bottom | default: 40
+%}
+
+<section class="video-gallery-section"
+  style="background:{{ background_color }};padding-top:{{ padding_top }}px;padding-bottom:{{ padding_bottom }}px;"
+  aria-label="Video Gallery"
+>
+  {% if section.settings.heading != blank %}
+    <header class="video-gallery__header" style="text-align:{{ text_alignment }};">
+      <h2 class="video-gallery__heading video-gallery__heading--{{ heading_size }} video-gallery__heading--{{ heading_weight }}"
+        style="color:{{ heading_color }};">
+        {{ section.settings.heading }}
+      </h2>
+    </header>
+  {% endif %}
+
+  <div class="video-gallery__blocks-wrapper video-gallery__blocks-wrapper--{{ layout_style }}"
+    {% if layout_style == 'grid' %}
+      style="display:grid;grid-template-columns:repeat({{ columns_desktop }},1fr);gap:24px;"
+    {% else %}
+      data-slider
+    {% endif %}
+  >
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'video' %}
+          <div class="video-gallery__item video-gallery__item--video"
+            style="grid-column:auto;"
+            aria-label="Video Item"
+          >
+            {% if block.settings.cover_image != blank %}
+              <div class="video-gallery__cover" style="position:relative;cursor:pointer;">
+                <img src="{{ block.settings.cover_image | image_url }}"
+                  alt="{{ block.settings.caption | escape }}"
+                  loading="lazy"
+                  class="video-gallery__cover-img"
+                  style="width:100%;height:auto;display:block;" />
+                {% if section.settings.play_icon_image != blank %}
+                  <img src="{{ section.settings.play_icon_image | image_url }}" alt="Play" class="video-gallery__play-icon" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;pointer-events:none;" />
+                {% endif %}
+              </div>
+            {% endif %}
+            <video
+              src="{{ block.settings.video_url }}"
+              {% if block.settings.autoplay or section.settings.enable_autoplay %}autoplay{% endif %}
+              {% if block.settings.controls or section.settings.show_controls %}controls{% endif %}
+              {% if block.settings.loop or section.settings.loop_videos %}loop{% endif %}
+              {% if block.settings.mute or section.settings.mute_on_autoplay %}muted{% endif %}
+              poster="{{ block.settings.cover_image }}"
+              class="video-gallery__video"
+              style="width:100%;height:auto;display:block;"
+              preload="none"
+              aria-label="Video Player"
+            ></video>
+            {% if block.settings.caption != blank %}
+              <div class="video-gallery__caption" style="margin-top:8px;text-align:center;">{{ block.settings.caption }}</div>
+            {% endif %}
+          </div>
+        {% when 'text' %}
+          <div class="video-gallery__item video-gallery__item--text"
+            style="grid-column:auto;background:{{ block.settings.background_color }};text-align:{{ block.settings.alignment }};"
+            aria-label="Text Block"
+          >
+            <div class="video-gallery__text-content"
+              style="font-size:{{ block.settings.font_size }}px;color:{{ block.settings.font_color }};font-weight:{{ block.settings.font_weight }};">
+              {{ block.settings.text_content }}
+            </div>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video Gallery",
+  "tag": "section",
+  "class": "video-gallery-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Featured Videos"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#222"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "medium", "label": "Medium" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "select",
+      "id": "heading_weight",
+      "label": "Heading Weight",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "bold", "label": "Bold" }
+      ],
+      "default": "bold"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "layout_style",
+      "label": "Layout Style",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "carousel", "label": "Carousel" }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "label": "Columns (Desktop)",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "label": "Columns (Mobile)",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_autoplay",
+      "label": "Enable Autoplay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_controls",
+      "label": "Show Controls",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "mute_on_autoplay",
+      "label": "Mute on Autoplay",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "loop_videos",
+      "label": "Loop Videos",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "play_icon_image",
+      "label": "Play Icon Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video Item",
+      "settings": [
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "label": "Video URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "cover_image",
+          "label": "Cover Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "Autoplay"
+        },
+        {
+          "type": "checkbox",
+          "id": "controls",
+          "label": "Show Controls"
+        },
+        {
+          "type": "checkbox",
+          "id": "loop",
+          "label": "Loop"
+        },
+        {
+          "type": "checkbox",
+          "id": "mute",
+          "label": "Mute"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text / Title Block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text_content",
+          "label": "Text Content"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "label": "Font Size",
+          "min": 12,
+          "max": 48,
+          "step": 1,
+          "default": 18
+        },
+        {
+          "type": "color",
+          "id": "font_color",
+          "label": "Font Color",
+          "default": "#222"
+        },
+        {
+          "type": "select",
+          "id": "font_weight",
+          "label": "Font Weight",
+          "options": [
+            { "value": "normal", "label": "Normal" },
+            { "value": "medium", "label": "Medium" },
+            { "value": "bold", "label": "Bold" }
+          ],
+          "default": "bold"
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "Alignment",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "center", "label": "Center" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#fff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Gallery Example",
+      "settings": {
+        "heading": "Our Video Gallery",
+        "layout_style": "grid",
+        "columns_desktop": 3,
+        "columns_mobile": 1,
+        "enable_autoplay": false,
+        "show_controls": true
+      },
+      "blocks": [
+        {
+          "type": "text",
+          "settings": {
+            "text_content": "<p>Welcome to our video gallery!</p>",
+            "font_size": 24,
+            "font_color": "#222",
+            "font_weight": "bold",
+            "alignment": "center",
+            "background_color": "#fff"
+          }
+        },
+        {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/sample1.mp4",
+            "cover_image": "",
+            "autoplay": false,
+            "controls": true,
+            "loop": false,
+            "mute": false,
+            "caption": "First video caption"
+          }
+        },
+        {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/sample2.mp4",
+            "cover_image": "",
+            "autoplay": false,
+            "controls": true,
+            "loop": false,
+            "mute": false,
+            "caption": "Second video caption"
+          }
+        },
+        {
+          "type": "video",
+          "settings": {
+            "video_url": "https://cdn.shopify.com/videos/c/sample3.mp4",
+            "cover_image": "",
+            "autoplay": false,
+            "controls": true,
+            "loop": false,
+            "mute": false,
+            "caption": "Third video caption"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
