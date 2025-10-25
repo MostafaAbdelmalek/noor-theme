@@ -102,8 +102,8 @@
             "product_description_AJaqwJ": {
               "type": "_product-description",
               "settings": {
-                "des_mode": "2",
-                "short_des": "{{ closest.product.metafields.custom.short_description | metafield_tag }}",
+                "des_mode": "1",
+                "short_des": "",
                 "readm": false,
                 "length": 31,
                 "readm_txt": "Read more",
@@ -230,11 +230,88 @@
             "socials_XYJPwj"
           ]
         },
+        "ai_gen_block_7184c8f_WrqUVR": {
+          "type": "ai_gen_block_7184c8f",
+          "settings": {
+            "section_background_color": "rgba(0,0,0,0)",
+            "section_border_width": 0,
+            "section_border_color": "#bee9ce",
+            "section_border_radius": 8,
+            "section_padding": 16,
+            "section_margin": 20,
+            "accordion_title": "المكونات",
+            "accordion_description": "",
+            "open_by_default": true,
+            "accordion_title_size": 18,
+            "accordion_title_weight": "600",
+            "accordion_padding": 16,
+            "accordion_content_padding": 20,
+            "accordion_border_radius": 16,
+            "accordion_header_bg": "#f0faf4",
+            "accordion_header_hover_bg": "#f0faf4",
+            "accordion_header_text": "#2f854e",
+            "accordion_content_bg": "#f0faf4",
+            "accordion_description_color": "#666666",
+            "accordion_description_size": 14,
+            "description_margin_bottom": 16,
+            "open_icon": "shopify://shop_images/plus-icon.png",
+            "close_icon": "shopify://shop_images/Frame_1000003082.png",
+            "accordion_icon_size": 24,
+            "columns_desktop": 3,
+            "columns_mobile": 3,
+            "grid_gap": 16,
+            "subitems_margin_top": 16,
+            "subitem_alignment": "center",
+            "subitem_bg_color": "rgba(0,0,0,0)",
+            "subitem_text_color": "#2f854e",
+            "subitem_text_size": 14,
+            "subitem_padding": 12,
+            "subitem_border_radius": 6,
+            "subitem_border_width": 1,
+            "subitem_border_color": "rgba(0,0,0,0)",
+            "subitem_image_height": 110,
+            "subitem_image_radius": 4,
+            "image_text_spacing": 10,
+            "subitem_1_enabled": true,
+            "subitem_1_image": "{{ closest.product.metafields.custom.first_component_img.value }}",
+            "subitem_1_text": "{{ closest.product.metafields.custom.first_component.value }}",
+            "subitem_2_enabled": true,
+            "subitem_2_image": "{{ closest.product.metafields.custom.second_component_img.value }}",
+            "subitem_2_text": "{{ closest.product.metafields.custom.second_component.value }}",
+            "subitem_3_enabled": true,
+            "subitem_3_image": "{{ closest.product.metafields.custom.third_component_img.value }}",
+            "subitem_3_text": "{{ closest.product.metafields.custom.third_component.value }}",
+            "subitem_4_enabled": true,
+            "subitem_4_image": "{{ closest.product.metafields.custom.fourth_component_img.value }}",
+            "subitem_4_text": "{{ closest.product.metafields.custom.fourth_component.value }}",
+            "subitem_5_enabled": true,
+            "subitem_5_image": "{{ closest.product.metafields.custom.fifth_component_img.value }}",
+            "subitem_5_text": "{{ closest.product.metafields.custom.fifth_component.value }}",
+            "subitem_6_enabled": true,
+            "subitem_6_image": "{{ closest.product.metafields.custom.sixth_component_img.value }}",
+            "subitem_6_text": "{{ closest.product.metafields.custom.sixth_component.value }}",
+            "subitem_7_enabled": true,
+            "subitem_7_image": "{{ closest.product.metafields.custom.seventh_component_img.value }}",
+            "subitem_7_text": "{{ closest.product.metafields.custom.seventh_component.value }}",
+            "subitem_8_enabled": true,
+            "subitem_8_image": "{{ closest.product.metafields.custom.component_8_img.value }}",
+            "subitem_8_text": "{{ closest.product.metafields.custom.component_8.value }}",
+            "subitem_9_enabled": false,
+            "subitem_9_text": "",
+            "subitem_10_enabled": false,
+            "subitem_10_text": "",
+            "subitem_11_enabled": false,
+            "subitem_11_text": "",
+            "subitem_12_enabled": false,
+            "subitem_12_text": ""
+          },
+          "blocks": {}
+        },
         "main-product-medias": {
           "type": "_product-medias",
           "static": true,
           "settings": {
-            "desktop_media_layout": "thumbnail_left",
+            "desktop_media_layout": "thumbnail_bottom",
             "media_size": "medium",
             "mobile_media_layout": "thumbnails",
             "show_first_media": false,
@@ -243,7 +320,7 @@
             "enable_video_looping": false,
             "enable_thumb_efect": true,
             "image_ratio": "adapt_image",
-            "image_size": true,
+            "image_size": false,
             "image_zoom": "zoom",
             "image_zoom_type": "external",
             "zoom_level": 2,
@@ -258,7 +335,8 @@
         }
       },
       "block_order": [
-        "group_product_9RYttB"
+        "group_product_9RYttB",
+        "ai_gen_block_7184c8f_WrqUVR"
       ],
       "custom_css": [
         "h2.hdt-h5.hdt-font-bold {font-size: 22px;}"
@@ -363,6 +441,7 @@
       "block_order": [
         "ai_gen_block_7184c8f_hgHQ7K"
       ],
+      "disabled": true,
       "custom_css": [
         "img {object-fit: contain;}",
         "h3.ai-accordion-title-azm1klzben2tpwkpysaigenblock7184c8fhghq7k {text-align: right;}"
@@ -417,10 +496,27 @@
               },
               "blocks": {}
             },
+            "heading_faHdgn": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h1>6 أفراد</h1>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
             "text_jRGeDc": {
               "type": "text",
               "settings": {
-                "text": "{{ closest.product.metafields.custom.people_count | metafield_tag }}",
+                "text": "<p>تكفي عائلة صغيرة</p>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
@@ -440,6 +536,7 @@
           "block_order": [
             "media_FxzWAx",
             "spacer_LUmWW8",
+            "heading_faHdgn",
             "text_jRGeDc"
           ]
         },
@@ -663,6 +760,7 @@
         "multi_column_XwxKYQ",
         "multi_column_aP8rjx"
       ],
+      "disabled": true,
       "custom_css": [
         "{background: linear-gradient(180deg, #267948 0%, #529a4a 100%);}",
         "img.hdt-object-pos-mb.hdt-obj-eff {width: 30px; object-fit: contain; margin-bottom: 7px;}",
@@ -684,6 +782,683 @@
         "section_layout": "container",
         "padding_top": 50,
         "padding_bottom": 60,
+        "padding_rate": 50
+      }
+    },
+    "custom_section_Fjd8gE": {
+      "type": "custom-section",
+      "blocks": {
+        "multi_column_FxGrDN": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "3",
+            "column_tb": "4",
+            "column_mb": "6",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "media_QCEqxt": {
+              "type": "_media",
+              "name": "t:blocks.media.name",
+              "settings": {
+                "source": "image",
+                "image": "shopify://shop_images/thermometer-02.png",
+                "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+              },
+              "blocks": {}
+            },
+            "spacer_LqVdeF": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 6,
+                "space_md": 6,
+                "space": 6
+              },
+              "blocks": {}
+            },
+            "heading_t6gDTP": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>24°C</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_YHz6Y4": {
+              "type": "text",
+              "settings": {
+                "text": "<p>تحفظ في درجة حرارة</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "media_QCEqxt",
+            "spacer_LqVdeF",
+            "heading_t6gDTP",
+            "text_YHz6Y4"
+          ]
+        },
+        "multi_column_TxPqY6": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "3",
+            "column_tb": "4",
+            "column_mb": "6",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "media_GFUtHJ": {
+              "type": "_media",
+              "name": "t:blocks.media.name",
+              "settings": {
+                "source": "image",
+                "image": "shopify://shop_images/user.png",
+                "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+              },
+              "blocks": {}
+            },
+            "spacer_TcTVB8": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 6,
+                "space_md": 6,
+                "space": 6
+              },
+              "blocks": {}
+            },
+            "heading_pTyUHM": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>6 أفراد</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_3cCYtr": {
+              "type": "text",
+              "settings": {
+                "text": "<p>تكفي عائلة صغيرة</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "media_GFUtHJ",
+            "spacer_TcTVB8",
+            "heading_pTyUHM",
+            "text_3cCYtr"
+          ]
+        },
+        "multi_column_kzPWYk": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "3",
+            "column_tb": "4",
+            "column_mb": "6",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "media_XHkchA": {
+              "type": "_media",
+              "name": "t:blocks.media.name",
+              "settings": {
+                "source": "image",
+                "image": "shopify://shop_images/clock-01.png",
+                "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+              },
+              "blocks": {}
+            },
+            "spacer_KynENC": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 6,
+                "space_md": 6,
+                "space": 6
+              },
+              "blocks": {}
+            },
+            "heading_iWkAry": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>7 أيام</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_K9fKr8": {
+              "type": "text",
+              "settings": {
+                "text": "<p>مدة الصلاحية بعد الفتح</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "media_XHkchA",
+            "spacer_KynENC",
+            "heading_iWkAry",
+            "text_K9fKr8"
+          ]
+        },
+        "multi_column_YjKDKe": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "3",
+            "column_tb": "4",
+            "column_mb": "6",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "media_iDTgjm": {
+              "type": "_media",
+              "name": "t:blocks.media.name",
+              "settings": {
+                "source": "image",
+                "image": "shopify://shop_images/honey-01.png",
+                "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+              },
+              "blocks": {}
+            },
+            "spacer_QWKf6E": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 6,
+                "space_md": 6,
+                "space": 6
+              },
+              "blocks": {}
+            },
+            "heading_6TdKUF": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>100%</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_9qQica": {
+              "type": "text",
+              "settings": {
+                "text": "<p>محلاة بالعسل الطبيعي</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "media_iDTgjm",
+            "spacer_QWKf6E",
+            "heading_6TdKUF",
+            "text_9qQica"
+          ]
+        }
+      },
+      "block_order": [
+        "multi_column_FxGrDN",
+        "multi_column_TxPqY6",
+        "multi_column_kzPWYk",
+        "multi_column_YjKDKe"
+      ],
+      "custom_css": [
+        "@media (min-width: 768px) {.hdt-grid-system {padding: 36px 90px; }}",
+        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 16px 0 16px; }}",
+        "img.hdt-object-pos-mb.hdt-obj-eff {width: 30px; margin-bottom: 7px;}",
+        ".hdt-s-gradient {background: linear-gradient(180deg, #267948 0%, #529a4a 100%);}",
+        "h4 {font-size: 22px !important; font-weight: 600; color: #22603c;}",
+        ".hdt-rte p {color: #22603c; font-size: 14px;}",
+        ".hdt-column {border-radius: 10px; background: #a8d35e;}",
+        ".hdt-column_inner {padding: 8px 12px;}"
+      ],
+      "name": "Text column with image",
+      "settings": {
+        "layout": "12",
+        "item_spacing": 16,
+        "item_spacing_tb": 16,
+        "item_spacing_mb": 16,
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "full_width",
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "padding_rate": 50
+      }
+    },
+    "custom_section_zYTkUE": {
+      "type": "custom-section",
+      "blocks": {
+        "text_XWFck7": {
+          "type": "text",
+          "name": "t:blocks.text.name",
+          "settings": {
+            "text": "<h2>محتوى البوكس</h2>",
+            "hidden_br_mobile": false,
+            "hidden_on_mobile": false,
+            "ffamily": "",
+            "text_size": "4xl",
+            "line_height": "",
+            "font_weight": "normal",
+            "text_color": "hdt-s-text",
+            "countdown": "2025-12-30 15:00:00",
+            "txt_day": "days",
+            "font_size_text_lg": 16,
+            "font_size_text": 14,
+            "letter_spacing_text": 0
+          },
+          "blocks": {}
+        },
+        "multi_column_brYawh": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "4",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_NN9JQm": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>1 كيس توست</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_NN9JQm"
+          ]
+        },
+        "multi_column_Cm6aag": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "4",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_H4mXik": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>1 كيس ساوردو</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_H4mXik"
+          ]
+        },
+        "multi_column_h3yRfA": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "4",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_r8xfKU": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>6 حبات صمون هوت دوغ</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_r8xfKU"
+          ]
+        },
+        "multi_column_PcVQcp": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "4",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_dA7LMg": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>6 حبات صمون برجر</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_dA7LMg"
+          ]
+        },
+        "multi_column_Emj3dp": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "4",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_Kqy7NE": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>5 حبات خبز تورتيلا</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_Kqy7NE"
+          ]
+        }
+      },
+      "block_order": [
+        "text_XWFck7",
+        "multi_column_brYawh",
+        "multi_column_Cm6aag",
+        "multi_column_h3yRfA",
+        "multi_column_PcVQcp",
+        "multi_column_Emj3dp"
+      ],
+      "custom_css": [
+        "@media (min-width: 768px) {.hdt-grid-system {padding: 32px 90px; }}",
+        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 16px 0 16px; }}",
+        ".hdt-s-gradient {background: #529a4a;}",
+        "h2 {font-size: 24px; color: #fff;}",
+        "h4 {font-size: 22px !important; font-weight: 600; color: #22603c;}",
+        ".hdt-column {border-radius: 12px; background: #a8d35e;}",
+        ".hdt-column_inner {padding: 8px 12px;}"
+      ],
+      "name": "Text column with image",
+      "settings": {
+        "layout": "12",
+        "item_spacing": 16,
+        "item_spacing_tb": 16,
+        "item_spacing_mb": 16,
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "full_width",
+        "padding_top": 24,
+        "padding_bottom": 24,
         "padding_rate": 50
       }
     },
@@ -734,10 +1509,27 @@
             "rounded": "none"
           },
           "blocks": {
+            "heading_KFDgY8": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>تحسين صحة الجهاز الهضمي</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
             "text_hWdGLj": {
               "type": "text",
               "settings": {
-                "text": "{{ closest.product.metafields.custom.feature_1 | metafield_tag }}",
+                "text": "<p>تدعم الخميرة الطبيعية نمو البكتيريا النافعة، مما يحسن الهضم ويقلل مشاكل الجهاز الهضمي.</p>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
@@ -755,6 +1547,7 @@
             }
           },
           "block_order": [
+            "heading_KFDgY8",
             "text_hWdGLj"
           ]
         },
@@ -782,10 +1575,27 @@
             "rounded": "none"
           },
           "blocks": {
+            "heading_yGLXkV": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>زيادة امتصاص العناصر الغذائية</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
             "text_R3HEUa": {
               "type": "text",
               "settings": {
-                "text": "{{ closest.product.metafields.custom.feature_2 | metafield_tag }}",
+                "text": "<p>يساعد التخمير الطبيعي على تعزيز امتصاص المعادن وزيادة استفادة الجسم منها.</p>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
@@ -803,6 +1613,7 @@
             }
           },
           "block_order": [
+            "heading_yGLXkV",
             "text_R3HEUa"
           ]
         },
@@ -830,10 +1641,27 @@
             "rounded": "none"
           },
           "blocks": {
+            "heading_amKpwM": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>مؤشر جلايسيمي منخفض</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
             "text_YxBH88": {
               "type": "text",
               "settings": {
-                "text": "{{ closest.product.metafields.custom.feature_3 | metafield_tag }}",
+                "text": "<p>يؤثر الخبز بالخميرة الطبيعية بشكل أقل على السكر في الدم، مما يناسب مرضى السكري.</p>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
@@ -851,6 +1679,7 @@
             }
           },
           "block_order": [
+            "heading_amKpwM",
             "text_YxBH88"
           ]
         },
@@ -878,10 +1707,27 @@
             "rounded": "none"
           },
           "blocks": {
+            "heading_Ynfi3V": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>غني بالفيتامينات والمعادن</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
             "text_M3MQRr": {
               "type": "text",
               "settings": {
-                "text": "{{ closest.product.metafields.custom.feature_4 | metafield_tag }}",
+                "text": "<p>يحتوي على فيتامينات B ومعادن أساسية مثل الحديد والزنك لدعم الصحة العامة.</p>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
@@ -899,6 +1745,7 @@
             }
           },
           "block_order": [
+            "heading_Ynfi3V",
             "text_M3MQRr"
           ]
         },
@@ -926,10 +1773,27 @@
             "rounded": "none"
           },
           "blocks": {
+            "heading_fHaG8g": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>خالٍ من المواد الصناعية</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
             "text_JtV3pi": {
               "type": "text",
               "settings": {
-                "text": "{{ closest.product.metafields.custom.feature_5 | metafield_tag }}",
+                "text": "<p>يُحضّر دون سكر مكرر أو زيوت مهدرجة، باستخدام العسل ودهون طبيعية صحية.</p>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
@@ -947,6 +1811,7 @@
             }
           },
           "block_order": [
+            "heading_fHaG8g",
             "text_JtV3pi"
           ]
         },
@@ -974,10 +1839,27 @@
             "rounded": "none"
           },
           "blocks": {
+            "heading_B3WeAE": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>طحين قمح كامل غير معدل</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
             "text_kkgXzx": {
               "type": "text",
               "settings": {
-                "text": "{{ closest.product.metafields.custom.feature_6 | metafield_tag }}",
+                "text": "<p>تُصنع المخبوزات من طحين قمح كامل غير معدل وراثيًا لضمان جودة وقيمة غذائية أعلى.</p>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
@@ -995,7 +1877,74 @@
             }
           },
           "block_order": [
+            "heading_B3WeAE",
             "text_kkgXzx"
+          ]
+        },
+        "multi_column_KbQWXf": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "6",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_Kn6dXd": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>تغليف صديق للبيئة</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_68CJph": {
+              "type": "text",
+              "settings": {
+                "text": "<p>تُعبأ المخبوزات في أكياس قابلة للتحلل لتقليل الأثر البيئي.</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_Kn6dXd",
+            "text_68CJph"
           ]
         }
       },
@@ -1006,27 +1955,30 @@
         "multi_column_xVK83e",
         "multi_column_6agYtF",
         "multi_column_hbm4PC",
-        "multi_column_J9Byjb"
+        "multi_column_J9Byjb",
+        "multi_column_KbQWXf"
       ],
       "custom_css": [
-        ".hdt-s-gradient {background: transparent !important;}",
+        "@media (min-width: 768px) {.hdt-grid-system {padding: 36px 90px; }}",
+        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 16px; }}",
+        ".hdt-s-gradient {background: #529a4a;}",
         "h2 {font-size: 30px; color: #fff;}",
         ".hdt-column {padding: 10px 15px; border-radius: 10px; background: #edfcf1;}",
-        "h3 {color: #2f854e; font-size: 18px; font-weight: 500;}",
-        "p {margin-top: 5px; font-size: 16px; color: #95b75f;}"
+        "h3 {color: #2f854e; font-size: 16px; font-weight: 500;}",
+        "p {margin-top: 5px; font-size: 13px; color: #75a02c;}"
       ],
       "name": "Text column with image",
       "settings": {
         "layout": "12",
-        "item_spacing": 30,
-        "item_spacing_tb": 15,
-        "item_spacing_mb": 15,
+        "item_spacing": 16,
+        "item_spacing_tb": 16,
+        "item_spacing_mb": 16,
         "colors_by_section": false,
         "color_scheme": "",
         "background_opacity": 0,
-        "section_layout": "container",
-        "padding_top": 50,
-        "padding_bottom": 60,
+        "section_layout": "full_width",
+        "padding_top": 24,
+        "padding_bottom": 24,
         "padding_rate": 50
       }
     },
@@ -1430,6 +2382,8 @@
     "main-product",
     "17599121975e02029c",
     "custom_section_X4HNfD",
+    "custom_section_Fjd8gE",
+    "custom_section_zYTkUE",
     "custom_section_qMLTB9",
     "tabs",
     "sidebar",
