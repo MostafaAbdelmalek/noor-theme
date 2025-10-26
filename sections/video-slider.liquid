@@ -718,6 +718,17 @@ https://flickity.metafizzy.co
   max-width: {{ max_width }};
 }
 
+/* Apply hdt-container only on desktop (screens larger than 767px) */
+@media screen and (min-width: 768px) {
+  #DP--{{ section_id }} .fbs-pck__desktop-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 55px;
+    padding-right: 55px;
+    max-width: 1200px;
+  }
+}
+
 #DP--{{ section_id }} .fbs-pck__flex--main {
   position: relative;
   align-items: center;
@@ -751,14 +762,21 @@ https://flickity.metafizzy.co
 
 #DP--{{ section_id }} .fbs-pck__section-heading {
   margin: 0 0 16px 0;
-  text-align: center;
-  color: {{ section.settings.text_color }};
+  text-align: {{ section.settings.heading_alignment | default: 'right' }};
+  color: {{ section.settings.heading_color | default: '#121212' }};
   {%- if section.settings.override_theme_font != blank -%}
     font-family: var(--heading-font);
-    font-weight: var(--heading-font-weight);
     font-style: var(--heading-font-style);
   {%- endif -%}
-  font-size: calc(var(--dp-g-heading-size, var(--dp-heading-size, 24px)) * 1);
+  font-weight: 600;
+  font-size: 32px;
+  padding: 20px 12px 0 12px;
+}
+
+@media (max-width: 480px) {
+  #DP--{{ section_id }} .fbs-pck__section-heading {
+    font-size: 24px;
+  }
 }
 
 {% comment %} Block styling {% endcomment %}
@@ -843,6 +861,7 @@ https://flickity.metafizzy.co
   align-items: flex-start;
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 #DP--{{ section_id }} .fbs-pck__video-wrapper {
@@ -850,6 +869,32 @@ https://flickity.metafizzy.co
   padding-top: calc(var(--selected-slide-height) - var(--slide-height));
   transition: all 0.5s ease;
   position: relative;
+}
+
+#DP--{{ section_id }} .fbs-pck__video-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  padding: 20px;
+  line-height: 1.4;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  font-weight: 500;
+  border-radius: 12px;
+}
+
+#DP--{{ section_id }} .fbs-pck__video-wrapper.is-playing .fbs-pck__video-description {
+  opacity: 0;
+}
+
+@media (max-width: 480px) {
+  #DP--{{ section_id }} .fbs-pck__video-description {
+    padding: 15px;
+  }
 }
 
 #DP--{{ section_id }} .fbs-pck__play-btn {
@@ -905,7 +950,7 @@ https://flickity.metafizzy.co
   border-radius: 50%;
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   width: 35px;
   height: 35px;
   margin: 10px;
@@ -1032,7 +1077,7 @@ https://flickity.metafizzy.co
   {%- if section.settings.heading != blank -%}
     <h2 class="fbs-pck__section-heading">{{ section.settings.heading }}</h2>
   {%- endif -%}
-  <div class="fbs-pck__sizer hdt-container">
+  <div class="fbs-pck__sizer {% if section.settings.base_width == 100 %}fbs-pck__desktop-container{% endif %}">
     <div class="fbs-pck__flex fbs-pck__flex--main">
       <div class="fbs-pck__videos">
         <div id="slider-{{ section_id }}" class="fbs-pck__videos-wrapper fbs-pck__video-slider">
@@ -1057,6 +1102,21 @@ https://flickity.metafizzy.co
                         {%- endfor -%}
                       </video>
                       <div class="fbs-pck__sound-button"></div>
+                      {%- if block.settings.description != blank -%}
+                        <style>
+                          #video-description-{{ block.id }} {
+                            color: {{ block.settings.description_text_color | default: '#ffffff' }};
+                            text-align: {{ block.settings.description_text_align | default: 'center' }};
+                            font-size: {{ block.settings.description_text_size | default: 14 }}px;
+                          }
+                          @media (max-width: 480px) {
+                            #video-description-{{ block.id }} {
+                              font-size: {{ block.settings.description_mobile_text_size | default: 12 }}px;
+                            }
+                          }
+                        </style>
+                        <div id="video-description-{{ block.id }}" class="fbs-pck__video-description">{{ block.settings.description }}</div>
+                      {%- endif -%}
                     </div>
                   {%- else -%}
                   {% comment %} Placeholder {% endcomment %}
@@ -1202,6 +1262,32 @@ https://flickity.metafizzy.co
       "id": "heading",
       "label": "Heading",
       "default": "Video Gallery"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "default": "right",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#121212"
     },
     {
       "type": "checkbox",
@@ -1374,6 +1460,58 @@ https://flickity.metafizzy.co
           "label": "Hosted video"
         },
         {
+          "type": "text",
+          "id": "description",
+          "label": "Video description",
+          "info": "Brief description that appears below the video"
+        },
+        {
+          "type": "select",
+          "id": "description_text_align",
+          "label": "Description text alignment",
+          "default": "center",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "range",
+          "id": "description_text_size",
+          "label": "Description text size",
+          "min": 12,
+          "max": 24,
+          "step": 1,
+          "default": 14,
+          "unit": "px"
+        },
+        {
+          "type": "range",
+          "id": "description_mobile_text_size",
+          "label": "Description mobile text size",
+          "min": 10,
+          "max": 20,
+          "step": 1,
+          "default": 12,
+          "unit": "px"
+        },
+        {
+          "type": "color",
+          "id": "description_text_color",
+          "label": "Description text color",
+          "default": "#ffffff"
+        },
+        {
           "type": "product",
           "id": "product",
           "label": "Product"
@@ -1490,6 +1628,9 @@ https://flickity.metafizzy.co
           const video = wrapper.querySelector('video');
           if (!video) return;
 
+          // Ensure native controls remain hidden — we use custom play/mute UI.
+          try { video.controls = false; } catch (e) { /* ignore */ }
+
           const btn = document.createElement('button');
           btn.type = 'button';
           btn.className = 'fbs-pck__play-btn';
@@ -1518,7 +1659,23 @@ https://flickity.metafizzy.co
           btn.style.zIndex = '3';
           btn.style.padding = '0';
 
+
           wrapper.appendChild(btn);
+
+          // Ensure the visible sound button (already present in markup) matches
+          // the video's actual muted state. The play button is separate.
+          try {
+            const soundBtn = wrapper.querySelector('.fbs-pck__sound-button');
+            if (soundBtn) {
+              if (video && video.muted === false) {
+                soundBtn.classList.add('fbs-pck__sound-button--on');
+              } else {
+                soundBtn.classList.remove('fbs-pck__sound-button--on');
+              }
+            }
+          } catch (err) {
+            // ignore
+          }
 
           btn.addEventListener('click', function(e) {
             e.stopPropagation();
@@ -1535,9 +1692,9 @@ https://flickity.metafizzy.co
             const playPromise = video.play();
             if (playPromise !== undefined) {
               playPromise.then(() => wrapper.classList.add('is-playing')).catch(() => {
-                // If play is blocked, show native controls so user can start
-                video.controls = true;
-              });
+                  // If play is blocked, keep native controls hidden; user can use our
+                  // custom play button to start playback when allowed.
+                });
             } else {
               wrapper.classList.add('is-playing');
             }
@@ -1577,8 +1734,8 @@ https://flickity.metafizzy.co
             const p = selectedVideo.play();
             if (p !== undefined) {
               p.catch(() => {
-                // Browser blocked autoplay with sound — reveal native controls so the user can start playback
-                selectedVideo.controls = true;
+                // Browser blocked autoplay with sound — keep native controls hidden
+                // and rely on our UI; do not reveal native controls.
               });
             }
           } catch (err) {
@@ -1634,7 +1791,7 @@ https://flickity.metafizzy.co
                 const p = video.play();
                 if (p !== undefined) {
                   p.catch(() => {
-                    video.controls = true;
+                    // Keep native controls hidden even if play is blocked.
                   });
                 }
               } catch (err) {
