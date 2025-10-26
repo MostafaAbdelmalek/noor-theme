@@ -54,19 +54,18 @@
                   loading="lazy"
                   class="video-gallery__cover-img"
                   style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;z-index:1;" />
-                {% if section.settings.play_icon_image != blank %}
-                  <img src="{{ section.settings.play_icon_image | image_url }}" alt="Play"
-                    class="video-gallery__play-icon"
-                    style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;pointer-events:none;z-index:2;transition:transform 0.2s;"
-                  />
-                {% endif %}
+                <button type="button" class="video-gallery__play-btn" aria-label="Play video" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;border:0;background:transparent;padding:0;">
+                  {% if section.settings.play_icon_image != blank %}
+                    <img src="{{ section.settings.play_icon_image | image_url }}" alt="Play" class="video-gallery__play-icon" style="width:48px;height:48px;display:block;" />
+                  {% else %}
+                    <span class="video-gallery__play-icon--fallback" style="font-size:36px;color:#fff;">▶</span>
+                  {% endif %}
+                </button>
               {% endif %}
               <video
                 src="{{ block.settings.video_file }}"
-                {% if block.settings.autoplay or section.settings.enable_autoplay %}autoplay{% endif %}
                 {% if block.settings.controls or section.settings.show_controls %}controls{% endif %}
                 {% if block.settings.loop or section.settings.loop_videos %}loop{% endif %}
-                {% if block.settings.mute or section.settings.mute_on_autoplay or block.settings.autoplay or section.settings.enable_autoplay %}muted{% endif %}
                 poster="{{ block.settings.cover_image }}"
                 class="video-gallery__video"
                 style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;z-index:0;"
@@ -118,19 +117,18 @@
                   loading="lazy"
                   class="video-gallery__cover-img"
                   style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;z-index:1;" />
-                {% if section.settings.play_icon_image != blank %}
-                  <img src="{{ section.settings.play_icon_image | image_url }}" alt="Play"
-                    class="video-gallery__play-icon"
-                    style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;pointer-events:none;z-index:2;transition:transform 0.2s;"
-                  />
-                {% endif %}
+                <button type="button" class="video-gallery__play-btn" aria-label="Play video" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;border:0;background:transparent;padding:0;">
+                  {% if section.settings.play_icon_image != blank %}
+                    <img src="{{ section.settings.play_icon_image | image_url }}" alt="Play" class="video-gallery__play-icon" style="width:48px;height:48px;display:block;" />
+                  {% else %}
+                    <span class="video-gallery__play-icon--fallback" style="font-size:36px;color:#fff;">▶</span>
+                  {% endif %}
+                </button>
               {% endif %}
               <video
                 src="{{ block.settings.video_file }}"
-                {% if block.settings.autoplay or section.settings.enable_autoplay %}autoplay{% endif %}
                 {% if block.settings.controls or section.settings.show_controls %}controls{% endif %}
                 {% if block.settings.loop or section.settings.loop_videos %}loop{% endif %}
-                {% if block.settings.mute or section.settings.mute_on_autoplay or block.settings.autoplay or section.settings.enable_autoplay %}muted{% endif %}
                 poster="{{ block.settings.cover_image }}"
                 class="video-gallery__video"
                 style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;z-index:0;"
@@ -173,7 +171,21 @@
     .video-gallery__heading--bold { font-weight: 700; }
     .video-gallery__play-icon:hover { transform: scale(1.1); }
     .video-gallery__frame { background: #000; }
+    .video-gallery__play-btn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:2; border:0; background:transparent; padding:0; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+    .video-gallery__play-btn img { display:block; }
+    .video-gallery__play-icon--fallback { display:inline-block; }
     .video-gallery__video { background: #000; }
+    .video-gallery__frame.is-playing .video-gallery__cover-img,
+    .video-gallery__frame.is-playing .video-gallery__play-icon,
+    .video-gallery__frame.is-playing .video-gallery__play-btn,
+    .video-gallery__frame.is-playing .video-gallery__play-icon--fallback {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .video-gallery__cover-img,
+    .video-gallery__play-icon {
+      transition: opacity 0.3s ease;
+    }
     @media (min-width: 600px) {
       .video-gallery__grid { grid-template-columns: repeat({{ columns_tablet }}, 1fr) !important; }
       .video-gallery__carousel .video-gallery__item { flex: 0 0 40% !important; max-width: 40% !important; }
@@ -182,7 +194,122 @@
       .video-gallery__grid { grid-template-columns: repeat({{ columns_desktop }}, 1fr) !important; }
       .video-gallery__carousel .video-gallery__item { flex: 0 0 40% !important; max-width: 40% !important; }
     }
+    /* Carousel controls */
+    .video-gallery__controls {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 12px;
+    }
+    .video-gallery__control {
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: 0;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .video-gallery__control:focus { outline: 2px solid #fff; outline-offset: 2px; }
+
   </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // --- Video play / pause handling -------------------------------------------------
+      const videoFrames = document.querySelectorAll('.video-gallery__frame');
+
+      videoFrames.forEach(frame => {
+        const video = frame.querySelector('.video-gallery__video');
+        if (!video) return;
+
+        // Play only when the custom play button is clicked
+        const playBtn = frame.querySelector('.video-gallery__play-btn');
+        if (playBtn) {
+          playBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            // Pause other videos
+            document.querySelectorAll('.video-gallery__video').forEach(v => {
+              if (v !== video) {
+                v.pause();
+                const otherFrame = v.closest('.video-gallery__frame');
+                if (otherFrame) otherFrame.classList.remove('is-playing');
+              }
+            });
+
+            // Try to play; if blocked, show controls so user can start
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.then(() => {
+                frame.classList.add('is-playing');
+              }).catch(() => {
+                video.setAttribute('controls', '');
+              });
+            } else {
+              frame.classList.add('is-playing');
+            }
+          });
+        }
+
+        // Allow clicking the video element to pause when playing
+        video.addEventListener('click', function(e) {
+          if (!video.paused) {
+            video.pause();
+            frame.classList.remove('is-playing');
+          }
+        });
+
+        // Reset the frame state when video ends
+        video.addEventListener('ended', function() {
+          frame.classList.remove('is-playing');
+        });
+      });
+
+      // --- Carousel navigation (prev / next + keyboard) -------------------------------
+      const carousels = document.querySelectorAll('.video-gallery__carousel');
+
+      carousels.forEach(carousel => {
+        // Create controls if not present
+        if (!carousel.querySelector('.video-gallery__controls')) {
+          const controls = document.createElement('div');
+          controls.className = 'video-gallery__controls';
+
+          const prev = document.createElement('button');
+          prev.type = 'button';
+          prev.className = 'video-gallery__control video-gallery__control--prev';
+          prev.setAttribute('aria-label', 'Previous');
+          prev.innerHTML = '&larr;';
+
+          const next = document.createElement('button');
+          next.type = 'button';
+          next.className = 'video-gallery__control video-gallery__control--next';
+          next.setAttribute('aria-label', 'Next');
+          next.innerHTML = '&rarr;';
+
+          controls.appendChild(prev);
+          controls.appendChild(next);
+          carousel.parentElement.insertBefore(controls, carousel.nextSibling);
+
+          const slideWidth = () => Math.round(carousel.clientWidth * 0.75);
+
+          prev.addEventListener('click', () => {
+            carousel.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
+          });
+
+          next.addEventListener('click', () => {
+            carousel.scrollBy({ left: slideWidth(), behavior: 'smooth' });
+          });
+
+          // Keyboard navigation when carousel is focused
+          carousel.setAttribute('tabindex', '0');
+          carousel.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') { e.preventDefault(); carousel.scrollBy({ left: -slideWidth(), behavior: 'smooth' }); }
+            if (e.key === 'ArrowRight') { e.preventDefault(); carousel.scrollBy({ left: slideWidth(), behavior: 'smooth' }); }
+          });
+        }
+      });
+    });
+  </script>
 </section>
 
 {% schema %}
@@ -191,7 +318,7 @@
   "tag": "section",
   "class": "video-gallery-section-wrapper",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Our Video Gallery" },
+  { "type": "text", "id": "heading", "label": "Heading", "default": "Video Gallery" },
     { "type": "color", "id": "heading_color", "label": "Heading Color", "default": "#222" },
     { "type": "select", "id": "heading_size", "label": "Heading Size", "options": [
       { "value": "small", "label": "Small" },
