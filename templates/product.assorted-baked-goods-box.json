@@ -23,6 +23,81 @@
         "padding_rate": 75
       }
     },
+    "video_slider_NNkhb4": {
+      "type": "video-slider",
+      "blocks": {
+        "video_8KMYzh": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_ayHECy": {
+          "type": "video",
+          "settings": {
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_RCggDg": {
+          "type": "video",
+          "settings": {
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_DiniJ3": {
+          "type": "video",
+          "settings": {
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_XgchMW": {
+          "type": "video",
+          "settings": {
+            "product": "",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_8KMYzh",
+        "video_ayHECy",
+        "video_RCggDg",
+        "video_DiniJ3",
+        "video_XgchMW"
+      ],
+      "name": "Video carousel",
+      "settings": {
+        "slide_width": 300,
+        "image_crop": "none",
+        "aspect_ratio": "9:16",
+        "autoplay": 8,
+        "gap": 10,
+        "heading": "Video Gallery",
+        "show_arrows": false,
+        "text_size": 100,
+        "text_alignment": "left",
+        "text_color": "#121212",
+        "border_color": "#121212",
+        "background_color": "",
+        "play_icon_image": "shopify://shop_images/Group_31.png",
+        "border_radius": 10,
+        "base_width": 100,
+        "max_width": "",
+        "inner_padding": 40,
+        "outer_margin": 0,
+        "custom_css": "",
+        "mobile_custom_css": "",
+        "anchor_id": "",
+        "override_theme_font": false,
+        "heading_font": "serif",
+        "main_font": "system_ui_n4"
+      }
+    },
     "main-product": {
       "type": "main-product",
       "blocks": {
@@ -2379,6 +2454,7 @@
   },
   "order": [
     "breadcrumb",
+    "video_slider_NNkhb4",
     "main-product",
     "17599121975e02029c",
     "custom_section_X4HNfD",

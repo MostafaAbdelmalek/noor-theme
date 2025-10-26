@@ -1032,7 +1032,7 @@ https://flickity.metafizzy.co
   {%- if section.settings.heading != blank -%}
     <h2 class="fbs-pck__section-heading">{{ section.settings.heading }}</h2>
   {%- endif -%}
-  <div class="fbs-pck__sizer">
+  <div class="fbs-pck__sizer hdt-container">
     <div class="fbs-pck__flex fbs-pck__flex--main">
       <div class="fbs-pck__videos">
         <div id="slider-{{ section_id }}" class="fbs-pck__videos-wrapper fbs-pck__video-slider">
@@ -1051,7 +1051,7 @@ https://flickity.metafizzy.co
                           {%- endif -%}
                         {%- endif -%}
                       {%- endfor -%}
-                      <video class="fbs-pck__hosted-video" src="{{ first_src }}" playsinline loop muted loading="lazy" poster="{{ video.preview_image | image_url: width: 2800 }}">
+                      <video class="fbs-pck__hosted-video" src="{{ first_src }}" playsinline loop loading="lazy" poster="{{ video.preview_image | image_url: width: 2800 }}">
                         {%- for source in video.sources -%}
                           {%- if source.format == 'mp4' or source.format == 'mov' -%}<source src="{{ source.url }}">{%- endif -%}
                         {%- endfor -%}
