@@ -1,7 +1,8 @@
 {% comment %}
   Video Gallery Section
   - Responsive grid or carousel layout
-  - Customizable heading and text blocks
+  - Upload video files directly
+  - Customizable heading and design
   - Full video playback control
   - Accessible and performant
 {% endcomment %}
@@ -9,6 +10,7 @@
 {% liquid
   assign layout_style = section.settings.layout_style | default: 'grid'
   assign columns_desktop = section.settings.columns_desktop | default: 3
+  assign columns_tablet = section.settings.columns_tablet | default: 2
   assign columns_mobile = section.settings.columns_mobile | default: 1
   assign heading_size = section.settings.heading_size | default: 'medium'
   assign heading_weight = section.settings.heading_weight | default: 'bold'
@@ -32,61 +34,155 @@
     </header>
   {% endif %}
 
-  <div class="video-gallery__blocks-wrapper video-gallery__blocks-wrapper--{{ layout_style }}"
-    {% if layout_style == 'grid' %}
-      style="display:grid;grid-template-columns:repeat({{ columns_desktop }},1fr);gap:24px;"
-    {% else %}
-      data-slider
-    {% endif %}
-  >
-    {% for block in section.blocks %}
-      {% case block.type %}
-        {% when 'video' %}
-          <div class="video-gallery__item video-gallery__item--video"
-            style="grid-column:auto;"
-            aria-label="Video Item"
-          >
-            {% if block.settings.cover_image != blank %}
-              <div class="video-gallery__cover" style="position:relative;cursor:pointer;">
+  {% if layout_style == 'grid' %}
+    <div class="video-gallery__grid"
+      style="
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat({{ columns_mobile }}, 1fr);
+        @media (min-width: 600px) { grid-template-columns: repeat({{ columns_tablet }}, 1fr); }
+        @media (min-width: 1024px) { grid-template-columns: repeat({{ columns_desktop }}, 1fr); }
+      "
+    >
+      {% for block in section.blocks %}
+        {% if block.type == 'video' %}
+          <div class="video-gallery__item" style="overflow:hidden;position:relative;" aria-label="Video Item">
+            <div class="video-gallery__frame" style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;">
+              {% if block.settings.cover_image != blank %}
                 <img src="{{ block.settings.cover_image | image_url }}"
                   alt="{{ block.settings.caption | escape }}"
                   loading="lazy"
                   class="video-gallery__cover-img"
-                  style="width:100%;height:auto;display:block;" />
+                  style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;z-index:1;" />
                 {% if section.settings.play_icon_image != blank %}
-                  <img src="{{ section.settings.play_icon_image | image_url }}" alt="Play" class="video-gallery__play-icon" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;pointer-events:none;" />
+                  <img src="{{ section.settings.play_icon_image | image_url }}" alt="Play"
+                    class="video-gallery__play-icon"
+                    style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;pointer-events:none;z-index:2;transition:transform 0.2s;"
+                  />
                 {% endif %}
-              </div>
-            {% endif %}
-            <video
-              src="{{ block.settings.video_url }}"
-              {% if block.settings.autoplay or section.settings.enable_autoplay %}autoplay{% endif %}
-              {% if block.settings.controls or section.settings.show_controls %}controls{% endif %}
-              {% if block.settings.loop or section.settings.loop_videos %}loop{% endif %}
-              {% if block.settings.mute or section.settings.mute_on_autoplay %}muted{% endif %}
-              poster="{{ block.settings.cover_image }}"
-              class="video-gallery__video"
-              style="width:100%;height:auto;display:block;"
-              preload="none"
-              aria-label="Video Player"
-            ></video>
-            {% if block.settings.caption != blank %}
-              <div class="video-gallery__caption" style="margin-top:8px;text-align:center;">{{ block.settings.caption }}</div>
-            {% endif %}
-          </div>
-        {% when 'text' %}
-          <div class="video-gallery__item video-gallery__item--text"
-            style="grid-column:auto;background:{{ block.settings.background_color }};text-align:{{ block.settings.alignment }};"
-            aria-label="Text Block"
-          >
-            <div class="video-gallery__text-content"
-              style="font-size:{{ block.settings.font_size }}px;color:{{ block.settings.font_color }};font-weight:{{ block.settings.font_weight }};">
-              {{ block.settings.text_content }}
+              {% endif %}
+              <video
+                src="{{ block.settings.video_file }}"
+                {% if block.settings.autoplay or section.settings.enable_autoplay %}autoplay{% endif %}
+                {% if block.settings.controls or section.settings.show_controls %}controls{% endif %}
+                {% if block.settings.loop or section.settings.loop_videos %}loop{% endif %}
+                {% if block.settings.mute or section.settings.mute_on_autoplay or block.settings.autoplay or section.settings.enable_autoplay %}muted{% endif %}
+                poster="{{ block.settings.cover_image }}"
+                class="video-gallery__video"
+                style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;z-index:0;"
+                preload="none"
+                aria-label="Video Player"
+              ></video>
+              {% if block.settings.caption != blank %}
+                <div class="video-gallery__caption"
+                  style="position:absolute;bottom:0;left:0;width:100%;background:rgba(0,0,0,0.5);color:#fff;padding:8px 12px;font-size:16px;text-align:center;z-index:3;">
+                  {{ block.settings.caption }}
+                </div>
+              {% endif %}
             </div>
           </div>
-      {% endcase %}
-    {% endfor %}
-  </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="video-gallery__carousel"
+      style="
+        display: flex;
+        overflow-x: auto;
+        gap: 24px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 8px;
+        white-space: nowrap;
+      "
+      aria-label="Video Gallery Carousel"
+    >
+      {% for block in section.blocks %}
+        {% if block.type == 'video' %}
+          <div class="video-gallery__item"
+            style="
+              flex: 0 0 70%;
+              max-width:70%;
+              scroll-snap-align: start;
+              position:relative;
+              overflow:hidden;
+              @media (min-width:600px){ flex:0 0 40%;max-width:40%; }
+              @media (min-width:1024px){ flex:0 0 40%;max-width:40%; }
+            "
+            aria-label="Video Item"
+          >
+            <div class="video-gallery__frame" style="position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;">
+              {% if block.settings.cover_image != blank %}
+                <img src="{{ block.settings.cover_image | image_url }}"
+                  alt="{{ block.settings.caption | escape }}"
+                  loading="lazy"
+                  class="video-gallery__cover-img"
+                  style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;z-index:1;" />
+                {% if section.settings.play_icon_image != blank %}
+                  <img src="{{ section.settings.play_icon_image | image_url }}" alt="Play"
+                    class="video-gallery__play-icon"
+                    style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;pointer-events:none;z-index:2;transition:transform 0.2s;"
+                  />
+                {% endif %}
+              {% endif %}
+              <video
+                src="{{ block.settings.video_file }}"
+                {% if block.settings.autoplay or section.settings.enable_autoplay %}autoplay{% endif %}
+                {% if block.settings.controls or section.settings.show_controls %}controls{% endif %}
+                {% if block.settings.loop or section.settings.loop_videos %}loop{% endif %}
+                {% if block.settings.mute or section.settings.mute_on_autoplay or block.settings.autoplay or section.settings.enable_autoplay %}muted{% endif %}
+                poster="{{ block.settings.cover_image }}"
+                class="video-gallery__video"
+                style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;z-index:0;"
+                preload="none"
+                aria-label="Video Player"
+              ></video>
+              {% if block.settings.caption != blank %}
+                <div class="video-gallery__caption"
+                  style="position:absolute;bottom:0;left:0;width:100%;background:rgba(0,0,0,0.5);color:#fff;padding:8px 12px;font-size:16px;text-align:center;z-index:3;">
+                  {{ block.settings.caption }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <style>
+    /* Works on Chrome, Safari, Edge, and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: none; /* Hide scrollbar, keep scroll */
+}
+
+/* Works on IE & old Edge */
+* {
+  -ms-overflow-style: none; /* Hide scrollbar */
+}
+
+    .video-gallery__heading--small { font-size: 1.5rem; }
+    .video-gallery__heading--medium { font-size: 2rem; }
+    .video-gallery__heading--large { font-size: 2.5rem; }
+    .video-gallery__heading--normal { font-weight: 400; }
+    .video-gallery__heading--bold { font-weight: 700; }
+    .video-gallery__play-icon:hover { transform: scale(1.1); }
+    .video-gallery__frame { background: #000; }
+    .video-gallery__video { background: #000; }
+    @media (min-width: 600px) {
+      .video-gallery__grid { grid-template-columns: repeat({{ columns_tablet }}, 1fr) !important; }
+      .video-gallery__carousel .video-gallery__item { flex: 0 0 40% !important; max-width: 40% !important; }
+    }
+    @media (min-width: 1024px) {
+      .video-gallery__grid { grid-template-columns: repeat({{ columns_desktop }}, 1fr) !important; }
+      .video-gallery__carousel .video-gallery__item { flex: 0 0 40% !important; max-width: 40% !important; }
+    }
+  </style>
 </section>
 
 {% schema %}
@@ -95,228 +191,50 @@
   "tag": "section",
   "class": "video-gallery-section-wrapper",
   "settings": [
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "Featured Videos"
-    },
-    {
-      "type": "color",
-      "id": "heading_color",
-      "label": "Heading Color",
-      "default": "#222"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "label": "Heading Size",
-      "options": [
-        { "value": "small", "label": "Small" },
-        { "value": "medium", "label": "Medium" },
-        { "value": "large", "label": "Large" }
-      ],
-      "default": "medium"
-    },
-    {
-      "type": "select",
-      "id": "heading_weight",
-      "label": "Heading Weight",
-      "options": [
-        { "value": "normal", "label": "Normal" },
-        { "value": "bold", "label": "Bold" }
-      ],
-      "default": "bold"
-    },
-    {
-      "type": "select",
-      "id": "text_alignment",
-      "label": "Text Alignment",
-      "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "center", "label": "Center" },
-        { "value": "right", "label": "Right" }
-      ],
-      "default": "center"
-    },
-    {
-      "type": "select",
-      "id": "layout_style",
-      "label": "Layout Style",
-      "options": [
-        { "value": "grid", "label": "Grid" },
-        { "value": "carousel", "label": "Carousel" }
-      ],
-      "default": "grid"
-    },
-    {
-      "type": "range",
-      "id": "columns_desktop",
-      "label": "Columns (Desktop)",
-      "min": 1,
-      "max": 4,
-      "step": 1,
-      "default": 3
-    },
-    {
-      "type": "range",
-      "id": "columns_mobile",
-      "label": "Columns (Mobile)",
-      "min": 1,
-      "max": 2,
-      "step": 1,
-      "default": 1
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background Color",
-      "default": "#fff"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "label": "Padding Top",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 40
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "label": "Padding Bottom",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 40
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_autoplay",
-      "label": "Enable Autoplay",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "show_controls",
-      "label": "Show Controls",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "mute_on_autoplay",
-      "label": "Mute on Autoplay",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "loop_videos",
-      "label": "Loop Videos",
-      "default": false
-    },
-    {
-      "type": "image_picker",
-      "id": "play_icon_image",
-      "label": "Play Icon Image"
-    }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Our Video Gallery" },
+    { "type": "color", "id": "heading_color", "label": "Heading Color", "default": "#222" },
+    { "type": "select", "id": "heading_size", "label": "Heading Size", "options": [
+      { "value": "small", "label": "Small" },
+      { "value": "medium", "label": "Medium" },
+      { "value": "large", "label": "Large" }
+    ], "default": "medium" },
+    { "type": "select", "id": "heading_weight", "label": "Heading Weight", "options": [
+      { "value": "normal", "label": "Normal" },
+      { "value": "bold", "label": "Bold" }
+    ], "default": "bold" },
+    { "type": "select", "id": "text_alignment", "label": "Text Alignment", "options": [
+      { "value": "left", "label": "Left" },
+      { "value": "center", "label": "Center" },
+      { "value": "right", "label": "Right" }
+    ], "default": "center" },
+    { "type": "select", "id": "layout_style", "label": "Layout Style", "options": [
+      { "value": "grid", "label": "Grid" },
+      { "value": "carousel", "label": "Carousel" }
+    ], "default": "grid" },
+    { "type": "range", "id": "columns_desktop", "label": "Columns (Desktop)", "min": 1, "max": 4, "step": 1, "default": 3 },
+    { "type": "range", "id": "columns_tablet", "label": "Columns (Tablet)", "min": 1, "max": 3, "step": 0.5, "default": 2 },
+    { "type": "range", "id": "columns_mobile", "label": "Columns (Mobile)", "min": 1, "max": 2, "step": 0.5, "default": 1 },
+    { "type": "color", "id": "background_color", "label": "Background Color", "default": "#fff" },
+    { "type": "range", "id": "padding_top", "label": "Padding Top", "min": 0, "max": 100, "step": 1, "unit": "px", "default": 40 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding Bottom", "min": 0, "max": 100, "step": 1, "unit": "px", "default": 40 },
+    { "type": "checkbox", "id": "enable_autoplay", "label": "Enable Autoplay", "default": false },
+    { "type": "checkbox", "id": "show_controls", "label": "Show Controls", "default": true },
+    { "type": "checkbox", "id": "mute_on_autoplay", "label": "Mute on Autoplay", "default": false },
+    { "type": "checkbox", "id": "loop_videos", "label": "Loop Videos", "default": false },
+    { "type": "image_picker", "id": "play_icon_image", "label": "Play Icon Image" }
   ],
   "blocks": [
     {
       "type": "video",
       "name": "Video Item",
       "settings": [
-        {
-          "type": "video_url",
-          "id": "video_url",
-          "label": "Video URL"
-        },
-        {
-          "type": "image_picker",
-          "id": "cover_image",
-          "label": "Cover Image"
-        },
-        {
-          "type": "checkbox",
-          "id": "autoplay",
-          "label": "Autoplay"
-        },
-        {
-          "type": "checkbox",
-          "id": "controls",
-          "label": "Show Controls"
-        },
-        {
-          "type": "checkbox",
-          "id": "loop",
-          "label": "Loop"
-        },
-        {
-          "type": "checkbox",
-          "id": "mute",
-          "label": "Mute"
-        },
-        {
-          "type": "text",
-          "id": "caption",
-          "label": "Caption"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "name": "Text / Title Block",
-      "settings": [
-        {
-          "type": "richtext",
-          "id": "text_content",
-          "label": "Text Content"
-        },
-        {
-          "type": "range",
-          "id": "font_size",
-          "label": "Font Size",
-          "min": 12,
-          "max": 48,
-          "step": 1,
-          "default": 18
-        },
-        {
-          "type": "color",
-          "id": "font_color",
-          "label": "Font Color",
-          "default": "#222"
-        },
-        {
-          "type": "select",
-          "id": "font_weight",
-          "label": "Font Weight",
-          "options": [
-            { "value": "normal", "label": "Normal" },
-            { "value": "medium", "label": "Medium" },
-            { "value": "bold", "label": "Bold" }
-          ],
-          "default": "bold"
-        },
-        {
-          "type": "select",
-          "id": "alignment",
-          "label": "Alignment",
-          "options": [
-            { "value": "left", "label": "Left" },
-            { "value": "center", "label": "Center" },
-            { "value": "right", "label": "Right" }
-          ],
-          "default": "center"
-        },
-        {
-          "type": "color",
-          "id": "background_color",
-          "label": "Background Color",
-          "default": "#fff"
-        }
+        { "type": "video", "id": "video_file", "label": "Video File (MP4/WebM/MOV)" },
+        { "type": "image_picker", "id": "cover_image", "label": "Cover Image" },
+        { "type": "text", "id": "caption", "label": "Caption" },
+        { "type": "checkbox", "id": "autoplay", "label": "Autoplay" },
+        { "type": "checkbox", "id": "controls", "label": "Show Controls" },
+        { "type": "checkbox", "id": "loop", "label": "Loop" },
+        { "type": "checkbox", "id": "mute", "label": "Mute" }
       ]
     }
   ],
@@ -327,56 +245,47 @@
         "heading": "Our Video Gallery",
         "layout_style": "grid",
         "columns_desktop": 3,
+        "columns_tablet": 2,
         "columns_mobile": 1,
         "enable_autoplay": false,
-        "show_controls": true
+        "show_controls": true,
+        "loop_videos": false
       },
       "blocks": [
         {
-          "type": "text",
+          "type": "video",
           "settings": {
-            "text_content": "<p>Welcome to our video gallery!</p>",
-            "font_size": 24,
-            "font_color": "#222",
-            "font_weight": "bold",
-            "alignment": "center",
-            "background_color": "#fff"
+            "video_file": "",
+            "cover_image": "",
+            "caption": "First video caption",
+            "autoplay": false,
+            "controls": true,
+            "loop": false,
+            "mute": false
           }
         },
         {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/sample1.mp4",
+            "video_file": "",
             "cover_image": "",
+            "caption": "Second video caption",
             "autoplay": false,
             "controls": true,
             "loop": false,
-            "mute": false,
-            "caption": "First video caption"
+            "mute": false
           }
         },
         {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/sample2.mp4",
+            "video_file": "",
             "cover_image": "",
+            "caption": "Third video caption",
             "autoplay": false,
             "controls": true,
             "loop": false,
-            "mute": false,
-            "caption": "Second video caption"
-          }
-        },
-        {
-          "type": "video",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/sample3.mp4",
-            "cover_image": "",
-            "autoplay": false,
-            "controls": true,
-            "loop": false,
-            "mute": false,
-            "caption": "Third video caption"
+            "mute": false
           }
         }
       ]
