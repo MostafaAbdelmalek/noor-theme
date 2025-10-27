@@ -1,0 +1,233 @@
+<div class="mp-components-wrapper mp-components-{{ block.id }}" {{ block.shopify_attributes }}>
+  <style>
+    /* Wrapper layout */
+    .mp-components-{{ block.id }}{
+      background: {{ block.settings.background_color | default: '#ffffff' }};
+      border: {{ block.settings.border_width | default: 0 }}px solid {{ block.settings.border_color | default: '#e6e6e6' }};
+      border-radius: {{ block.settings.border_radius | default: 0 }}px;
+      padding: {{ block.settings.padding | default: 16 }}px;
+      box-sizing: border-box;
+    }
+
+    /* Title */
+    .mp-components-{{ block.id }} .mp-components-title{
+      margin: 0 0 12px 0;
+      color: {{ block.settings.title_color | default: '#222222' }};
+      font-size: {{ block.settings.title_size | default: 20 }}px;
+      font-weight: {{ block.settings.title_weight | default: 600 }};
+      text-align: {{ block.settings.title_alignment | default: 'right' }};
+    }
+
+    /* Grid */
+    .mp-components-{{ block.id }} .mp-components-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: {{ block.settings.gap | default: 16 }}px;
+      align-items: start;
+      justify-content: center;
+    }
+
+    /* Component item */
+    .mp-components-{{ block.id }} .mp-component-item{
+      text-align: {{ block.settings.item_text_alignment | default: 'center' }};
+      color: {{ block.settings.item_text_color | default: '#222222' }};
+      font-size: clamp(12px, calc({{ block.settings.item_text_size | default: 14 }}px * 0.8), {{ block.settings.item_text_size | default: 14 }}px);
+      font-weight: {{ block.settings.item_text_weight | default: 400 }};
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .mp-components-{{ block.id }} .mp-component-image{
+      width: clamp(40px, 100%, {{ block.settings.image_size | default: 80 }}px);
+      height: clamp(40px, 100%, {{ block.settings.image_size | default: 80 }}px);
+      border-radius: {{ block.settings.image_radius | default: 50 }}%;
+      overflow: hidden;
+      display: block;
+      aspect-ratio: 1;
+    }
+
+    .mp-components-{{ block.id }} .mp-component-image img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Responsive adjustments */
+    @media screen and (max-width: 767px){
+      .mp-components-{{ block.id }}{
+        padding: calc({{ block.settings.padding | default: 16 }}px * 0.75);
+      }
+      .mp-components-{{ block.id }} .mp-components-grid{
+        gap: calc({{ block.settings.gap | default: 16 }}px * 0.75);
+      }
+      .mp-components-{{ block.id }} .mp-components-title{
+        font-size: clamp(16px, calc({{ block.settings.title_size | default: 20 }}px * 0.9), {{ block.settings.title_size | default: 20 }}px);
+      }
+    }
+  </style>
+
+  {% if block.settings.title != blank %}
+    <h3 class="mp-components-title">{{ block.settings.title }}</h3>
+  {% endif %}
+
+  <div class="mp-components-grid">
+    {% for i in (1..18) %}
+      {% liquid
+        assign enabled_key = 'item_' | append: i | append: '_enabled'
+        assign image_key = 'item_' | append: i | append: '_image'
+        assign text_key = 'item_' | append: i | append: '_text'
+
+        assign enabled = block.settings[enabled_key]
+        assign image = block.settings[image_key]
+        assign text = block.settings[text_key]
+      %}
+
+      {% if enabled %}
+        <div class="mp-component-item">
+          <span class="mp-component-image">
+            {% if image != blank %}
+              <img src="{{ image | image_url: width: block.settings.image_size | default: 80 }}" alt="{{ text | escape }}" loading="lazy" />
+            {% else %}
+              {{ 'image' | placeholder_svg_tag }}
+            {% endif %}
+          </span>
+
+          {% if text != blank %}
+            <div class="mp-component-text">{{ text }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Components",
+  "settings": [
+    { "type": "header", "content": "Layout" },
+    { "type": "color", "id": "background_color", "label": "Background color", "default": "#ffffff" },
+    { "type": "color", "id": "border_color", "label": "Border color", "default": "#e6e6e6" },
+    { "type": "range", "id": "border_width", "label": "Border width", "min": 0, "max": 10, "step": 1, "unit": "px", "default": 0 },
+    { "type": "range", "id": "border_radius", "label": "Border radius", "min": 0, "max": 40, "step": 1, "unit": "px", "default": 0 },
+    { "type": "range", "id": "padding", "label": "Padding", "min": 0, "max": 80, "step": 4, "unit": "px", "default": 16 },
+    { "type": "range", "id": "gap", "label": "Gap between items", "min": 0, "max": 40, "step": 2, "unit": "px", "default": 16 },
+
+    { "type": "header", "content": "Heading" },
+    { "type": "text", "id": "title", "label": "Title text", "default": "Components" },
+    { "type": "color", "id": "title_color", "label": "Title color", "default": "#222222" },
+    { "type": "range", "id": "title_size", "label": "Title size", "min": 12, "max": 48, "step": 1, "unit": "px", "default": 20 },
+    { "type": "select", "id": "title_weight", "label": "Title weight", "options": [ { "value": "400", "label": "Normal" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semibold" }, { "value": "700", "label": "Bold" } ], "default": "600" },
+    { "type": "select", "id": "title_alignment", "label": "Title alignment", "options": [ { "value": "left", "label": "Left" }, { "value": "center", "label": "Center" }, { "value": "right", "label": "Right" } ], "default": "right" },
+
+    { "type": "header", "content": "Component settings" },
+    { "type": "range", "id": "image_size", "label": "Image size (px)", "min": 24, "max": 300, "step": 4, "unit": "px", "default": 80 },
+    { "type": "range", "id": "image_radius", "label": "Image border radius (%)", "min": 0, "max": 100, "step": 1, "default": 50 },
+    { "type": "color", "id": "item_text_color", "label": "Item text color", "default": "#222222" },
+    { "type": "range", "id": "item_text_size", "label": "Item text size", "min": 10, "max": 28, "step": 1, "unit": "px", "default": 14 },
+    { "type": "select", "id": "item_text_weight", "label": "Item text weight", "options": [ { "value": "400", "label": "Normal" }, { "value": "500", "label": "Medium" }, { "value": "600", "label": "Semibold" } ], "default": "400" },
+    { "type": "select", "id": "item_text_alignment", "label": "Item text alignment", "options": [ { "value": "left", "label": "Left" }, { "value": "center", "label": "Center" }, { "value": "right", "label": "Right" } ], "default": "center" },
+
+    { "type": "header", "content": "Items" },
+
+    { "type": "checkbox", "id": "item_1_enabled", "label": "Enable item 1", "default": true },
+    { "type": "image_picker", "id": "item_1_image", "label": "Image" },
+    { "type": "text", "id": "item_1_text", "label": "Text", "default": "Item 1" },
+
+    { "type": "header", "content": "Item 2" },
+    { "type": "checkbox", "id": "item_2_enabled", "label": "Enable item 2", "default": false },
+    { "type": "image_picker", "id": "item_2_image", "label": "Image" },
+    { "type": "text", "id": "item_2_text", "label": "Text", "default": "Item 2" },
+
+    { "type": "header", "content": "Item 3" },
+    { "type": "checkbox", "id": "item_3_enabled", "label": "Enable item 3", "default": false },
+    { "type": "image_picker", "id": "item_3_image", "label": "Image" },
+    { "type": "text", "id": "item_3_text", "label": "Text", "default": "Item 3" },
+
+    { "type": "header", "content": "Item 4" },
+    { "type": "checkbox", "id": "item_4_enabled", "label": "Enable item 4", "default": false },
+    { "type": "image_picker", "id": "item_4_image", "label": "Image" },
+    { "type": "text", "id": "item_4_text", "label": "Text", "default": "Item 4" },
+
+    { "type": "header", "content": "Item 5" },
+    { "type": "checkbox", "id": "item_5_enabled", "label": "Enable item 5", "default": false },
+    { "type": "image_picker", "id": "item_5_image", "label": "Image" },
+    { "type": "text", "id": "item_5_text", "label": "Text", "default": "Item 5" },
+
+    { "type": "header", "content": "Item 6" },
+    { "type": "checkbox", "id": "item_6_enabled", "label": "Enable item 6", "default": false },
+    { "type": "image_picker", "id": "item_6_image", "label": "Image" },
+    { "type": "text", "id": "item_6_text", "label": "Text", "default": "Item 6" },
+
+    { "type": "header", "content": "Item 7" },
+    { "type": "checkbox", "id": "item_7_enabled", "label": "Enable item 7", "default": false },
+    { "type": "image_picker", "id": "item_7_image", "label": "Image" },
+    { "type": "text", "id": "item_7_text", "label": "Text", "default": "Item 7" },
+
+    { "type": "header", "content": "Item 8" },
+    { "type": "checkbox", "id": "item_8_enabled", "label": "Enable item 8", "default": false },
+    { "type": "image_picker", "id": "item_8_image", "label": "Image" },
+    { "type": "text", "id": "item_8_text", "label": "Text", "default": "Item 8" },
+
+    { "type": "header", "content": "Item 9" },
+    { "type": "checkbox", "id": "item_9_enabled", "label": "Enable item 9", "default": false },
+    { "type": "image_picker", "id": "item_9_image", "label": "Image" },
+    { "type": "text", "id": "item_9_text", "label": "Text", "default": "Item 9" },
+
+    { "type": "header", "content": "Item 10" },
+    { "type": "checkbox", "id": "item_10_enabled", "label": "Enable item 10", "default": false },
+    { "type": "image_picker", "id": "item_10_image", "label": "Image" },
+    { "type": "text", "id": "item_10_text", "label": "Text", "default": "Item 10" },
+
+    { "type": "header", "content": "Item 11" },
+    { "type": "checkbox", "id": "item_11_enabled", "label": "Enable item 11", "default": false },
+    { "type": "image_picker", "id": "item_11_image", "label": "Image" },
+    { "type": "text", "id": "item_11_text", "label": "Text", "default": "Item 11" },
+
+    { "type": "header", "content": "Item 12" },
+    { "type": "checkbox", "id": "item_12_enabled", "label": "Enable item 12", "default": false },
+    { "type": "image_picker", "id": "item_12_image", "label": "Image" },
+    { "type": "text", "id": "item_12_text", "label": "Text", "default": "Item 12" },
+
+    { "type": "header", "content": "Item 13" },
+    { "type": "checkbox", "id": "item_13_enabled", "label": "Enable item 13", "default": false },
+    { "type": "image_picker", "id": "item_13_image", "label": "Image" },
+    { "type": "text", "id": "item_13_text", "label": "Text", "default": "Item 13" },
+
+    { "type": "header", "content": "Item 14" },
+    { "type": "checkbox", "id": "item_14_enabled", "label": "Enable item 14", "default": false },
+    { "type": "image_picker", "id": "item_14_image", "label": "Image" },
+    { "type": "text", "id": "item_14_text", "label": "Text", "default": "Item 14" },
+
+    { "type": "header", "content": "Item 15" },
+    { "type": "checkbox", "id": "item_15_enabled", "label": "Enable item 15", "default": false },
+    { "type": "image_picker", "id": "item_15_image", "label": "Image" },
+    { "type": "text", "id": "item_15_text", "label": "Text", "default": "Item 15" },
+
+    { "type": "header", "content": "Item 16" },
+    { "type": "checkbox", "id": "item_16_enabled", "label": "Enable item 16", "default": false },
+    { "type": "image_picker", "id": "item_16_image", "label": "Image" },
+    { "type": "text", "id": "item_16_text", "label": "Text", "default": "Item 16" },
+
+    { "type": "header", "content": "Item 17" },
+    { "type": "checkbox", "id": "item_17_enabled", "label": "Enable item 17", "default": false },
+    { "type": "image_picker", "id": "item_17_image", "label": "Image" },
+    { "type": "text", "id": "item_17_text", "label": "Text", "default": "Item 17" },
+
+    { "type": "header", "content": "Item 18" },
+    { "type": "checkbox", "id": "item_18_enabled", "label": "Enable item 18", "default": false },
+    { "type": "image_picker", "id": "item_18_image", "label": "Image" },
+    { "type": "text", "id": "item_18_text", "label": "Text", "default": "Item 18" }
+  ],
+  "presets": [
+    {
+      "name": "Components",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
