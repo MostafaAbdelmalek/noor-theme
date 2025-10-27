@@ -26,7 +26,7 @@
 %}
 <div class="hdt-section-inner hdt-s-gradient hdt-section-spacing" {%- if section.settings.colors_by_section %} color-scheme="{{ section.settings.color_scheme }}" style="--background-opacity: {{ section.settings.background_opacity }};"{%- endif %} hdt-reveal="fade-in">
   <div class="hdt-container{% if section.settings.fullwidth %}-full hdt-px-15{% endif %}">
-    <div class="hdt-secion-main-product--{{ section.id }} hdt-row-grid hdt-grid-cols-1 md:hdt-grid-cols-2">
+    <div class="hdt-secion-main-product--{{ section.id }} hdt-row-grid hdt-grid-cols-1 md:hdt-grid-cols-{{ section.settings.layout_columns | default: 2 }}">
       {% content_for 'block', type: '_product-medias',  id: 'main-product-medias' %}
       {% content_for 'blocks' %}
     </div>
@@ -147,6 +147,22 @@
       "id": "product_list_fbt",
       "label": "t:sections.main-product.settings.product_list_fbt.label",
       "limit": 10
+    },
+    {
+      "type": "select",
+      "id": "layout_columns",
+      "label": "Layout columns on desktop",
+      "default": "2",
+      "options": [
+        {
+          "value": "2",
+          "label": "2 columns"
+        },
+        {
+          "value": "3",
+          "label": "3 columns"
+        }
+      ]
     },
     {
       "type": "header",
