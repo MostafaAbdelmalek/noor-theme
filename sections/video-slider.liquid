@@ -1096,7 +1096,7 @@ https://flickity.metafizzy.co
                           {%- endif -%}
                         {%- endif -%}
                       {%- endfor -%}
-                      <video class="fbs-pck__hosted-video" src="{{ first_src }}" playsinline loop loading="lazy" poster="{{ video.preview_image | image_url: width: 2800 }}">
+                      <video class="fbs-pck__hosted-video" src="{{ first_src }}" playsinline muted loop loading="lazy" poster="{{ video.preview_image | image_url: width: 2800 }}">
                         {%- for source in video.sources -%}
                           {%- if source.format == 'mp4' or source.format == 'mov' -%}<source src="{{ source.url }}">{%- endif -%}
                         {%- endfor -%}

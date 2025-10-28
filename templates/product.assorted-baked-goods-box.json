@@ -2220,8 +2220,8 @@
         },
         "video_NAgUAz": {
           "type": "video",
-          "disabled": true,
           "settings": {
+            "html5_video": "shopify://files/videos/ابراهيم- نور فودز .MP4",
             "description": "بسبوسة لذيذة",
             "description_text_align": "center",
             "description_text_size": 14,
