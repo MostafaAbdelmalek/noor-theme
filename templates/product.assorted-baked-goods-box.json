@@ -119,6 +119,7 @@
             "product_buy_button_yxMTt7": {
               "type": "_product-buy-button",
               "name": "t:sections.main-product.blocks.buy_buttons.name",
+              "disabled": true,
               "settings": {
                 "show_quantity_selector": true,
                 "show_dynamic_checkout": true,
@@ -235,38 +236,46 @@
           "type": "components",
           "name": "Components",
           "settings": {
-            "background_color": "#ffffff",
-            "border_color": "#e6e6e6",
-            "border_width": 0,
-            "border_radius": 0,
+            "background_color": "#f0faf4",
+            "border_color": "#bee9ce",
+            "border_width": 1,
+            "border_radius": 12,
             "padding": 16,
             "gap": 16,
-            "title": "Components",
-            "title_color": "#222222",
+            "title": "المكونات",
+            "title_color": "#2f854e",
             "title_size": 20,
             "title_weight": "600",
             "title_alignment": "right",
             "image_size": 80,
             "image_radius": 50,
-            "item_text_color": "#222222",
-            "item_text_size": 14,
-            "item_text_weight": "400",
+            "item_text_color": "#2f854e",
+            "item_text_size": 16,
+            "item_text_weight": "600",
             "item_text_alignment": "center",
             "item_1_enabled": true,
-            "item_1_text": "Item 1",
-            "item_2_enabled": false,
-            "item_2_text": "Item 2",
-            "item_3_enabled": false,
-            "item_3_text": "Item 3",
-            "item_4_enabled": false,
-            "item_4_text": "Item 4",
-            "item_5_enabled": false,
-            "item_5_text": "Item 5",
+            "item_1_image": "shopify://shop_images/c39cfeb9f1234c044030311b46e3215e33066a5c.png",
+            "item_1_text": "زبدة رائبة",
+            "item_2_enabled": true,
+            "item_2_image": "shopify://shop_images/a4551809692e4171ba590a417467e07e748c2444.png",
+            "item_2_text": "زيت زيتون",
+            "item_3_enabled": true,
+            "item_3_image": "shopify://shop_images/Frame_1000003072_3.png",
+            "item_3_text": "عسل طبيعي",
+            "item_4_enabled": true,
+            "item_4_image": "shopify://shop_images/e5f6394cf4b353b56ebc441310810d6c8d2e7a24.png",
+            "item_4_text": "طحين قمح كامل غير معدل وراثيًا",
+            "item_5_enabled": true,
+            "item_5_image": "shopify://shop_images/809cea0548810a81e66d42b45042470ef8e717ce.png",
+            "item_5_text": "خميرة طبيعة",
             "item_6_enabled": false,
+            "item_6_image": "shopify://shop_images/Frame_1000003072_5.png",
             "item_6_text": "Item 6",
             "item_7_enabled": false,
+            "item_7_image": "shopify://shop_images/Frame_1000003072_6.png",
             "item_7_text": "Item 7",
             "item_8_enabled": false,
+            "item_8_image": "shopify://shop_images/Frame_1000003072_7.png",
             "item_8_text": "Item 8",
             "item_9_enabled": false,
             "item_9_text": "Item 9",
@@ -323,7 +332,7 @@
         "components_zpmzDL"
       ],
       "custom_css": [
-        ".hdt-product-form__submit {background: #2f854e; border-color: #2f854e;}",
+        ".hdt-product-form__submit,.hdt-sticky-atc__submit {background: #2f854e; border-color: #2f854e;}",
         ".shopify-payment-button button,shopify-buy-it-now-button button {background: #17a78b !important;}",
         ".hdt-product__buy-button {position: relative; padding: 15px; border: 1px solid var(--Semantic-Border-Gray, #e9ecea);}",
         ".hdt-product-form__top-buttons {flex-wrap: nowrap;}",
@@ -2121,7 +2130,7 @@
         "video_8KMYzh": {
           "type": "video",
           "settings": {
-            "html5_video": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "html5_video": "shopify://files/videos/٢.mp4",
             "description": "بسبوسة لذيذة",
             "description_text_align": "right",
             "description_text_size": 18,
@@ -2134,7 +2143,7 @@
         "video_wkTQxG": {
           "type": "video",
           "settings": {
-            "html5_video": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "html5_video": "shopify://files/videos/سارة هاشم- نور فودز edited.mov",
             "description": "بسبوسة لذيذة",
             "description_text_align": "right",
             "description_text_size": 18,
@@ -2147,7 +2156,7 @@
         "video_FeNckE": {
           "type": "video",
           "settings": {
-            "html5_video": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "html5_video": "shopify://files/videos/1.MP4",
             "description": "بسبوسة لذيذة",
             "description_text_align": "right",
             "description_text_size": 18,
@@ -2160,7 +2169,7 @@
         "video_7BLTP6": {
           "type": "video",
           "settings": {
-            "html5_video": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "html5_video": "shopify://files/videos/فارس-نور فودز ستوري1.mp4",
             "description": "بسبوسة لذيذة",
             "description_text_align": "right",
             "description_text_size": 18,
@@ -2173,11 +2182,50 @@
         "video_h7TXz6": {
           "type": "video",
           "settings": {
-            "html5_video": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "html5_video": "shopify://files/videos/١.mp4",
             "description": "بسبوسة لذيذة",
             "description_text_align": "right",
             "description_text_size": 18,
             "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_aUnHpy": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/سارة1- نور فودز.mp4",
+            "description": "بسبوسة لذيذة",
+            "description_text_align": "center",
+            "description_text_size": 14,
+            "description_mobile_text_size": 12,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_hWfifR": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/هدى- نور فودز.mp4",
+            "description": "بسبوسة لذيذة",
+            "description_text_align": "center",
+            "description_text_size": 14,
+            "description_mobile_text_size": 12,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_NAgUAz": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "description": "بسبوسة لذيذة",
+            "description_text_align": "center",
+            "description_text_size": 14,
+            "description_mobile_text_size": 12,
             "description_text_color": "#ffffff",
             "product": "",
             "collection": ""
@@ -2189,7 +2237,10 @@
         "video_wkTQxG",
         "video_FeNckE",
         "video_7BLTP6",
-        "video_h7TXz6"
+        "video_h7TXz6",
+        "video_aUnHpy",
+        "video_hWfifR",
+        "video_NAgUAz"
       ],
       "name": "Video carousel",
       "settings": {
