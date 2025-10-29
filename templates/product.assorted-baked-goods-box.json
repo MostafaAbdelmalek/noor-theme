@@ -334,7 +334,7 @@
       "custom_css": [
         ".hdt-product-form__submit,.hdt-sticky-atc__submit {background: #2f854e; border-color: #2f854e;}",
         ".shopify-payment-button button,shopify-buy-it-now-button button {background: #17a78b !important;}",
-        ".hdt-product__buy-button {position: relative; padding: 15px; border: 1px solid var(--Semantic-Border-Gray, #e9ecea);}",
+        ".hdt-product__buy-button {position: absolute; padding: 15px; border: 1px solid var(--Semantic-Border-Gray, #e9ecea);}",
         ".hdt-product-form__top-buttons {flex-wrap: nowrap;}",
         "@media screen and (max-width: 768px) {.hdt-product__buy-button {bottom: 60px; }}"
       ],
@@ -357,6 +357,7 @@
     },
     "custom_liquid_jYRmxp": {
       "type": "custom-liquid",
+      "disabled": true,
       "custom_css": [],
       "name": "t:sections.custom-liquid.name",
       "settings": {
