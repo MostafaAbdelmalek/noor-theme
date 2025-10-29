@@ -718,14 +718,31 @@ https://flickity.metafizzy.co
   max-width: {{ max_width }};
 }
 
+/* Constrain content inside a centered container while keeping section background full-bleed */
+#DP--{{ section_id }} .hdt-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: {{ max_width }};
+}
+
+@media screen and (min-width: 768px) {
+  #DP--{{ section_id }} .hdt-container {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+}
+
 /* Apply hdt-container only on desktop (screens larger than 767px) */
 @media screen and (min-width: 768px) {
   #DP--{{ section_id }} .fbs-pck__desktop-container {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 55px;
-    padding-right: 55px;
-    max-width: 1200px;
+
+    max-width: 1400px;
   }
 }
 
@@ -1070,14 +1087,15 @@ https://flickity.metafizzy.co
 -%}
 
 {%- comment -%} HTML {%- endcomment -%}
-<section id="DP--{{ section_id }}" class="DP--{{ section_id }} fbs-pck__videos-slider fbs-pck__section">
+<section id="DP--{{ section_id }}" class="DP--{{ section_id }} fbs-pck__videos-slider fbs-pck__section hdt-section-spacing">
   {%- if section.settings.anchor_id != blank -%}
     <div id="{{ section.settings.anchor_id | remove: '#' | handleize }}" class="fbs-pck__anchor-id" style="height: 0; overflow: hidden;"></div>
   {%- endif -%}
-  {%- if section.settings.heading != blank -%}
-    <h2 class="fbs-pck__section-heading">{{ section.settings.heading }}</h2>
-  {%- endif -%}
-  <div class="fbs-pck__sizer {% if section.settings.base_width == 100 %}fbs-pck__desktop-container{% endif %}">
+  <div class="hdt-container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="fbs-pck__section-heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <div class="fbs-pck__sizer {% if section.settings.base_width == 100 %}fbs-pck__desktop-container{% endif %}">
     <div class="fbs-pck__flex fbs-pck__flex--main">
       <div class="fbs-pck__videos">
         <div id="slider-{{ section_id }}" class="fbs-pck__videos-wrapper fbs-pck__video-slider">
@@ -1177,7 +1195,8 @@ https://flickity.metafizzy.co
         {%- endif -%}
       </div>
     </div>
-  </div>
+    </div> <!-- .fbs-pck__sizer -->
+  </div> <!-- .hdt-container -->
 </section>
 {%- endcapture -%}
 {{ minify | strip_newlines }}
