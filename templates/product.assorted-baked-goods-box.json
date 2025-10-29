@@ -349,7 +349,7 @@
         "colors_by_section": false,
         "color_scheme": "",
         "background_opacity": 1,
-        "fullwidth": true,
+        "fullwidth": false,
         "padding_top": 30,
         "padding_bottom": 60,
         "padding_rate": 75
@@ -357,7 +357,6 @@
     },
     "custom_liquid_jYRmxp": {
       "type": "custom-liquid",
-      "disabled": true,
       "custom_css": [],
       "name": "t:sections.custom-liquid.name",
       "settings": {
@@ -1166,8 +1165,6 @@
         "multi_column_YjKDKe"
       ],
       "custom_css": [
-        "@media (min-width: 768px) {.hdt-grid-system {padding: 36px 90px; }}",
-        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 16px 0 16px; }}",
         "img.hdt-object-pos-mb.hdt-obj-eff {width: 30px; margin-bottom: 7px;}",
         ".hdt-s-gradient {background: linear-gradient(180deg, #267948 0%, #529a4a 100%);}",
         "h4 {font-size: 22px !important; font-weight: 600; color: #22603c;}",
@@ -1184,7 +1181,7 @@
         "colors_by_section": false,
         "color_scheme": "",
         "background_opacity": 0,
-        "section_layout": "full_width",
+        "section_layout": "wrapper_container",
         "padding_top": 24,
         "padding_bottom": 24,
         "padding_rate": 50
@@ -1453,10 +1450,9 @@
         "multi_column_Emj3dp"
       ],
       "custom_css": [
-        "@media (min-width: 768px) {.hdt-grid-system {padding: 32px 90px; }}",
-        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 16px 0 16px; }}",
+        "@media (min-width: 768px) {h2 {font-size: 32px; color: #fff; }}",
+        "@media (max-width: 767px) {h2 {font-size: 24px; color: #fff; }}",
         ".hdt-s-gradient {background: #529a4a;}",
-        "h2 {font-size: 24px; color: #fff;}",
         "h4 {font-size: 22px !important; font-weight: 600; color: #22603c;}",
         ".hdt-column {border-radius: 12px; background: #a8d35e;}",
         ".hdt-column_inner {padding: 8px 12px;}"
@@ -1470,7 +1466,7 @@
         "colors_by_section": false,
         "color_scheme": "",
         "background_opacity": 0,
-        "section_layout": "full_width",
+        "section_layout": "wrapper_container",
         "padding_top": 24,
         "padding_bottom": 24,
         "padding_rate": 50
@@ -1973,10 +1969,9 @@
         "multi_column_KbQWXf"
       ],
       "custom_css": [
-        "@media (min-width: 768px) {.hdt-grid-system {padding: 36px 90px; }}",
-        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 16px; }}",
+        "@media (min-width: 768px) {h2 {font-size: 32px; color: #fff; }}",
+        "@media (max-width: 767px) {h2 {font-size: 24px; color: #fff; }}",
         ".hdt-s-gradient {background: #529a4a;}",
-        "h2 {font-size: 30px; color: #fff;}",
         ".hdt-column {padding: 10px 15px; border-radius: 10px; background: #edfcf1;}",
         "h3 {color: #2f854e; font-size: 16px; font-weight: 500;}",
         "p {margin-top: 5px; font-size: 13px; color: #75a02c;}"
@@ -1990,7 +1985,7 @@
         "colors_by_section": false,
         "color_scheme": "",
         "background_opacity": 0,
-        "section_layout": "full_width",
+        "section_layout": "wrapper_container",
         "padding_top": 24,
         "padding_bottom": 24,
         "padding_rate": 50
