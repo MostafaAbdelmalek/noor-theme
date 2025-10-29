@@ -30,6 +30,48 @@
   assign first_3d_model = models | first
 %}
 <div class="hdt-product-media-wrapps hdt-group-block hdt-s-gradient hdt-group-block--{{ block.id }}">
+    <style>
+    /* Mobile: full-bleed product media and remove borders */
+    @media (max-width: 768px) {
+      .hdt-product-media-wrapps.hdt-group-block .hdt-product-media__main {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        overflow: hidden !important;
+      }
+
+      .hdt-product-media-wrapps.hdt-group-block .hdt-product-media__main .hdt-ratio,
+      .hdt-product-media-wrapps.hdt-group-block .hdt-product-media__main .hdt-product__media,
+      .hdt-product-media-wrapps.hdt-group-block .hdt-product-media__main img,
+      .hdt-product-media-wrapps.hdt-group-block .hdt-product-media__main video,
+      .hdt-product-media-wrapps.hdt-group-block .hdt-product-media__main hdt-slider,
+      .hdt-product-media-wrapps.hdt-group-block .hdt-product-media__main .hdt-slider__viewport {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: auto !important;
+        object-fit: cover !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        display: block !important;
+      }
+
+      /* Placeholder handling */
+      .hdt-product-media-placeholder,
+      .hdt-product-media-placeholder-wrap {
+        width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        border-radius: 0 !important;
+        overflow: hidden !important;
+      }
+    }
+  </style>
   {%- if product != blank -%}
     {%- capture start_index -%}
     {%- unless group_media_obj.size > 0 %}, "startIndex": {% if block.settings.show_first_media or un_no_pick == false %}0{% else %}{{ selected_variant_featured_media.position | default: 1 | minus: 1 }}{% endif %}{% endunless -%}
