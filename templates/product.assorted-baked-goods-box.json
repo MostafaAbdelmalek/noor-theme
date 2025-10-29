@@ -2197,9 +2197,9 @@
           "settings": {
             "html5_video": "shopify://files/videos/سارة1- نور فودز.mp4",
             "description": "بسبوسة لذيذة",
-            "description_text_align": "center",
-            "description_text_size": 14,
-            "description_mobile_text_size": 12,
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
             "description_text_color": "#ffffff",
             "product": "",
             "collection": ""
@@ -2210,9 +2210,9 @@
           "settings": {
             "html5_video": "shopify://files/videos/هدى- نور فودز.mp4",
             "description": "بسبوسة لذيذة",
-            "description_text_align": "center",
-            "description_text_size": 14,
-            "description_mobile_text_size": 12,
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
             "description_text_color": "#ffffff",
             "product": "",
             "collection": ""
@@ -2223,9 +2223,9 @@
           "settings": {
             "html5_video": "shopify://files/videos/ابراهيم- نور فودز .MP4",
             "description": "بسبوسة لذيذة",
-            "description_text_align": "center",
-            "description_text_size": 14,
-            "description_mobile_text_size": 12,
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
             "description_text_color": "#ffffff",
             "product": "",
             "collection": ""
