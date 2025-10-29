@@ -102,8 +102,8 @@
             "product_description_AJaqwJ": {
               "type": "_product-description",
               "settings": {
-                "des_mode": "1",
-                "short_des": "",
+                "des_mode": "2",
+                "short_des": "<p>بوكس مخبوزات بالخميرة الطبيعية ليس مجرد صندوق مخبوزات، بل تجربة غذائية متكاملة تجمع بين المذاق الأصيل والصحة والعافية؛ حيثُ تم تحضير هذا البوكس بمكونات طبيعية عالية الجودة، واُعتمد فيه على التخمير البطيء بخميرة طبيعية عمرها أكثر من 13 عامًا، لضمان جودة أعلى وهضم أسهل.</p>",
                 "readm": false,
                 "length": 31,
                 "readm_txt": "Read more",
@@ -334,9 +334,9 @@
       "custom_css": [
         ".hdt-product-form__submit,.hdt-sticky-atc__submit {background: #2f854e; border-color: #2f854e;}",
         ".shopify-payment-button button,shopify-buy-it-now-button button {background: #17a78b !important;}",
-        ".hdt-product__buy-button {position: absolute; padding: 15px; border: 1px solid var(--Semantic-Border-Gray, #e9ecea);}",
+        ".hdt-product__buy-button {position: relative; padding: 15px; border: 1px solid var(--Semantic-Border-Gray, #e9ecea);}",
         ".hdt-product-form__top-buttons {flex-wrap: nowrap;}",
-        "@media screen and (max-width: 768px) {.hdt-product__buy-button {bottom: 60px; }}"
+        "@media screen and (max-width: 768px) {}"
       ],
       "settings": {
         "product_list_fbt": [],
