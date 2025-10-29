@@ -1165,6 +1165,8 @@
         "multi_column_YjKDKe"
       ],
       "custom_css": [
+        "@media (min-width: 768px) {.hdt-grid-system {padding: 32px 0px; }}",
+        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 0px; }}",
         "img.hdt-object-pos-mb.hdt-obj-eff {width: 30px; margin-bottom: 7px;}",
         ".hdt-s-gradient {background: linear-gradient(180deg, #267948 0%, #529a4a 100%);}",
         "h4 {font-size: 22px !important; font-weight: 600; color: #22603c;}",
@@ -1450,8 +1452,8 @@
         "multi_column_Emj3dp"
       ],
       "custom_css": [
-        "@media (min-width: 768px) {h2 {font-size: 32px; color: #fff; }}",
-        "@media (max-width: 767px) {h2 {font-size: 24px; color: #fff; }}",
+        "@media (min-width: 768px) {.hdt-grid-system {padding: 32px 0px; } h2 {font-size: 32px; color: #fff; }}",
+        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 0px; } h2 {font-size: 24px; color: #fff; }}",
         ".hdt-s-gradient {background: #529a4a;}",
         "h4 {font-size: 22px !important; font-weight: 600; color: #22603c;}",
         ".hdt-column {border-radius: 12px; background: #a8d35e;}",
@@ -1969,8 +1971,8 @@
         "multi_column_KbQWXf"
       ],
       "custom_css": [
-        "@media (min-width: 768px) {h2 {font-size: 32px; color: #fff; }}",
-        "@media (max-width: 767px) {h2 {font-size: 24px; color: #fff; }}",
+        "@media (min-width: 768px) {.hdt-grid-system {padding: 32px 0px; } h2 {font-size: 32px; color: #fff; }}",
+        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 0px; } h2 {font-size: 24px; color: #fff; }}",
         ".hdt-s-gradient {background: #529a4a;}",
         ".hdt-column {padding: 10px 15px; border-radius: 10px; background: #edfcf1;}",
         "h3 {color: #2f854e; font-size: 16px; font-weight: 500;}",
