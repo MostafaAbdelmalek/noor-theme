@@ -336,7 +336,9 @@
         ".shopify-payment-button button,shopify-buy-it-now-button button {background: #17a78b !important;}",
         ".hdt-product__buy-button {position: relative; padding: 15px; border: 1px solid var(--Semantic-Border-Gray, #e9ecea);}",
         ".hdt-product-form__top-buttons {flex-wrap: nowrap;}",
-        "@media screen and (max-width: 768px) {}"
+        "@media screen and (max-width: 768px) {}",
+        ".cvc-money {font-size: 24px; }",
+        "@media (min-width: 768px) {.cvc-money {font-size: 28px; font-weight: 600; color: #000; }}"
       ],
       "settings": {
         "product_list_fbt": [],
