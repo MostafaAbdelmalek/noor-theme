@@ -443,9 +443,7 @@
       "button.shopify-payment-button__button.shopify-payment-button__button--unbranded {background: red !important;}",
       "button.shopify-payment-button__button.shopify-payment-button__button--unbranded:hover {background: #980000 !important;}",
       "hdt-price.hdt-price {font-weight: 700; color: #000;}",
-      "footer {padding-bottom: 85px;}",
-      ".hdt-sticky-atc__product-monney .cvc-money {font-size: 24px !important; font-weight: 600; color: #000;}",
-      "@media (min-width: 768px) {.hdt-sticky-atc__product-monney .cvc-money {font-size: 28px !important; font-weight: 600; color: #000; }}"
+      "footer {padding-bottom: 85px;}"
     ]
   }
 }
