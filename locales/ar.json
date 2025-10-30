@@ -108,8 +108,8 @@
       "search_for": "البحث عن"
     },
     "cart": {
-      "view": "عرض السلة ({{ count }})",
-      "view_empty_cart": "عرض السلة",
+      "view": "عرض العربة ({{ count }})",
+      "view_empty_cart": "عرض العربة",
       "item_added": "تم إضافة العنصر إلى سلتك"
     },
     "slider": {
@@ -130,8 +130,8 @@
       "empty_info_wishlist": "ليس لديك أي منتجات في قائمة الأمنيات حتى الآن. ستجد الكثير من المنتجات المثيرة للاهتمام في صفحة \"المتجر\"."
     },
     "compare": {
-      "view": "عرض السلة ({{ count }})",
-      "view_empty_cart": "عرض السلة",
+      "view": "عرض العربة ({{ count }})",
+      "view_empty_cart": "عرض العربة",
       "item_added": "تم إضافة العنصر إلى سلتك",
       "compare_text": "مقارنة",
       "login_to_use_compare": "سجل دخولك لاستخدام المقارنة",
@@ -263,8 +263,8 @@
       "quick_add": "إضافة سريعة",
       "quick_view": "عرض سريع",
       "pre_order": "طلب مسبق",
-      "add_to_cart": "أضف إلى السلة",
-      "add_selected_to_cart": "أضف المحدد إلى السلة",
+      "add_to_cart": "أضف للعربة",
+      "add_selected_to_cart": "أضف المحدد للعربة",
       "choose_options": "اختر الخيارات",
       "choose_product_options": "اختر خيارات لـ {{ product_name }}",
       "choose_an_option": "اختر خياراً",
@@ -345,7 +345,7 @@
         "minimum_of": "الحد الأدنى {{ quantity }}",
         "maximum_of": "الحد الأقصى {{ quantity }}",
         "multiples_of": "زيادات من {{ quantity }}",
-        "in_cart_html": "<span class=\"hdt-quantity-cart\">{{ quantity }}<\/span> في السلة"
+        "in_cart_html": "<span class=\"hdt-quantity-cart\">{{ quantity }}<\/span> في العربة"
       },
       "volume_pricing": {
         "title": "أسعار الكمية",
@@ -430,7 +430,7 @@
     "fbt": {
       "title": "يُشترى معاً بكثرة",
       "tt_price": "السعر الإجمالي:",
-      "add_tc": "أضف المحدد إلى السلة",
+      "add_tc": "أضف المحدد للعربة",
       "this_item": "هذا العنصر:"
     }
   },
@@ -474,7 +474,7 @@
       "pages": "الصفحات"
     },
     "cart": {
-      "cart": "السلة"
+      "cart": "العربة"
     },
     "contact": {
       "form": {
@@ -524,7 +524,7 @@
       "taxes_and_shipping_policy_at_checkout_html": "الضرائب و<a href=\"{{ link }}\">الشحن<\/a> محسوب عند الدفع",
       "taxes_and_shipping_at_checkout": "الضرائب والشحن محسوب عند الدفع",
       "remove_discount": "إزالة الخصم",
-      "caption": "عناصر السلة",
+      "caption": "عناصر العربة",
       "remove": "إزالة",
       "remove_item": "إزالة العنصر",
       "remove_title": "إزالة {{ title }}",
@@ -532,7 +532,7 @@
       "add_note": "إضافة ملاحظة للطلب",
       "edit_note": "تعديل ملاحظة الطلب",
       "placeholder_note": "كيف يمكننا مساعدتك؟",
-      "view_cart": "عرض السلة",
+      "view_cart": "عرض العربة",
       "checkout": "إتمام الطلب",
       "empty_html": "قبل الانتقال إلى الدفع يجب إضافة بعض المنتجات إلى سلة التسوق.<br \/> ستجد الكثير من المنتجات المثيرة للاهتمام في صفحة \"المتجر\".",
       "cart_error": "حدث خطأ أثناء تحديث سلتك. يرجى المحاولة مرة أخرى.",
