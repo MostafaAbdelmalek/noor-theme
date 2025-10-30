@@ -314,7 +314,7 @@
             "enable_thumb_efect": true,
             "image_ratio": "adapt_image",
             "image_size": false,
-            "image_zoom": "zoom",
+            "image_zoom": "no",
             "image_zoom_type": "external",
             "zoom_level": 2,
             "max_zoom_lightbox": 3,
