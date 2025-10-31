@@ -2442,7 +2442,7 @@
         "nav_style": "default",
         "nav_shape": "rounded",
         "nav_size": "small",
-        "nav_hide_mobile": false,
+        "nav_hide_mobile": true,
         "dotUI": false,
         "pag_style": "default",
         "pag_rounded": false,
