@@ -1186,8 +1186,8 @@
         "color_scheme": "",
         "background_opacity": 0,
         "section_layout": "wrapper_container",
-        "padding_top": 24,
-        "padding_bottom": 24,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "padding_rate": 50
       }
     },
@@ -1471,8 +1471,8 @@
         "color_scheme": "",
         "background_opacity": 0,
         "section_layout": "wrapper_container",
-        "padding_top": 24,
-        "padding_bottom": 24,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "padding_rate": 50
       }
     },
@@ -1990,8 +1990,8 @@
         "color_scheme": "",
         "background_opacity": 0,
         "section_layout": "wrapper_container",
-        "padding_top": 24,
-        "padding_bottom": 24,
+        "padding_top": 0,
+        "padding_bottom": 0,
         "padding_rate": 50
       }
     },
@@ -2395,7 +2395,7 @@
         }
       },
       "settings": {
-        "product_des": "6",
+        "product_des": "2",
         "image_ratio": "portrait",
         "image_size": false,
         "show_vendor": false,
@@ -2442,7 +2442,7 @@
             "products_count": 8,
             "product_list": [],
             "pr_border": "none",
-            "product_des": "6",
+            "product_des": "2",
             "image_ratio": "portrait",
             "image_size": false,
             "show_vendor": false,
