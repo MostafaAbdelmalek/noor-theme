@@ -376,7 +376,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.name",
       "settings": {
-        "custom_liquid": "<style>\n\n@media (min-width: 768px) { \n.hdt-row-grid {\n  display: grid;\n  grid-template-columns: 28.3% 39.6% 27.1%;\n}\n}\n</style>",
+        "custom_liquid": "<style>\n.hdt-card-product__btn-ultra {\n  position: absolute !important;\n  bottom: 0px !important;\n  left: 5px !important;\n  background-color: #2F854E !important;\n  color: white !important;\n  border: 1px solid #E9ECEA !important;\n}\n\n@media (min-width: 768px) { \n  .hdt-row-grid {\n    display: grid;\n    grid-template-columns: 28.3% 39.6% 27.1%;\n  }\n\n  .hdt-card-product__btn-ultra {\n    bottom: -10px !important;\n    left: 10px !important;\n  }\n}\n\n.hdt-pr-style2:not(:hover) .hdt-product-btns {\n  opacity: 1 !important;\n}\n</style>",
         "colors_by_section": false,
         "color_scheme": "",
         "background_opacity": 0,
