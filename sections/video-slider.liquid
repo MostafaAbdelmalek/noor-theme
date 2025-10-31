@@ -960,26 +960,7 @@ https://flickity.metafizzy.co
   border-width: 2px;
 }
 
-#DP--{{ section_id }} .fbs-pck__sound-button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 35px;
-  height: 35px;
-  margin: 10px;
-  padding: 5px;
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'%3E%3Cpath d='M18 23l-9.305-5.998.835-.651 7.47 4.815v-10.65l1-.781v13.265zm0-15.794l5.384-4.206.616.788-23.384 18.264-.616-.788 5.46-4.264h-2.46v-10h5.691l9.309-6v6.206zm-11.26 8.794l1.26-.984v-7.016h-4v8h2.74zm10.26-8.013v-5.153l-8 5.157v6.244l8-6.248z'/%3E%3C/svg%3E");
-  background-size: 65%;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
-#DP--{{ section_id }} .fbs-pck__sound-button--on {
-  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg' fill-rule='evenodd' clip-rule='evenodd'%3E%3Cpath d='M15 23l-9.309-6h-5.691v-10h5.691l9.309-6v22zm-9-15.009v8.018l8 5.157v-18.332l-8 5.157zm14.228-4.219c2.327 1.989 3.772 4.942 3.772 8.229 0 3.288-1.445 6.241-3.77 8.229l-.708-.708c2.136-1.791 3.478-4.501 3.478-7.522s-1.342-5.731-3.478-7.522l.706-.706zm-2.929 2.929c1.521 1.257 2.476 3.167 2.476 5.299 0 2.132-.955 4.042-2.476 5.299l-.706-.706c1.331-1.063 2.182-2.729 2.182-4.591 0-1.863-.851-3.529-2.184-4.593l.708-.708zm-12.299 1.299h-4v8h4v-8z'/%3E%3C/svg%3E");
-}
+/* Sound button styles removed */
 
 #DP--{{ section_id }} .fbs-pck__text-area {
   flex: 1;
@@ -1113,12 +1094,11 @@ https://flickity.metafizzy.co
                           {%- endif -%}
                         {%- endif -%}
                       {%- endfor -%}
-                      <video class="fbs-pck__hosted-video" src="{{ first_src }}" playsinline muted loop loading="lazy" poster="{{ video.preview_image | image_url: width: 2800 }}">
+                      <video class="fbs-pck__hosted-video" src="{{ first_src }}" playsinline loop loading="lazy" poster="{{ video.preview_image | image_url: width: 2800 }}">
                         {%- for source in video.sources -%}
                           {%- if source.format == 'mp4' or source.format == 'mov' -%}<source src="{{ source.url }}">{%- endif -%}
                         {%- endfor -%}
                       </video>
-                      <div class="fbs-pck__sound-button"></div>
                       {%- if block.settings.description != blank -%}
                         <style>
                           #video-description-{{ block.id }} {
@@ -1141,10 +1121,9 @@ https://flickity.metafizzy.co
                     <video
                       class="fbs-pck__hosted-video"
                       src="https://cdn.shopify.com/videos/c/o/v/{{ background_placeholder_video_id }}.mp4"
-                      playsinline loop muted loading="lazy">
+                      playsinline loop loading="lazy">
                         <source src="https://cdn.shopify.com/videos/c/o/v/{{ background_placeholder_video_id }}.mp4" data-fbs-pck-default-src>
                     </video>
-                    <div class="fbs-pck__sound-button"></div>
                   </div>
                   {%- endif -%}
                   {%- unless block.settings.product == blank and block.settings.collection == blank -%}
@@ -1738,33 +1717,7 @@ https://flickity.metafizzy.co
       // initial attach and re-attach after images load / flickity changes
       attachPlayButtons();
 
-      // Added: sync initial mute state for the currently selected video based on sound button class
-      (function syncInitialMute() {
-        const videos = section.querySelectorAll('video');
-        if (!videos || videos.length === 0) return;
-        const sel = (websPack.flkty && typeof websPack.flkty.selectedIndex === 'number') ? websPack.flkty.selectedIndex : 0;
-        const selectedVideo = videos[sel] || videos[0];
-        const activeBtn = section.querySelector('.fbs-pck__sound-button.fbs-pck__sound-button--on');
-        if (activeBtn) {
-          // If user has the sound button set to 'on' in the initial markup, try to unmute and play
-          selectedVideo.muted = false;
-          try {
-            const p = selectedVideo.play();
-            if (p !== undefined) {
-              p.catch(() => {
-                // Browser blocked autoplay with sound — keep native controls hidden
-                // and rely on our UI; do not reveal native controls.
-              });
-            }
-          } catch (err) {
-            // ignore
-          }
-        } else {
-          // keep default muted attribute set in markup
-        }
-      })();
-
-      var previousButton = section.querySelector('.fbs-pck__nav-button--prev');
+      // Initial mute state handling removed - videos now play with sound by default      var previousButton = section.querySelector('.fbs-pck__nav-button--prev');
       if (typeof previousButton != 'undefined' && previousButton != null) {
         previousButton.addEventListener( 'click', function() {
           websPack.flkty.previous();
@@ -1778,49 +1731,7 @@ https://flickity.metafizzy.co
         });
       }
 
-      // Updated: sound button should toggle mute only on its own video and MUST NOT trigger Flickity staticClick
-      // (which previously paused videos). Stop propagation so Flickity doesn't treat the click as a cell click.
-      var soundButtons = section.querySelectorAll('.fbs-pck__sound-button');
-      if (typeof soundButtons != 'undefined' && soundButtons != null) {
-        soundButtons.forEach((button) => {
-          button.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Prevent Flickity staticClick / change handlers from firing due to this click
-            e.stopPropagation();
-
-            // Operate on the video that belongs to this button (closest wrapper)
-            const wrapper = button.closest('.fbs-pck__video-wrapper');
-            const video = wrapper ? wrapper.querySelector('video') : null;
-            if (!video) return false;
-
-            const isOn = button.classList.contains('fbs-pck__sound-button--on');
-            if (isOn) {
-              // currently 'on' means sound enabled -> turn it off
-              video.muted = true;
-              button.classList.remove('fbs-pck__sound-button--on');
-            } else {
-              // turn sound on for this video only
-              video.muted = false;
-              button.classList.add('fbs-pck__sound-button--on');
-
-              // If the user unmutes and expects to hear audio immediately, try to play the video.
-              // If the browser blocks autoplay, we reveal native controls so they can start playback.
-              try {
-                const p = video.play();
-                if (p !== undefined) {
-                  p.catch(() => {
-                    // Keep native controls hidden even if play is blocked.
-                  });
-                }
-              } catch (err) {
-                // ignore playback errors
-              }
-            }
-
-            return false;
-          });
-        });
-      }
+      // Sound button functionality removed
 
     },
     unload: function(section){
