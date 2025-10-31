@@ -16,7 +16,7 @@
     <div class="hdt-tags-wrapper hdt-s-text2">{{ 'products.product.tag' | t }}
       {% for tag in product.tags -%}
       {%- if tag contains 't4_' or tag contains 'badge_' %}{% continue %}{% endif -%}
-      <a class="hdt-inline-block hdt-s-text" href="{{ tag_cat_url }}/{{ tag | handle }}">{{ tag | remove: 'type ' | remove: 'Type ' }}</a> {% endfor -%}
+      <span class="hdt-inline-block hdt-s-text">{{ tag | remove: 'type ' | remove: 'Type ' }}</span> {% endfor -%}
     </div>
   {%- endif -%}
   

@@ -229,7 +229,7 @@
     "portfolio": {
       "category": "الفئة:",
       "author": "المؤلف:",
-      "tags": "ضمن:"
+      "tags": "ضمن"
     }
   },
   "onboarding": {
@@ -296,7 +296,7 @@
       "vendor": "البائع:",
       "type": "النوع:",
       "category": "الفئات:",
-      "tag": "ضمن:",
+      "tag": "ضمن",
       "variant_sold_out": "المتغير غير متوفر",
       "video_exit_message": "{{ title }} يفتح فيديو بملء الشاشة في نفس النافذة.",
       "view_full_details": "عرض التفاصيل الكاملة",
