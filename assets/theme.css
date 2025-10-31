@@ -2288,7 +2288,7 @@ country-filter {
 }
 hdt-slider-thumb:not([stagger]) .hdt-thumbnail__media:not(.is-thumb-selected),
 hdt-slider-thumb.stagger-finished .hdt-thumbnail__media:not(.is-thumb-selected) {
-  opacity: .5 !important;
+  opacity: 1 !important;
 }
 .hdt-ratio>*.hdt-thumbnail__badge {border-radius: var(--radius-full);}
 @media(min-width:768px){

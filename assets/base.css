@@ -1713,6 +1713,7 @@ NOTE: most of the CSS variables used are defined in the "css-variables.liquid" s
     .hdt-ratio--contain .hdt-ratio > img,
     .hdt-object-contain {
       object-fit: contain;
+      border-radius: 12px !important;
     }
     .hdt-object-center {
       object-position: center;
@@ -2343,9 +2344,13 @@ NOTE: most of the CSS variables used are defined in the "css-variables.liquid" s
       hdt-slider-thumb.stagger-finished .hdt-thumbnail__media {
         transition: .3s ease-in-out;
       }
+      .is-thumb-selected .hdt-ratio {
+        outline: 3px solid #5AA04A;
+        border-radius: 12px;
+      }
       hdt-slider-thumb:not([stagger]) .hdt-thumbnail__media:not(.is-thumb-selected),
       hdt-slider-thumb.stagger-finished .hdt-thumbnail__media:not(.is-thumb-selected) {
-        opacity: .5 !important;
+        opacity: 1 !important;
       }
       .hdt-ratio > *.hdt-thumbnail__badge {
         width: 2rem;
@@ -2823,6 +2828,9 @@ NOTE: most of the CSS variables used are defined in the "css-variables.liquid" s
     .hdt-slider__viewport {
       position: relative;
       overflow: hidden;
+    }
+    .hdt-slider__viewport:has(.hdt-slider__container > .is-thumb-selected) {
+      overflow: visible;
     }
     .hdt-slider__container {
       display: flex;
