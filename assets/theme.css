@@ -2365,7 +2365,6 @@ hdt-slider-thumb.stagger-finished .hdt-thumbnail__media:not(.is-thumb-selected) 
 .hdt-product-form__quantity button{
   width: 3rem;
   height: 3.8rem;
-  line-height: 3.8rem;
   border: 0;
   background: 0 0;
   transition: all .3s ease;
