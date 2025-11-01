@@ -1,0 +1,1285 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumb": {
+      "type": "brc-nav-product",
+      "disabled": true,
+      "settings": {
+        "back_next_pr": true,
+        "colors_by_section": true,
+        "color_scheme": "scheme-23cf8966-8e57-4acd-9bb3-bb85f222fbb9",
+        "background_opacity": 1,
+        "section_layout": "wrapper_container",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_rate": 75
+      }
+    },
+    "main-product": {
+      "type": "main-product",
+      "blocks": {
+        "group_product_9RYttB": {
+          "type": "_group-product",
+          "settings": {
+            "colors_by_block": false,
+            "color_scheme": ""
+          },
+          "blocks": {
+            "judge_me_reviews_preview_badge_9b8wx7": {
+              "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+              "settings": {}
+            },
+            "product_extra_link_JNnUBD": {
+              "type": "_product-extra-link",
+              "name": "t:sections.main-product.blocks.extra_link.name",
+              "settings": {},
+              "blocks": {
+                "product_link_custom_pqFxQg": {
+                  "type": "_product-link-custom",
+                  "name": "t:sections.main-product.blocks.extra_link.link_custom.name",
+                  "settings": {
+                    "label": "{{ closest.product.metafields.custom.among_the.value }}",
+                    "url": "{{ closest.product.metafields.custom.among_the_link.value }}",
+                    "open_in_new_tab": false
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_link_custom_pqFxQg"
+              ]
+            },
+            "product_meta_hnDEjn": {
+              "type": "_product-meta",
+              "settings": {},
+              "blocks": {
+                "product_meta_sku_kXHJPJ": {
+                  "type": "_product-meta-sku",
+                  "disabled": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "product_meta_category_4Gq4HK": {
+                  "type": "_product-meta-category",
+                  "disabled": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "product_meta_tags_bePDzg": {
+                  "type": "_product-meta-tags",
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_meta_sku_kXHJPJ",
+                "product_meta_category_4Gq4HK",
+                "product_meta_tags_bePDzg"
+              ]
+            },
+            "product_title_ehRqkq": {
+              "type": "_product-title",
+              "settings": {
+                "txt_tr_pr": "none",
+                "tag": "h2",
+                "heading_size": "h5",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "font_weight": "bold",
+                "letter_spacing_heading": 0,
+                "create_link": false
+              },
+              "blocks": {}
+            },
+            "product_description_AJaqwJ": {
+              "type": "_product-description",
+              "settings": {
+                "des_mode": "2",
+                "short_des": "<p>خليط طبيعي غني يجمع بين عسل السدر الكويتي النقي ومكونات مغذية مثل السمسم الأحمر السوداني، الكاجو، حبة البركة، غذاء ملكات النحل، وغبار طلع النخيل، لتغذية الجسم وزيادة الوزن بطريقة طبيعية وآمنة.</p>",
+                "readm": false,
+                "length": 31,
+                "readm_txt": "Read more",
+                "readl_txt": "Read less"
+              },
+              "blocks": {}
+            },
+            "product_price_9JizTC": {
+              "type": "_product-price",
+              "settings": {},
+              "blocks": {}
+            },
+            "product_buy_button_yxMTt7": {
+              "type": "_product-buy-button",
+              "name": "t:sections.main-product.blocks.buy_buttons.name",
+              "disabled": true,
+              "settings": {
+                "show_quantity_selector": true,
+                "show_dynamic_checkout": true,
+                "show_gift_card_recipient": true,
+                "show_wishlist": true,
+                "show_compare": false,
+                "ani": "none",
+                "time": 6,
+                "btn_transform": "hdt-uppercase",
+                "btn_style": "",
+                "btn_fullwidth": false
+              },
+              "blocks": {}
+            },
+            "product_buy_button_3A7FcG": {
+              "type": "_product-buy-button",
+              "name": "t:sections.main-product.blocks.buy_buttons.name",
+              "settings": {
+                "show_quantity_selector": true,
+                "show_dynamic_checkout": true,
+                "show_gift_card_recipient": true,
+                "show_wishlist": true,
+                "show_compare": false,
+                "ani": "hdt-ani-bounce is--infinite",
+                "time": 6,
+                "btn_transform": "hdt-uppercase",
+                "btn_style": "",
+                "btn_fullwidth": true
+              },
+              "blocks": {}
+            },
+            "product_variant_picker_WMmDTM": {
+              "type": "_product-variant-picker",
+              "settings": {
+                "color_picker_type": "color_rounded",
+                "color_size": "medium",
+                "picker_type": "circle",
+                "size_chart_source": "page",
+                "size_chart_page": "size-chart"
+              },
+              "blocks": {}
+            },
+            "quantity_selector_tarLcL": {
+              "type": "_quantity-selector",
+              "disabled": true,
+              "settings": {},
+              "blocks": {}
+            },
+            "product_trust_badge_QALnxQ": {
+              "type": "_product-trust-badge",
+              "disabled": true,
+              "settings": {
+                "mess": "",
+                "size": 16,
+                "source": "2",
+                "wimg": 400,
+                "svg": "visa,master,apple_pay,mada,knet,sadad,kfast,benefit,myfatoorah,uaevisa,stcpay,meeza",
+                "height": 30
+              },
+              "blocks": {}
+            },
+            "product_extra_link_HfDmDV": {
+              "type": "_product-extra-link",
+              "disabled": true,
+              "settings": {},
+              "blocks": {
+                "product_ask_question_nWC4pL": {
+                  "type": "_product-ask-question",
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_ask_question_nWC4pL"
+              ]
+            },
+            "socials_XYJPwj": {
+              "type": "socials",
+              "disabled": true,
+              "settings": {
+                "type": "follow",
+                "share_facebook": false,
+                "share_x": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "share_telegram": false,
+                "share_email": false,
+                "share_whatsapp": false,
+                "socials_style": "simple",
+                "socials_size": "medium",
+                "bd_radius": 30,
+                "space_item": 30
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "judge_me_reviews_preview_badge_9b8wx7",
+            "product_extra_link_JNnUBD",
+            "product_meta_hnDEjn",
+            "product_title_ehRqkq",
+            "product_description_AJaqwJ",
+            "product_price_9JizTC",
+            "product_buy_button_yxMTt7",
+            "product_buy_button_3A7FcG",
+            "product_variant_picker_WMmDTM",
+            "quantity_selector_tarLcL",
+            "product_trust_badge_QALnxQ",
+            "product_extra_link_HfDmDV",
+            "socials_XYJPwj"
+          ]
+        },
+        "components_zpmzDL": {
+          "type": "components",
+          "name": "Components",
+          "settings": {
+            "background_color": "#f0faf4",
+            "border_color": "#bee9ce",
+            "border_width": 1,
+            "border_radius": 12,
+            "padding": 16,
+            "gap": 16,
+            "title": "المكونات",
+            "title_color": "#2f854e",
+            "title_size": 20,
+            "title_weight": "600",
+            "title_alignment": "right",
+            "image_size": 80,
+            "image_radius": 50,
+            "item_text_color": "#2f854e",
+            "item_text_size": 16,
+            "item_text_weight": "600",
+            "item_text_alignment": "center",
+            "item_1_enabled": true,
+            "item_1_image": "shopify://shop_images/Frame_1000003072_6_7d152bae-13e3-4e0c-aeb6-7544b2457826.png",
+            "item_1_text": "كاجو",
+            "item_2_enabled": true,
+            "item_2_image": "shopify://shop_images/Frame_1000003072_7_7b8a1008-8a68-47de-ad7a-4d2609b0eb3c.png",
+            "item_2_text": "عسل سدر",
+            "item_3_enabled": true,
+            "item_3_image": "shopify://shop_images/Frame_1000003072_12.png",
+            "item_3_text": "حبة البركة",
+            "item_4_enabled": true,
+            "item_4_image": "shopify://shop_images/Frame_1000003072_8.png",
+            "item_4_text": "غبار طلع النخيل",
+            "item_5_enabled": true,
+            "item_5_image": "shopify://shop_images/Frame_1000003072_10.png",
+            "item_5_text": "غذاء ملكات النحل",
+            "item_6_enabled": true,
+            "item_6_image": "shopify://shop_images/Frame_1000003072_11.png",
+            "item_6_text": "سمسم أحمر سوداني",
+            "item_7_enabled": false,
+            "item_7_text": "Item 7",
+            "item_8_enabled": false,
+            "item_8_text": "Item 8",
+            "item_9_enabled": false,
+            "item_9_text": "Item 9",
+            "item_10_enabled": false,
+            "item_10_text": "Item 10",
+            "item_11_enabled": false,
+            "item_11_text": "Item 11",
+            "item_12_enabled": false,
+            "item_12_text": "Item 12",
+            "item_13_enabled": false,
+            "item_13_text": "Item 13",
+            "item_14_enabled": false,
+            "item_14_text": "Item 14",
+            "item_15_enabled": false,
+            "item_15_text": "Item 15",
+            "item_16_enabled": false,
+            "item_16_text": "Item 16",
+            "item_17_enabled": false,
+            "item_17_text": "Item 17",
+            "item_18_enabled": false,
+            "item_18_text": "Item 18"
+          },
+          "blocks": {}
+        },
+        "main-product-medias": {
+          "type": "_product-medias",
+          "static": true,
+          "settings": {
+            "desktop_media_layout": "thumbnail_bottom",
+            "media_size": "medium",
+            "mobile_media_layout": "thumbnails",
+            "show_first_media": false,
+            "use_select_varaint_change_media": true,
+            "enable_media_autoplay": false,
+            "enable_video_looping": false,
+            "enable_thumb_efect": true,
+            "image_ratio": "adapt_image",
+            "image_size": false,
+            "image_zoom": "no",
+            "image_zoom_type": "external",
+            "zoom_level": 2,
+            "max_zoom_lightbox": 3,
+            "navUI": true,
+            "nav_style": "default",
+            "nav_shape": "rounded",
+            "nav_size": "small",
+            "nav_hide_mobile": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "group_product_9RYttB",
+        "components_zpmzDL"
+      ],
+      "custom_css": [
+        ".hdt-product-form__submit,.hdt-sticky-atc__submit {background: #2f854e; border-color: #2f854e;}",
+        ".shopify-payment-button button,shopify-buy-it-now-button button {background: #17a78b !important;}",
+        ".hdt-product__buy-button {position: relative; padding: 15px; border: 1px solid var(--Semantic-Border-Gray, #e9ecea);}",
+        ".hdt-product-form__top-buttons {flex-wrap: nowrap;}",
+        ".hdt-quantity-wrapp @media screen and (max-width: 768px) {}",
+        ".cvc-money {font-size: 24px;}",
+        "@media (min-width: 768px) {.cvc-money {font-size: 28px; font-weight: 600; color: #000; }}"
+      ],
+      "settings": {
+        "product_list_fbt": [],
+        "layout_columns": "3",
+        "sticky_atc": true,
+        "ani": "hdt-ani-tada is--infinite",
+        "time": 6,
+        "btn_transform": "hdt-uppercase",
+        "btn_style": "",
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 1,
+        "fullwidth": false,
+        "padding_top": 30,
+        "padding_bottom": 60,
+        "padding_rate": 75
+      }
+    },
+    "custom_liquid_jYRmxp": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<style>\n.jdgm-rev-widg .jdgm-star,\n.jdgm-revs-tab .jdgm-star,\n.jdgm-all-reviews .jdgm-star,\n.jdgm-gallery-popup .jdgm-star {\n  color: #f28535 !important;\n}\n.jdgm-widget {\n max-width: 1333px !important;\n}\n.jdgm-row-media {\nborder: none !important;\n}\n.jdgm-rev-widg__title {\ntext-align: right;\nfont-color: #000 !important;\nfont-size: 20px !important;\n}\n@media (min-width: 768px) {\n.jdgm-rev-widg__title {\nfont-size: 32px !important;\n}\n}\n@media (max-width: 767px) {\n.jdgm-rev-widg__reviews {\nborder: none !important;\n}\n.jdgm-rev {\npadding: 0px 5px !important;\n}\n}\n.jdgm-row-stars {\npadding: 16px;\nbackground-color: #F8F8F8 ;\nborder: 1px solid #E9ECEA ;\nborder-radius: 20px;\n}\n.jdgm-histogram__bar,\n.jdgm-histogram__bar-content {\nborder-radius: 10px !important;\n}\n.jdgm-rev__author-wrapper {\ndisplay: flex;\ngap: 5px;\n}\n.jdgm-rev__buyer-badge {\nbackground-color: #F0FAF4 !important;\ncolor: #17A78B !important;\nborder: 1px solid #BEE9CE !important;\nborder-radius: 10px !important;\npadding: 4px 8px !important;\n}\n.jdgm-widget-actions-wrapper a[role=\"button\"] {\nbackground-color: #FBFEFC;\n    color: #5AA04A;\n    border: 1px solid #5AA04A;\n    border-radius: 32px;\n}\n.jdgm-paginate {\ndisplay: flex;\njustify-content: center;\ngap: 8px;\nalign-items: center;\n}\n.jdgm-paginate a {\ndisplay: flex !important;\njustify-content: center !important;\nalign-items: center !important;\n}\n.jdgm-rev__author {\ncolor: #2E3430 !important;\n}\n.jdgm-rev__timestamp,\n.jdgm-rev__body {\ncolor: #536359 !important;\n}\n.jdgm-rev__icon {\n display: none !important; \n}\n .jdgm-rev,\n.jdgm-row-actions,\n.jdgm-paginate {\n  border-top: none !important;\n}\n.jdgm-rev.jdgm-divider-top.jdgm--done-setup {\n border-bottom: 1px solid #E9ECEA; padding-left: 20px; padding-right: 20px; \n}\n.jdgm-rev-widg__reviews { \nborder: 1px solid #E9ECEA; border-radius: 24px; \n}\n.jdgm-rev.jdgm-divider-top.jdgm--done-setup:last-of-type {\n border: none !important; \n}\n.jdgm-row-rating {\n display: flex; flex-direction: column;\n}\n.jdgm-medals-wrapper {\n display: none !important; \n}\n.jdgm-rev__header {\nmargin: 10px 0 !important;\n}\n.hdt-ratio--contain .hdt-ratio > img,\n.hdt-object-contain {\n  border-radius: 15px;\n  object-fit: cover;\n}\nhtml,\nbody {\n  overflow-x: hidden;\n}\ndiv#shopify-section-template--18890923704511__custom_section_X4HNfD {\n  background: linear-gradient(180deg, #267948 0%, #529a4a 100%);\n}\ndiv#shopify-section-template--18890923704511__custom_section_qMLTB9 {\n  background: #529a4a;\n}\n#product-form-template--18890923704511__main-product8208861790399\n  .hdt-product-form__buttons\n  .hdt-product-form__submit {\n  background: #2f854e;\n  border-color: #2f854e;\n}\n#product-form-template--18890923704511__main-product8208861790399\n  > hdt-buy-buttons\n  > div.shopify-payment-button\n  > shopify-accelerated-checkout\n  > shopify-buy-it-now-button\n  > button {\n  background: #17a78b !important;\n}\n.hdt-product-info__item.hdt-product__buy-button:first-child {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  background: #fff;\n  margin: 0;\n  padding: 10px 5px;\n}\n.hdt-product-info__item.hdt-product__buy-button:first-of-type {\n  position: relative !important;\n  padding: 15px;\n  border: 1px solid var(--Semantic-Border-Gray, #e9ecea);\n}\ndiv:has(div > div > [href=\"https://wa.me/96569333051\"]) {\n  bottom: 175px !important;\n}\n@media screen and (max-width: 768px) {\n  .hdt-product-info__item.hdt-product__buy-button {\n    bottom: 60px;\n  }\n\n  .hdt-flex {\n    display: flex;\n    justify-content: center;\n  }\n\n  div:has(div > div > [href=\"https://wa.me/96569333051\"]) {\n    bottom: 235px !important;\n  }\n\n  footer {\n    padding-bottom: 130px;\n  }\n}\n.hdt-btn-atc_text,\n.shopify-payment-button__button {\n  font-size: 20px;\n}\n.shopify-payment-button__button--unbranded {\n  padding: 0;\n}\n.hdt-sticky-atc__product-monney .cvc-money {\n  font-size: 24px !important;\n  font-weight: 600;\n  color: #000;\n}\n@media (min-width: 768px) {\n  .hdt-sticky-atc__product-monney .cvc-money {\n    font-size: 28px !important;\n    font-weight: 600;\n    color: #000;\n  }\n.hdt-quantity-wrapp input {\nfont-size: 24px !important;\n}\n}\n.hdt-quantity-wrapp {\nheight: 46px !important;\ndisplay: flex !important;\nalign-items: center !important;\njustify-content: center !important;\nfont-size: 30px !important;\n}\n.hdt-quantity-wrapp button {\nmargin-top: 3px;\n}\n.hdt-quantity-wrapp input {\nfont-size: 20px !important;\n}\n</style>",
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
+    "custom_liquid_xtRwpR": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<style>\n.hdt-card-product__btn-ultra {\n  position: absolute !important;\n  bottom: 0px !important;\n  left: 5px !important;\n  background-color: #2F854E !important;\n  color: white !important;\n\n}\nbutton.hdt-slider__button {\nbackground-color: white !important;\nborder: 1.14px solid #EDEDED !important;\n}\nbutton.hdt-slider__button svg {\ncolor: #262626 !important;\nwidth: 7px !important; \n}\n@media (min-width: 768px) { \n  .hdt-row-grid {\n    display: grid;\n    grid-template-columns: 28.3% 39.6% 27.1%;\n  }\n\n  .hdt-card-product__btn-ultra {\n    bottom: -10px !important;\n    left: 10px !important;\n  }\n}\n\n.hdt-pr-style2:not(:hover) .hdt-product-btns {\n  opacity: 1 !important;\n}\n</style>",
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
+    "custom_liquid_C8Em6y": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<style>\n.hdt-ratio--contain .hdt-ratio > img,\n    .hdt-object-contain {\n      border-radius: 12px !important;\n    }\n.is-thumb-selected .hdt-ratio {\n        outline: 3px solid #5AA04A;\n        border-radius: 12px;\n      }\n.hdt-slider__viewport:has(.hdt-slider__container > .is-thumb-selected) {\n      overflow: visible;\n    }\nhdt-slider-thumb:not([stagger]) .hdt-thumbnail__media:not(.is-thumb-selected),\nhdt-slider-thumb.stagger-finished .hdt-thumbnail__media:not(.is-thumb-selected) {\n  opacity: 1 !important;\n}\n.hdt-product__title h2 {\n  font-size: 22px !important;\n  line-height: 32px;}\n.hdt-product__media img {\n    border: 1px solid #E9ECEA !important;\n    border-radius: 24px !important;\n}\n@media (min-width: 768px) {\n.hdt-product__title h2 {\n  font-size: 24px !important;\n  line-height: 36px;\n}\n</style>",
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
+    "custom_section_qMLTB9": {
+      "type": "custom-section",
+      "blocks": {
+        "text_mECCLY": {
+          "type": "text",
+          "name": "t:blocks.text.name",
+          "settings": {
+            "text": "<h2>المميزات</h2>",
+            "hidden_br_mobile": false,
+            "hidden_on_mobile": false,
+            "ffamily": "",
+            "text_size": "2xl",
+            "line_height": "",
+            "font_weight": "semibold",
+            "text_color": "hdt-s-text",
+            "countdown": "2025-12-30 15:00:00",
+            "txt_day": "days",
+            "font_size_text_lg": 16,
+            "font_size_text": 14,
+            "letter_spacing_text": 0
+          },
+          "blocks": {}
+        },
+        "multi_column_U6YiDW": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "6",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_KFDgY8": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>فاتح للشهية</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_hWdGLj": {
+              "type": "text",
+              "settings": {
+                "text": "<p>يساعد على تحفيز الشهية بفضل محتواه من الإنزيمات والأحماض الأمينية والفيتامينات.</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_KFDgY8",
+            "text_hWdGLj"
+          ]
+        },
+        "multi_column_UKC4BM": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "6",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_yGLXkV": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>غني بالسعرات الحرارية</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_R3HEUa": {
+              "type": "text",
+              "settings": {
+                "text": "<p>يحتوي على بروتينات، سكريات طبيعية، ودهون صحية تساهم في زيادة الطاقة والوزن عند تناوله بانتظام</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_yGLXkV",
+            "text_R3HEUa"
+          ]
+        },
+        "multi_column_xVK83e": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "6",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_amKpwM": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>تحسين الامتصاص الغذائي</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_YxBH88": {
+              "type": "text",
+              "settings": {
+                "text": "<p>يعزز امتصاص العناصر الغذائية من الأطعمة الأخرى، مما يدعم الجسم في الاستفادة من الطعام لزيادة الوزن.</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_amKpwM",
+            "text_YxBH88"
+          ]
+        },
+        "multi_column_6agYtF": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "6",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_Ynfi3V": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>تعزيز المناعة</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_M3MQRr": {
+              "type": "text",
+              "settings": {
+                "text": "<p>يحسّن الصحة العامة، وبالتالي يُمكّن الجسم من الاستفادة من الغذاء بشكل أفضل</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_Ynfi3V",
+            "text_M3MQRr"
+          ]
+        }
+      },
+      "block_order": [
+        "text_mECCLY",
+        "multi_column_U6YiDW",
+        "multi_column_UKC4BM",
+        "multi_column_xVK83e",
+        "multi_column_6agYtF"
+      ],
+      "custom_css": [
+        "@media (min-width: 768px) {.hdt-grid-system {padding: 32px 0px; } h2 {font-size: 32px; color: #fff; line-height: 1.4; }}",
+        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 0px; } h2 {font-size: 24px; color: #fff; line-height: 1.4; }}",
+        ".hdt-s-gradient {background: linear-gradient(180deg, #267948 0%, #529a4a 100%);}",
+        ".hdt-column {padding: 10px 15px; border-radius: 10px; background: #edfcf1;}",
+        "h3 {color: #2f854e; font-size: 16px; font-weight: 500;}",
+        "p {margin-top: 5px; font-size: 13px; color: #75a02c;}"
+      ],
+      "name": "Text column with image",
+      "settings": {
+        "layout": "12",
+        "item_spacing": 16,
+        "item_spacing_tb": 16,
+        "item_spacing_mb": 16,
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "wrapper_container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
+    "tabs": {
+      "type": "main-product-tabs",
+      "blocks": {
+        "tab_des_tKqkJj": {
+          "type": "tab_des",
+          "settings": {
+            "title": "الوصف"
+          }
+        },
+        "tab_add_HXf3yk": {
+          "type": "tab_add",
+          "settings": {
+            "title": "Additional Information"
+          }
+        }
+      },
+      "block_order": [
+        "tab_des_tKqkJj",
+        "tab_add_HXf3yk"
+      ],
+      "disabled": true,
+      "settings": {
+        "tabs_design": "tab",
+        "enable_first_tab": false,
+        "full_width": false,
+        "colors_by_section": true,
+        "color_scheme": "scheme-1",
+        "background_opacity": 1,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_rate": 50
+      }
+    },
+    "sidebar": {
+      "type": "sidebar-product",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "space": 50
+      }
+    },
+    "recently-products": {
+      "type": "recently-products",
+      "blocks": {
+        "pr-heading": {
+          "type": "section-heading",
+          "static": true,
+          "settings": {
+            "design_heading": "1",
+            "horizontal": false,
+            "alignment": "center",
+            "heading_gap": 18,
+            "margin_bottom": 30
+          },
+          "blocks": {
+            "heading_section_JdADpx": {
+              "type": "_heading_section",
+              "settings": {
+                "heading": "Recently viewed products",
+                "line_height": "",
+                "heading_size": "h4",
+                "text_color": "hdt-s-text"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_section_JdADpx"
+          ]
+        }
+      },
+      "disabled": true,
+      "settings": {
+        "product_des": "1",
+        "image_ratio": "portrait",
+        "image_size": true,
+        "show_vendor": false,
+        "pr_border": "none",
+        "limit": 10,
+        "col_dk": "4",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_items": "x",
+        "loop": false,
+        "autoplay": 0,
+        "pauseOnHover": false,
+        "navUI": true,
+        "nav_position": "default",
+        "nav_visible": "hover",
+        "nav_style": "default",
+        "nav_shape": "rounded",
+        "nav_size": "small",
+        "nav_hide_mobile": false,
+        "dotUI": false,
+        "pag_style": "default",
+        "pag_rounded": false,
+        "pag_space": 10,
+        "pag_mgt": 10,
+        "only_show_mobile": false,
+        "pag_hide_mobile": false,
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "padding_rate": 80
+      }
+    },
+    "175672037518982b98": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_UwcJfV": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_UwcJfV"
+      ],
+      "custom_css": [],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "video_slider_NNkhb4": {
+      "type": "video-slider",
+      "blocks": {
+        "video_8KMYzh": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/٢.mp4",
+            "description": "بسبوسة لذيذة",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_wkTQxG": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/سارة هاشم- نور فودز edited.mov",
+            "description": "بسبوسة لذيذة",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_FeNckE": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/1.MP4",
+            "description": "بسبوسة لذيذة",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_7BLTP6": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/فارس-نور فودز ستوري1.mp4",
+            "description": "بسبوسة لذيذة",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_h7TXz6": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/١.mp4",
+            "description": "بسبوسة لذيذة",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_aUnHpy": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/سارة1- نور فودز.mp4",
+            "description": "بسبوسة لذيذة",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_hWfifR": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/هدى- نور فودز.mp4",
+            "description": "بسبوسة لذيذة",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_NAgUAz": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/ابراهيم- نور فودز .MP4",
+            "description": "بسبوسة لذيذة",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_8KMYzh",
+        "video_wkTQxG",
+        "video_FeNckE",
+        "video_7BLTP6",
+        "video_h7TXz6",
+        "video_aUnHpy",
+        "video_hWfifR",
+        "video_NAgUAz"
+      ],
+      "name": "Video carousel",
+      "settings": {
+        "slide_width": 300,
+        "image_crop": "none",
+        "aspect_ratio": "9:16",
+        "autoplay": 0,
+        "gap": 10,
+        "heading": "تجاربكم",
+        "heading_alignment": "right",
+        "heading_color": "#287141",
+        "show_arrows": false,
+        "text_size": 100,
+        "text_alignment": "left",
+        "text_color": "#121212",
+        "border_color": "#121212",
+        "background_color": "linear-gradient(270deg, rgba(168, 211, 94, 1), rgba(168, 211, 94, 1) 100%)",
+        "play_icon_image": "shopify://shop_images/Group_31.png",
+        "border_radius": 10,
+        "base_width": 100,
+        "max_width": "",
+        "inner_padding": 40,
+        "outer_margin": 0,
+        "custom_css": "",
+        "mobile_custom_css": "",
+        "anchor_id": "",
+        "override_theme_font": false,
+        "heading_font": "serif",
+        "main_font": "system_ui_n4"
+      }
+    },
+    "175992648168a81ef0": {
+      "type": "_blocks",
+      "blocks": {
+        "heading_CWfiTP": {
+          "type": "heading",
+          "name": "t:blocks.heading.name",
+          "settings": {
+            "heading": "<h2>تجاربكم</h2>",
+            "hidden_br_mobile": false,
+            "hidden_on_mobile": false,
+            "line_height": "",
+            "font_weight": "normal",
+            "heading_size": "h3",
+            "text_color": "hdt-s-text",
+            "font_size_heading_lg": 50,
+            "font_size_heading": 24,
+            "letter_spacing_heading": 0
+          },
+          "blocks": {}
+        },
+        "spacer_KFHmAJ": {
+          "type": "spacer",
+          "name": "t:blocks.spacer.name",
+          "settings": {
+            "direction": false,
+            "space_lg": 20,
+            "space_md": 20,
+            "space": 20
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_071685b_er7r6c": {
+          "type": "ai_gen_block_071685b",
+          "settings": {
+            "layout_mode": "carousel",
+            "section_background_color": "#ffffff",
+            "enable_infinite_scroll": true,
+            "pause_on_hover": true,
+            "scroll_speed": 50,
+            "desktop_items": 4,
+            "tablet_items": 3,
+            "mobile_items": 2,
+            "total_items": 6,
+            "item_height": 440,
+            "preview_width": 300,
+            "overlay_gradient": "linear-gradient(360deg, rgba(55, 55, 55, 1), rgba(33, 94, 55, 0) 36.32%)",
+            "custom_play_icon": "shopify://shop_images/Group_31.png",
+            "description_position_horizontal": "right",
+            "description_position_vertical": "bottom",
+            "video_1": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "preview_image_1": "shopify://shop_images/image_5.png",
+            "description_1": "بسبوسة لذيذة",
+            "video_2": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "preview_image_2": "shopify://shop_images/image_5.png",
+            "description_2": "بسبوسة لذيذة",
+            "video_3": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "preview_image_3": "shopify://shop_images/image_5.png",
+            "description_3": "بسبوسة لذيذة",
+            "video_4": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "preview_image_4": "shopify://shop_images/image_5.png",
+            "description_4": "بسبوسة لذيذة",
+            "video_5": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "preview_image_5": "shopify://shop_images/image_5.png",
+            "description_5": "بسبوسة لذيذة",
+            "video_6": "shopify://files/videos/ssstik.io_@nourorganicfoods_1759928693526.mp4",
+            "preview_image_6": "shopify://shop_images/image_5.png",
+            "description_6": "بسبوسة لذيذة",
+            "description_7": "",
+            "description_8": "",
+            "description_9": "",
+            "description_10": "",
+            "description_11": "",
+            "description_12": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading_CWfiTP",
+        "spacer_KFHmAJ",
+        "ai_gen_block_071685b_er7r6c"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "{background: #a8d35e; margin-top: 30px; padding: 50px 10px; width: 100%;}",
+        ".ai-video-play-icon-abhbzthhmmm9xsm9bzaigenblock071685ber7r6c {background: rgb(255 255 255 / 0%);}",
+        ".ai-video-play-icon-abhbzthhmmm9xsm9bzaigenblock071685ber7r6c img {width: 50px; height: 50px;}",
+        ".ai-video-controls-abhbzthhmmm9xsm9bzaigenblock071685ber7r6c {display: none;}"
+      ],
+      "settings": {}
+    },
+    "related-products": {
+      "type": "related-products",
+      "blocks": {
+        "pr-heading": {
+          "type": "section-heading",
+          "static": true,
+          "settings": {
+            "design_heading": "1",
+            "horizontal": false,
+            "alignment": "left",
+            "heading_gap": 18,
+            "margin_bottom": 30
+          },
+          "blocks": {
+            "heading_section_nLFWkr": {
+              "type": "_heading_section",
+              "settings": {
+                "heading": "منتجات مشابهة",
+                "line_height": "",
+                "heading_size": "h4",
+                "text_color": "hdt-s-text"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_section_nLFWkr"
+          ]
+        }
+      },
+      "settings": {
+        "product_des": "2",
+        "image_ratio": "portrait",
+        "image_size": false,
+        "show_vendor": false,
+        "pr_border": "none",
+        "limit": 6,
+        "col_dk": "4",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_items": "x",
+        "loop": true,
+        "autoplay": 0,
+        "pauseOnHover": true,
+        "navUI": true,
+        "nav_position": "default",
+        "nav_visible": "hover",
+        "nav_style": "default",
+        "nav_shape": "rounded",
+        "nav_size": "small",
+        "nav_hide_mobile": true,
+        "dotUI": false,
+        "pag_style": "default",
+        "pag_rounded": false,
+        "pag_space": 10,
+        "pag_mgt": 10,
+        "only_show_mobile": false,
+        "pag_hide_mobile": false,
+        "colors_by_section": false,
+        "color_scheme": "scheme-23cf8966-8e57-4acd-9bb3-bb85f222fbb9",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 75,
+        "padding_bottom": 75,
+        "padding_rate": 50
+      }
+    },
+    "featured_collection_Ldhf8P": {
+      "type": "featured-collection",
+      "blocks": {
+        "product_carousel_EzxMqn": {
+          "type": "_product-carousel",
+          "name": "t:blocks.product_carousel.name",
+          "settings": {
+            "collection": "الأكثر-طلبا",
+            "products_count": 8,
+            "product_list": [],
+            "pr_border": "none",
+            "product_des": "2",
+            "image_ratio": "portrait",
+            "image_size": false,
+            "show_vendor": false,
+            "col_dk": "4",
+            "col_tb": "3",
+            "col_mb": "2",
+            "space_items": "x",
+            "pagination": false,
+            "paginate_pos": "center",
+            "dis_pagination": 30,
+            "btn_label": "",
+            "btn_style": "",
+            "icon": "none",
+            "size": "m",
+            "btn_fw": "medium",
+            "font_size_btn": 14,
+            "padding_btn": 30,
+            "min_width_btn": 100,
+            "min_width_dt_btn": 100,
+            "min_height_btn": 40,
+            "loop": true,
+            "autoplay": 0,
+            "pauseOnHover": true,
+            "navUI": false,
+            "nav_position": "default",
+            "nav_visible": "always",
+            "nav_style": "default",
+            "nav_shape": "default",
+            "nav_size": "small",
+            "nav_hide_mobile": false,
+            "dotUI": false,
+            "pag_style": "default",
+            "pag_rounded": true,
+            "pag_space": 10,
+            "pag_mgt": 10,
+            "only_show_mobile": false,
+            "pag_hide_mobile": false
+          },
+          "blocks": {}
+        },
+        "pr-heading": {
+          "type": "section-heading",
+          "static": true,
+          "settings": {
+            "design_heading": "1",
+            "horizontal": false,
+            "alignment": "left",
+            "heading_gap": 0,
+            "margin_bottom": 30
+          },
+          "blocks": {
+            "heading_section_LYi4xE": {
+              "type": "_heading_section",
+              "settings": {
+                "heading": "منتجات الاكثر مبيعا",
+                "line_height": "",
+                "heading_size": "h4",
+                "text_color": "hdt-s-text"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_section_LYi4xE"
+          ]
+        }
+      },
+      "block_order": [
+        "product_carousel_EzxMqn"
+      ],
+      "custom_css": [
+        ".hdt-container-heading {padding: 0 !important;}",
+        ".hdt-container {padding-bottom: 24px;}"
+      ],
+      "name": "t:sections.collection_products.name",
+      "settings": {
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 24,
+        "padding_rate": 50
+      }
+    },
+    "custom_liquid_Tx6an9": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<style>\n.jdgm-rev-widg .jdgm-star, .jdgm-revs-tab .jdgm-star, .jdgm-all-reviews .jdgm-star, .jdgm-gallery-popup .jdgm-star {\n    color: #f28535 !important;\n}\n.hdt-ratio--contain .hdt-ratio>img, .hdt-object-contain {\n    border-radius: 15px;\n    object-fit: cover;\n}\nhtml, body {\n    overflow-x: hidden;\n}\ndiv#shopify-section-template--18890923704511__custom_section_X4HNfD{\n    background: linear-gradient(180deg, #267948 0%, #529a4a 100%);\n}\ndiv#shopify-section-template--18890923704511__custom_section_qMLTB9 {\n    background: #529A4A;\n}\n#product-form-template--18890923704511__main-product8208861790399 .hdt-product-form__buttons .hdt-product-form__submit {\n    background: #2f854e;\n    border-color: #2f854e;\n}\n#product-form-template--18890923704511__main-product8208861790399 > hdt-buy-buttons > div.shopify-payment-button > shopify-accelerated-checkout > shopify-buy-it-now-button > button {\n    background: #17a78b !important;\n}\n.hdt-product-info__item.hdt-product__buy-button {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  background: #fff;\n  margin: 0;\n  padding: 10px 5px;\n}\n.hdt-product-info__item.hdt-product__buy-button:nth-child(7) {\n    position: relative;\n    padding: 15px;\n    border: 1px solid var(--Semantic-Border-Gray, #E9ECEA);\n}\n#product-info-template--18890923704511__main-product > div.hdt-product-info__item.hdt-product__extra-link a {\n    display: flex\n;\n    flex-direction: row;\n    flex-wrap: nowrap;\n    align-items: center;\n    opacity: 1;\n    padding-top: 8px;\n    padding-right: 12px;\n    padding-bottom: 8px;\n    padding-left: 12px;\n    border-radius: 8px;\n    background: var(--Semantic-Bg-Grey-Light, #F7F8F7);\n    width: 95%;\n    justify-content: space-between;\n}\n#product-info-template--18890923704511__main-product > div.hdt-product-info__item.hdt-product__extra-link a:after {\n    content: \"\";\n    height: 12px;\n    background: url(https://cdn.shopify.com/s/files/1/0675/4176/2239/files/Vector_1.png?v=1759911105) no-repeat center;\n    width: 20px;\n    display: inline-block;\n    background-size: contain;\n    margin-top: -2.5px;\n}\ndiv:has(div > div > [href=\"https://wa.me/96569333051\"]) {\n    bottom: 175px !important;\n}\n@media screen and (max-width: 768px) {\n  .hdt-product-info__item.hdt-product__buy-button {\n    bottom: 60px;\n  }\n  .hdt-flex {\n    display: flex;\n    justify-content: center;\n  }\n  div:has(div > div > [href=\"https://wa.me/96569333051\"])\n  {\n    bottom: 235px !important;\n  }\n  footer {\n  padding-bottom: 130px;\n}\n}\n</style>",
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    }
+  },
+  "order": [
+    "breadcrumb",
+    "main-product",
+    "custom_liquid_jYRmxp",
+    "custom_liquid_xtRwpR",
+    "custom_liquid_C8Em6y",
+    "custom_section_qMLTB9",
+    "tabs",
+    "sidebar",
+    "recently-products",
+    "175672037518982b98",
+    "video_slider_NNkhb4",
+    "175992648168a81ef0",
+    "related-products",
+    "featured_collection_Ldhf8P",
+    "custom_liquid_Tx6an9"
+  ]
+}

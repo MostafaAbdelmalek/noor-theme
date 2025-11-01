@@ -437,7 +437,7 @@
   "platform_customizations": {
     "custom_css": [
       ".hdt-product-info__item.hdt-product__buy-button {position: fixed; bottom: 0; left: 0; background: #fff; margin: 0; padding: 10px 5px; z-index: 999;}",
-      ".hdt-product-btns.hdt-pr-btns-group1,.hdt-product-btns.hdt-pr-btns-group1 a,.hdt-product-btns.hdt-pr-btns-group1 .hdt-align-center,.hdt-product-btns.hdt-pr-btns-group1 .hdt-product-form,{width: -webkit-fill-available !important;}",
+      ".hdt-product-btns.hdt-pr-btns-group1,.hdt-product-btns.hdt-pr-btns-group1 a,.hdt-product-btns.hdt-pr-btns-group1 .hdt-align-center,.hdt-product-btns.hdt-pr-btns-group1 .hdt-product-form {width: -webkit-fill-available !important;}",
       ".hdt-card-product__title {height: 43px;}",
       "a.hdt-view-all-btn.hdt-btn.hdt-oh.hdt-inline-flex.hdt-align-center.hdt-justify-center.hdt-relative.hdt-btn-hdt-btn-accent.hdt-btn--size-xl.hdt-font-semibold,a.hdt-view-all-btn.hdt-btn.hdt-oh.hdt-inline-flex.hdt-align-center.hdt-justify-center.hdt-relative.hdt-btn-hdt-btn-outline-hover-accent.hdt-btn--size-xl.hdt-font-semibold {background: #45774c; border-color: #45774c;}",
       ".hdt-product-form__buttons .hdt-product-form__submit {background: green; border-color: green;}",
