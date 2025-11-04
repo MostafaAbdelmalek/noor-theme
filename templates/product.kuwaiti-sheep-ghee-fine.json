@@ -11,6 +11,7 @@
   "sections": {
     "breadcrumb": {
       "type": "brc-nav-product",
+      "disabled": true,
       "settings": {
         "back_next_pr": true,
         "colors_by_section": true,
@@ -32,6 +33,58 @@
             "color_scheme": ""
           },
           "blocks": {
+            "judge_me_reviews_preview_badge_9b8wx7": {
+              "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+              "settings": {}
+            },
+            "product_extra_link_JNnUBD": {
+              "type": "_product-extra-link",
+              "name": "t:sections.main-product.blocks.extra_link.name",
+              "settings": {},
+              "blocks": {
+                "product_link_custom_pqFxQg": {
+                  "type": "_product-link-custom",
+                  "name": "t:sections.main-product.blocks.extra_link.link_custom.name",
+                  "settings": {
+                    "label": "{{ closest.product.metafields.custom.among_the.value }}",
+                    "url": "{{ closest.product.metafields.custom.among_the_link.value }}",
+                    "open_in_new_tab": false
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_link_custom_pqFxQg"
+              ]
+            },
+            "product_meta_hnDEjn": {
+              "type": "_product-meta",
+              "settings": {},
+              "blocks": {
+                "product_meta_sku_kXHJPJ": {
+                  "type": "_product-meta-sku",
+                  "disabled": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "product_meta_category_4Gq4HK": {
+                  "type": "_product-meta-category",
+                  "disabled": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "product_meta_tags_bePDzg": {
+                  "type": "_product-meta-tags",
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "product_meta_sku_kXHJPJ",
+                "product_meta_category_4Gq4HK",
+                "product_meta_tags_bePDzg"
+              ]
+            },
             "product_title_ehRqkq": {
               "type": "_product-title",
               "settings": {
@@ -46,20 +99,11 @@
               },
               "blocks": {}
             },
-            "judge_me_reviews_preview_badge_9b8wx7": {
-              "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-              "settings": {}
-            },
-            "product_price_9JizTC": {
-              "type": "_product-price",
-              "settings": {},
-              "blocks": {}
-            },
             "product_description_AJaqwJ": {
               "type": "_product-description",
               "settings": {
                 "des_mode": "2",
-                "short_des": "",
+                "short_des": "<p>نقدم لك زبدة بقري طبيعي من نور أورقانيك فود الخيار المثالي، حيثُ إنها خالية تمامًا من الهرمونات والمضادات الحيوية، ولقد تمت تنقيتها بعناية فائقة لتحصل على منتج صحي مثالي للطهي، القلي، والتحمير، لتمنح أطباقك نكهة غنية وفوائد غذائية عالية.</p>",
                 "readm": false,
                 "length": 31,
                 "readm_txt": "Read more",
@@ -67,15 +111,39 @@
               },
               "blocks": {}
             },
-            "product_buy_button_aPmAbD": {
+            "product_price_9JizTC": {
+              "type": "_product-price",
+              "settings": {},
+              "blocks": {}
+            },
+            "product_buy_button_yxMTt7": {
               "type": "_product-buy-button",
+              "name": "t:sections.main-product.blocks.buy_buttons.name",
+              "disabled": true,
               "settings": {
                 "show_quantity_selector": true,
                 "show_dynamic_checkout": true,
                 "show_gift_card_recipient": true,
                 "show_wishlist": true,
-                "show_compare": true,
-                "ani": "hdt-ani-tada is--infinite",
+                "show_compare": false,
+                "ani": "none",
+                "time": 6,
+                "btn_transform": "hdt-uppercase",
+                "btn_style": "",
+                "btn_fullwidth": false
+              },
+              "blocks": {}
+            },
+            "product_buy_button_3A7FcG": {
+              "type": "_product-buy-button",
+              "name": "t:sections.main-product.blocks.buy_buttons.name",
+              "settings": {
+                "show_quantity_selector": true,
+                "show_dynamic_checkout": true,
+                "show_gift_card_recipient": true,
+                "show_wishlist": true,
+                "show_compare": false,
+                "ani": "hdt-ani-bounce is--infinite",
                 "time": 6,
                 "btn_transform": "hdt-uppercase",
                 "btn_style": "",
@@ -128,34 +196,9 @@
                 "product_ask_question_nWC4pL"
               ]
             },
-            "product_meta_hnDEjn": {
-              "type": "_product-meta",
-              "settings": {},
-              "blocks": {
-                "product_meta_sku_kXHJPJ": {
-                  "type": "_product-meta-sku",
-                  "settings": {},
-                  "blocks": {}
-                },
-                "product_meta_category_4Gq4HK": {
-                  "type": "_product-meta-category",
-                  "settings": {},
-                  "blocks": {}
-                },
-                "product_meta_tags_bePDzg": {
-                  "type": "_product-meta-tags",
-                  "settings": {},
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "product_meta_sku_kXHJPJ",
-                "product_meta_category_4Gq4HK",
-                "product_meta_tags_bePDzg"
-              ]
-            },
             "socials_XYJPwj": {
               "type": "socials",
+              "disabled": true,
               "settings": {
                 "type": "follow",
                 "share_facebook": false,
@@ -174,24 +217,90 @@
             }
           },
           "block_order": [
-            "product_title_ehRqkq",
             "judge_me_reviews_preview_badge_9b8wx7",
-            "product_price_9JizTC",
+            "product_extra_link_JNnUBD",
+            "product_meta_hnDEjn",
+            "product_title_ehRqkq",
             "product_description_AJaqwJ",
-            "product_buy_button_aPmAbD",
+            "product_price_9JizTC",
+            "product_buy_button_yxMTt7",
+            "product_buy_button_3A7FcG",
             "product_variant_picker_WMmDTM",
             "quantity_selector_tarLcL",
             "product_trust_badge_QALnxQ",
             "product_extra_link_HfDmDV",
-            "product_meta_hnDEjn",
             "socials_XYJPwj"
           ]
+        },
+        "components_zpmzDL": {
+          "type": "components",
+          "name": "Components",
+          "disabled": true,
+          "settings": {
+            "background_color": "#f0faf4",
+            "border_color": "#bee9ce",
+            "border_width": 1,
+            "border_radius": 12,
+            "padding": 16,
+            "gap": 16,
+            "title": "المكونات",
+            "title_color": "#2f854e",
+            "title_size": 20,
+            "title_weight": "600",
+            "title_alignment": "right",
+            "image_size": 80,
+            "image_radius": 50,
+            "item_text_color": "#2f854e",
+            "item_text_size": 16,
+            "item_text_weight": "600",
+            "item_text_alignment": "center",
+            "item_1_enabled": true,
+            "item_1_image": "shopify://shop_images/Frame_1000003072_17.png",
+            "item_1_text": "عظام بقر",
+            "item_2_enabled": true,
+            "item_2_image": "shopify://shop_images/Frame_1000003072_16.png",
+            "item_2_text": "ماء",
+            "item_3_enabled": true,
+            "item_3_image": "shopify://shop_images/Frame_1000003072_18.png",
+            "item_3_text": "نخاع بقر",
+            "item_4_enabled": false,
+            "item_4_text": "",
+            "item_5_enabled": false,
+            "item_5_text": "",
+            "item_6_enabled": false,
+            "item_6_text": "Item 6",
+            "item_7_enabled": false,
+            "item_7_text": "Item 7",
+            "item_8_enabled": false,
+            "item_8_text": "Item 8",
+            "item_9_enabled": false,
+            "item_9_text": "Item 9",
+            "item_10_enabled": false,
+            "item_10_text": "Item 10",
+            "item_11_enabled": false,
+            "item_11_text": "Item 11",
+            "item_12_enabled": false,
+            "item_12_text": "Item 12",
+            "item_13_enabled": false,
+            "item_13_text": "Item 13",
+            "item_14_enabled": false,
+            "item_14_text": "Item 14",
+            "item_15_enabled": false,
+            "item_15_text": "Item 15",
+            "item_16_enabled": false,
+            "item_16_text": "Item 16",
+            "item_17_enabled": false,
+            "item_17_text": "Item 17",
+            "item_18_enabled": false,
+            "item_18_text": "Item 18"
+          },
+          "blocks": {}
         },
         "main-product-medias": {
           "type": "_product-medias",
           "static": true,
           "settings": {
-            "desktop_media_layout": "thumbnail_left",
+            "desktop_media_layout": "thumbnail_bottom",
             "media_size": "medium",
             "mobile_media_layout": "thumbnails",
             "show_first_media": false,
@@ -199,15 +308,15 @@
             "enable_media_autoplay": false,
             "enable_video_looping": false,
             "enable_thumb_efect": true,
-            "image_ratio": "square",
+            "image_ratio": "adapt_image",
             "image_size": false,
-            "image_zoom": "zoom",
+            "image_zoom": "no",
             "image_zoom_type": "external",
             "zoom_level": 2,
             "max_zoom_lightbox": 3,
             "navUI": true,
             "nav_style": "default",
-            "nav_shape": "default",
+            "nav_shape": "rounded",
             "nav_size": "small",
             "nav_hide_mobile": true
           },
@@ -215,11 +324,22 @@
         }
       },
       "block_order": [
-        "group_product_9RYttB"
+        "group_product_9RYttB",
+        "components_zpmzDL"
+      ],
+      "custom_css": [
+        ".hdt-product-form__submit,.hdt-sticky-atc__submit {background: #2f854e; border-color: #2f854e;}",
+        ".shopify-payment-button button,shopify-buy-it-now-button button {background: #17a78b !important;}",
+        ".hdt-product__buy-button {position: relative; padding: 15px; border: 1px solid var(--Semantic-Border-Gray, #e9ecea);}",
+        ".hdt-product-form__top-buttons {flex-wrap: nowrap;}",
+        ".hdt-quantity-wrapp @media screen and (max-width: 768px) {}",
+        ".cvc-money {font-size: 24px;}",
+        "@media (min-width: 768px) {.cvc-money {font-size: 28px; font-weight: 600; color: #000; }}"
       ],
       "settings": {
         "product_list_fbt": [],
-        "sticky_atc": false,
+        "layout_columns": "3",
+        "sticky_atc": true,
         "ani": "hdt-ani-tada is--infinite",
         "time": 6,
         "btn_transform": "hdt-uppercase",
@@ -227,10 +347,762 @@
         "colors_by_section": false,
         "color_scheme": "",
         "background_opacity": 1,
-        "fullwidth": true,
+        "fullwidth": false,
         "padding_top": 30,
         "padding_bottom": 60,
         "padding_rate": 75
+      }
+    },
+    "custom_liquid_jYRmxp": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<style>\n.jdgm-rev-widg .jdgm-star,\n.jdgm-revs-tab .jdgm-star,\n.jdgm-all-reviews .jdgm-star,\n.jdgm-gallery-popup .jdgm-star {\n  color: #f28535 !important;\n}\n.jdgm-row-media {\nborder: none !important;\n}\n.jdgm-rev-widg__title {\ntext-align: right;\nfont-color: #000 !important;\nfont-size: 20px !important;\n}\n@media (min-width: 768px) {\n.jdgm-rev-widg__title {\nfont-size: 32px !important;\n}\n}\n@media (max-width: 767px) {\n.jdgm-rev-widg__reviews {\nborder: none !important;\n}\n.jdgm-rev {\npadding: 0px 5px !important;\n}\n}\n.jdgm-row-stars {\npadding: 16px;\nbackground-color: #F8F8F8 ;\nborder: 1px solid #E9ECEA ;\nborder-radius: 20px;\n}\n.jdgm-histogram__bar,\n.jdgm-histogram__bar-content {\nborder-radius: 10px !important;\n}\n.jdgm-rev__author-wrapper {\ndisplay: flex;\ngap: 5px;\n}\n.jdgm-rev__buyer-badge {\nbackground-color: #F0FAF4 !important;\ncolor: #17A78B !important;\nborder: 1px solid #BEE9CE !important;\nborder-radius: 10px !important;\npadding: 4px 8px !important;\n}\n.jdgm-widget-actions-wrapper a[role=\"button\"] {\nbackground-color: #FBFEFC;\n    color: #5AA04A;\n    border: 1px solid #5AA04A;\n    border-radius: 32px;\n}\n.jdgm-paginate {\ndisplay: flex;\njustify-content: center;\ngap: 8px;\nalign-items: center;\n}\n.jdgm-paginate a {\ndisplay: flex !important;\njustify-content: center !important;\nalign-items: center !important;\n}\n.jdgm-rev__author {\ncolor: #2E3430 !important;\n}\n.jdgm-rev__timestamp,\n.jdgm-rev__body {\ncolor: #536359 !important;\n}\n.jdgm-rev__icon {\n display: none !important; \n}\n .jdgm-rev,\n.jdgm-row-actions,\n.jdgm-paginate {\n  border-top: none !important;\n}\n.jdgm-rev.jdgm-divider-top.jdgm--done-setup {\n border-bottom: 1px solid #E9ECEA; padding-left: 20px; padding-right: 20px; \n}\n.jdgm-rev-widg__reviews { \nborder: 1px solid #E9ECEA; border-radius: 24px; \n}\n.jdgm-rev.jdgm-divider-top.jdgm--done-setup:last-of-type {\n border: none !important; \n}\n.jdgm-row-rating {\n display: flex; flex-direction: column;\n}\n.jdgm-medals-wrapper {\n display: none !important; \n}\n.jdgm-rev__header {\nmargin: 10px 0 !important;\n}\n.hdt-ratio--contain .hdt-ratio > img,\n.hdt-object-contain {\n  border-radius: 15px;\n  object-fit: cover;\n}\nhtml,\nbody {\n  overflow-x: hidden;\n}\ndiv#shopify-section-template--18890923704511__custom_section_X4HNfD {\n  background: linear-gradient(180deg, #267948 0%, #529a4a 100%);\n}\ndiv#shopify-section-template--18890923704511__custom_section_qMLTB9 {\n  background: #529a4a;\n}\n#product-form-template--18890923704511__main-product8208861790399\n  .hdt-product-form__buttons\n  .hdt-product-form__submit {\n  background: #2f854e;\n  border-color: #2f854e;\n}\n#product-form-template--18890923704511__main-product8208861790399\n  > hdt-buy-buttons\n  > div.shopify-payment-button\n  > shopify-accelerated-checkout\n  > shopify-buy-it-now-button\n  > button {\n  background: #17a78b !important;\n}\n.hdt-product-info__item.hdt-product__buy-button:first-child {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  background: #fff;\n  margin: 0;\n  padding: 10px 5px;\n}\n.hdt-product-info__item.hdt-product__buy-button:first-of-type {\n  position: relative !important;\n  padding: 15px;\n  border: 1px solid var(--Semantic-Border-Gray, #e9ecea);\n}\ndiv:has(div > div > [href=\"https://wa.me/96569333051\"]) {\n  bottom: 175px !important;\n}\n@media screen and (max-width: 768px) {\n  .hdt-product-info__item.hdt-product__buy-button {\n    bottom: 60px;\n  }\n\n  .hdt-flex {\n    display: flex;\n    justify-content: center;\n  }\n\n  div:has(div > div > [href=\"https://wa.me/96569333051\"]) {\n    bottom: 235px !important;\n  }\n\n  footer {\n    padding-bottom: 130px;\n  }\n}\n.hdt-btn-atc_text,\n.shopify-payment-button__button {\n  font-size: 20px;\n}\n.shopify-payment-button__button--unbranded {\n  padding: 0;\n}\n.hdt-sticky-atc__product-monney .cvc-money {\n  font-size: 24px !important;\n  font-weight: 600;\n  color: #000;\n}\n@media (min-width: 768px) {\n  .hdt-sticky-atc__product-monney .cvc-money {\n    font-size: 28px !important;\n    font-weight: 600;\n    color: #000;\n  }\n.hdt-quantity-wrapp input {\nfont-size: 24px !important;\n}\n}\n.hdt-quantity-wrapp {\nheight: 46px !important;\ndisplay: flex !important;\nalign-items: center !important;\njustify-content: center !important;\nfont-size: 30px !important;\n}\n.hdt-quantity-wrapp button {\nmargin-top: 3px;\n}\n.hdt-quantity-wrapp input {\nfont-size: 20px !important;\n}\n</style>",
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
+    "custom_liquid_xtRwpR": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<style>\n.hdt-card-product__btn-ultra {\n  position: absolute !important;\n  bottom: 0px !important;\n  left: 5px !important;\n  background-color: #2F854E !important;\n  color: white !important;\n\n}\nbutton.hdt-slider__button {\nbackground-color: white !important;\nborder: 1.14px solid #EDEDED !important;\n}\nbutton.hdt-slider__button svg {\ncolor: #262626 !important;\nwidth: 7px !important; \n}\n@media (min-width: 768px) { \n  .hdt-row-grid {\n    display: grid;\n    grid-template-columns: 28.3% 39.6% 27.1%;\n  }\n\n  .hdt-card-product__btn-ultra {\n    bottom: -10px !important;\n    left: 10px !important;\n  }\n}\n\n.hdt-pr-style2:not(:hover) .hdt-product-btns {\n  opacity: 1 !important;\n}\n</style>",
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
+    "custom_liquid_C8Em6y": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<style>\n.hdt-ratio--contain .hdt-ratio > img,\n    .hdt-object-contain {\n      border-radius: 12px !important;\n    }\n.is-thumb-selected .hdt-ratio {\n        outline: 3px solid #5AA04A;\n        border-radius: 12px;\n      }\n.hdt-slider__viewport:has(.hdt-slider__container > .is-thumb-selected) {\n      overflow: visible;\n    }\nhdt-slider-thumb:not([stagger]) .hdt-thumbnail__media:not(.is-thumb-selected),\nhdt-slider-thumb.stagger-finished .hdt-thumbnail__media:not(.is-thumb-selected) {\n  opacity: 1 !important;\n}\n.hdt-product__title h2 {\n  font-size: 22px !important;\n  line-height: 32px;}\n@media (min-width: 768px) {\n.hdt-product__title h2 {\n  font-size: 24px !important;\n  line-height: 36px;\n}\n</style>",
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
+    "custom_section_Fjd8gE": {
+      "type": "custom-section",
+      "blocks": {
+        "multi_column_Qje3bM": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "3",
+            "column_tb": "4",
+            "column_mb": "6",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "media_nzhbCQ": {
+              "type": "_media",
+              "name": "t:blocks.media.name",
+              "settings": {
+                "source": "image",
+                "image": "shopify://shop_images/Frame.png",
+                "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+              },
+              "blocks": {}
+            },
+            "spacer_VpKJ3D": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 6,
+                "space_md": 6,
+                "space": 6
+              },
+              "blocks": {}
+            },
+            "heading_XtjcKi": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>500 جرام</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_8xfLWA": {
+              "type": "text",
+              "settings": {
+                "text": "<p>الحجم</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "media_nzhbCQ",
+            "spacer_VpKJ3D",
+            "heading_XtjcKi",
+            "text_8xfLWA"
+          ]
+        },
+        "multi_column_FxGrDN": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "3",
+            "column_tb": "4",
+            "column_mb": "6",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "media_QCEqxt": {
+              "type": "_media",
+              "name": "t:blocks.media.name",
+              "settings": {
+                "source": "image",
+                "image": "shopify://shop_images/Kuwait_Map_1.png",
+                "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+              },
+              "blocks": {}
+            },
+            "spacer_LqVdeF": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 6,
+                "space_md": 6,
+                "space": 6
+              },
+              "blocks": {}
+            },
+            "heading_t6gDTP": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>الكويت</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_YHz6Y4": {
+              "type": "text",
+              "settings": {
+                "text": "<p>بلد الإنتاج</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "media_QCEqxt",
+            "spacer_LqVdeF",
+            "heading_t6gDTP",
+            "text_YHz6Y4"
+          ]
+        },
+        "multi_column_TxPqY6": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "3",
+            "column_tb": "4",
+            "column_mb": "6",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "media_GFUtHJ": {
+              "type": "_media",
+              "name": "t:blocks.media.name",
+              "settings": {
+                "source": "image",
+                "image": "shopify://shop_images/Lamb_Side_View_1.png",
+                "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+              },
+              "blocks": {}
+            },
+            "spacer_TcTVB8": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 6,
+                "space_md": 6,
+                "space": 6
+              },
+              "blocks": {}
+            },
+            "heading_pTyUHM": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>إنتاج مرعى حر</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_3cCYtr": {
+              "type": "text",
+              "settings": {
+                "text": "<p>خالي من الهرمونات</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "media_GFUtHJ",
+            "spacer_TcTVB8",
+            "heading_pTyUHM",
+            "text_3cCYtr"
+          ]
+        },
+        "multi_column_kzPWYk": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "3",
+            "column_tb": "4",
+            "column_mb": "6",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "media_XHkchA": {
+              "type": "_media",
+              "name": "t:blocks.media.name",
+              "settings": {
+                "source": "image",
+                "image": "shopify://shop_images/natural-food.png",
+                "external_video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+              },
+              "blocks": {}
+            },
+            "spacer_KynENC": {
+              "type": "spacer",
+              "name": "t:blocks.spacer.name",
+              "settings": {
+                "direction": false,
+                "space_lg": 6,
+                "space_md": 6,
+                "space": 6
+              },
+              "blocks": {}
+            },
+            "heading_iWkAry": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h4>بديل مثالي</h4>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h_custom",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 24,
+                "font_size_heading": 20,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_K9fKr8": {
+              "type": "text",
+              "settings": {
+                "text": "<p>للدهون والزيوت المهدرجة</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "media_XHkchA",
+            "spacer_KynENC",
+            "heading_iWkAry",
+            "text_K9fKr8"
+          ]
+        }
+      },
+      "block_order": [
+        "multi_column_Qje3bM",
+        "multi_column_FxGrDN",
+        "multi_column_TxPqY6",
+        "multi_column_kzPWYk"
+      ],
+      "custom_css": [
+        "@media (min-width: 768px) {.hdt-grid-system {padding: 32px 0px; }}",
+        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 0px; }}",
+        "img.hdt-object-pos-mb.hdt-obj-eff {width: 30px; margin-bottom: 7px;}",
+        ".hdt-s-gradient {background: linear-gradient(180deg, #267948 0%, #529a4a 100%);}",
+        "h4 {font-size: 22px !important; font-weight: 600; color: #22603c;}",
+        ".hdt-rte p {color: #22603c; font-size: 14px;}",
+        ".hdt-column {border-radius: 10px; background: #a8d35e;}",
+        ".hdt-column_inner {padding: 8px 12px;}"
+      ],
+      "name": "Text column with image",
+      "settings": {
+        "layout": "12",
+        "item_spacing": 16,
+        "item_spacing_tb": 16,
+        "item_spacing_mb": 16,
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "wrapper_container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
+    "custom_section_qMLTB9": {
+      "type": "custom-section",
+      "blocks": {
+        "text_mECCLY": {
+          "type": "text",
+          "name": "t:blocks.text.name",
+          "settings": {
+            "text": "<h2>المميزات</h2>",
+            "hidden_br_mobile": false,
+            "hidden_on_mobile": false,
+            "ffamily": "",
+            "text_size": "2xl",
+            "line_height": "",
+            "font_weight": "semibold",
+            "text_color": "hdt-s-text",
+            "countdown": "2025-12-30 15:00:00",
+            "txt_day": "days",
+            "font_size_text_lg": 16,
+            "font_size_text": 14,
+            "letter_spacing_text": 0
+          },
+          "blocks": {}
+        },
+        "multi_column_U6YiDW": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "6",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_KFDgY8": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>جودة عالية</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_hWdGLj": {
+              "type": "text",
+              "settings": {
+                "text": "<p>مصنوع من دهن الغنم العداني المعروف بنقائه وطعمه الفاخر.</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_KFDgY8",
+            "text_hWdGLj"
+          ]
+        },
+        "multi_column_UKC4BM": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "6",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_yGLXkV": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>تحضير تقليدي</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_R3HEUa": {
+              "type": "text",
+              "settings": {
+                "text": "<p>يُحضّر وفقًا للطريقة الكويتية التقليدية لضمان الأصالة والنكهة المميزة.</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_yGLXkV",
+            "text_R3HEUa"
+          ]
+        },
+        "multi_column_xVK83e": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "6",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_amKpwM": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>خالي من الإضافات الصناعية</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_YxBH88": {
+              "type": "text",
+              "settings": {
+                "text": "<p>لا يحتوي على مواد حافظة أو ملونات، مما يجعله خيارًا صحيًا وطبيعيًا.</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_amKpwM",
+            "text_YxBH88"
+          ]
+        },
+        "multi_column_6agYtF": {
+          "type": "_multi_column",
+          "settings": {
+            "column_dk": "4",
+            "column_tb": "6",
+            "column_mb": "12",
+            "column_dk_10": "5",
+            "column_tb_10": "5",
+            "column_mb_10": "10",
+            "spacing_h_dk": 0,
+            "spacing_v_dk": 0,
+            "spacing_h_tb": 0,
+            "spacing_v_tb": 0,
+            "spacing_h_mb": 5,
+            "spacing_v_mb": 5,
+            "content_width": "full",
+            "content_position": "center",
+            "content_position_mb": "center",
+            "alignment": "left",
+            "alignment_mb": "left",
+            "background_color": "#ffffff",
+            "rounded": "none"
+          },
+          "blocks": {
+            "heading_Ynfi3V": {
+              "type": "heading",
+              "name": "t:blocks.heading.name",
+              "settings": {
+                "heading": "<h3>متعدد الاستخدامات</h3>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "line_height": "",
+                "font_weight": "normal",
+                "heading_size": "h3",
+                "text_color": "hdt-s-text",
+                "font_size_heading_lg": 50,
+                "font_size_heading": 24,
+                "letter_spacing_heading": 0
+              },
+              "blocks": {}
+            },
+            "text_M3MQRr": {
+              "type": "text",
+              "settings": {
+                "text": "<p>مثالي للطهي، القلي، أو حتى الاستخدام في الحلويات لإضفاء نكهة غنية ومميزة</p>",
+                "hidden_br_mobile": false,
+                "hidden_on_mobile": false,
+                "ffamily": "",
+                "text_size": "base",
+                "line_height": "",
+                "font_weight": "normal",
+                "text_color": "hdt-text-secondary",
+                "countdown": "2025-12-30 15:00:00",
+                "txt_day": "days",
+                "font_size_text_lg": 16,
+                "font_size_text": 14,
+                "letter_spacing_text": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_Ynfi3V",
+            "text_M3MQRr"
+          ]
+        }
+      },
+      "block_order": [
+        "text_mECCLY",
+        "multi_column_U6YiDW",
+        "multi_column_UKC4BM",
+        "multi_column_xVK83e",
+        "multi_column_6agYtF"
+      ],
+      "custom_css": [
+        "@media (min-width: 768px) {.hdt-grid-system {padding: 32px 0px; } h2 {font-size: 32px; color: #fff; line-height: 1.4; }}",
+        "@media (max-width: 767px) {.hdt-grid-system {padding: 24px 0px; } h2 {font-size: 24px; color: #fff; line-height: 1.4; }}",
+        ".hdt-s-gradient {background: #529a4a;}",
+        ".hdt-column {padding: 10px 15px; border-radius: 10px; background: #edfcf1;}",
+        "h3 {color: #2f854e; font-size: 16px; font-weight: 500;}",
+        "p {margin-top: 5px; font-size: 13px; color: #75a02c;}"
+      ],
+      "name": "Text column with image",
+      "settings": {
+        "layout": "12",
+        "item_spacing": 16,
+        "item_spacing_tb": 16,
+        "item_spacing_mb": 16,
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "wrapper_container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
       }
     },
     "tabs": {
@@ -272,73 +1144,6 @@
       "settings": {
         "color_scheme": "",
         "space": 50
-      }
-    },
-    "related-products": {
-      "type": "related-products",
-      "blocks": {
-        "pr-heading": {
-          "type": "section-heading",
-          "static": true,
-          "settings": {
-            "design_heading": "1",
-            "horizontal": false,
-            "alignment": "center",
-            "heading_gap": 18,
-            "margin_bottom": 30
-          },
-          "blocks": {
-            "heading_section_nLFWkr": {
-              "type": "_heading_section",
-              "settings": {
-                "heading": "منتجات قد تعجبك",
-                "line_height": "",
-                "heading_size": "h4",
-                "text_color": "hdt-s-text"
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "heading_section_nLFWkr"
-          ]
-        }
-      },
-      "settings": {
-        "product_des": "6",
-        "image_ratio": "portrait",
-        "image_size": true,
-        "show_vendor": false,
-        "pr_border": "none",
-        "limit": 6,
-        "col_dk": "4",
-        "col_tb": "3",
-        "col_mb": "2",
-        "space_items": "x",
-        "loop": true,
-        "autoplay": 3,
-        "pauseOnHover": true,
-        "navUI": true,
-        "nav_position": "default",
-        "nav_visible": "hover",
-        "nav_style": "default",
-        "nav_shape": "rounded",
-        "nav_size": "small",
-        "nav_hide_mobile": false,
-        "dotUI": false,
-        "pag_style": "default",
-        "pag_rounded": false,
-        "pag_space": 10,
-        "pag_mgt": 10,
-        "only_show_mobile": false,
-        "pag_hide_mobile": false,
-        "colors_by_section": false,
-        "color_scheme": "scheme-23cf8966-8e57-4acd-9bb3-bb85f222fbb9",
-        "background_opacity": 0,
-        "section_layout": "container",
-        "padding_top": 75,
-        "padding_bottom": 75,
-        "padding_rate": 50
       }
     },
     "recently-products": {
@@ -416,30 +1221,329 @@
           "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "review_data": "sample_data",
+            "max_width": 1200,
             "show_shop_reviews": false,
-            "empty_state": "empty_widget",
-            "max_width": 1200
+            "empty_state": "empty_widget"
           }
         }
       },
       "block_order": [
         "judge_me_reviews_review_widget_UwcJfV"
       ],
+      "custom_css": [],
       "settings": {
         "include_margins": true
       }
     },
-    "custom_liquid_jYRmxp": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.name",
+    "video_slider_NNkhb4": {
+      "type": "video-slider",
+      "blocks": {
+        "video_8KMYzh": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/٢.mp4",
+            "description": "",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_wkTQxG": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/سارة هاشم- نور فودز edited.mov",
+            "description": "",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_FeNckE": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/1.MP4",
+            "description": "",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_7BLTP6": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/فارس-نور فودز ستوري1.mp4",
+            "description": "",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_h7TXz6": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/١.mp4",
+            "description": "",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_aUnHpy": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/سارة1- نور فودز.mp4",
+            "description": "",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_hWfifR": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/هدى- نور فودز.mp4",
+            "description": "",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        },
+        "video_NAgUAz": {
+          "type": "video",
+          "settings": {
+            "html5_video": "shopify://files/videos/ابراهيم- نور فودز .MP4",
+            "description": "",
+            "description_text_align": "right",
+            "description_text_size": 18,
+            "description_mobile_text_size": 16,
+            "description_text_color": "#ffffff",
+            "product": "",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_8KMYzh",
+        "video_wkTQxG",
+        "video_FeNckE",
+        "video_7BLTP6",
+        "video_h7TXz6",
+        "video_aUnHpy",
+        "video_hWfifR",
+        "video_NAgUAz"
+      ],
+      "name": "Video carousel",
       "settings": {
-        "custom_liquid": "<style>\ndiv:has(div > div > [href=\"https://wa.me/96569333051\"]) {\n    bottom: 175px !important;\n}\n@media screen and (max-width: 768px) {\n  .hdt-product-info__item.hdt-product__buy-button {\n    bottom: 60px;\n  }\n  .hdt-flex {\n    display: flex;\n    justify-content: center;\n  }\n  div:has(div > div > [href=\"https://wa.me/96569333051\"])\n  {\n    bottom: 235px !important;\n  }\n  footer {\n  padding-bottom: 130px;\n}\n}\n</style>",
+        "slide_width": 300,
+        "image_crop": "none",
+        "aspect_ratio": "9:16",
+        "autoplay": 0,
+        "gap": 10,
+        "heading": "تجاربكم",
+        "heading_alignment": "right",
+        "heading_color": "#287141",
+        "show_arrows": false,
+        "text_size": 100,
+        "text_alignment": "left",
+        "text_color": "#121212",
+        "border_color": "#121212",
+        "background_color": "linear-gradient(270deg, rgba(168, 211, 94, 1), rgba(168, 211, 94, 1) 100%)",
+        "play_icon_image": "shopify://shop_images/Group_31.png",
+        "border_radius": 10,
+        "base_width": 100,
+        "max_width": "",
+        "inner_padding": 40,
+        "outer_margin": 0,
+        "custom_css": "",
+        "mobile_custom_css": "",
+        "anchor_id": "",
+        "override_theme_font": false,
+        "heading_font": "serif",
+        "main_font": "system_ui_n4"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "blocks": {
+        "pr-heading": {
+          "type": "section-heading",
+          "static": true,
+          "settings": {
+            "design_heading": "1",
+            "horizontal": false,
+            "alignment": "left",
+            "heading_gap": 18,
+            "margin_bottom": 30
+          },
+          "blocks": {
+            "heading_section_nLFWkr": {
+              "type": "_heading_section",
+              "settings": {
+                "heading": "منتجات مشابهة",
+                "line_height": "",
+                "heading_size": "h4",
+                "text_color": "hdt-s-text"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_section_nLFWkr"
+          ]
+        }
+      },
+      "settings": {
+        "product_des": "2",
+        "image_ratio": "portrait",
+        "image_size": false,
+        "show_vendor": false,
+        "pr_border": "none",
+        "limit": 6,
+        "col_dk": "4",
+        "col_tb": "3",
+        "col_mb": "2",
+        "space_items": "x",
+        "loop": true,
+        "autoplay": 0,
+        "pauseOnHover": true,
+        "navUI": true,
+        "nav_position": "default",
+        "nav_visible": "hover",
+        "nav_style": "default",
+        "nav_shape": "rounded",
+        "nav_size": "small",
+        "nav_hide_mobile": true,
+        "dotUI": false,
+        "pag_style": "default",
+        "pag_rounded": false,
+        "pag_space": 10,
+        "pag_mgt": 10,
+        "only_show_mobile": false,
+        "pag_hide_mobile": false,
+        "colors_by_section": false,
+        "color_scheme": "scheme-23cf8966-8e57-4acd-9bb3-bb85f222fbb9",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 75,
+        "padding_bottom": 75,
+        "padding_rate": 50
+      }
+    },
+    "featured_collection_Ldhf8P": {
+      "type": "featured-collection",
+      "blocks": {
+        "product_carousel_EzxMqn": {
+          "type": "_product-carousel",
+          "name": "t:blocks.product_carousel.name",
+          "settings": {
+            "collection": "الأكثر-طلبا",
+            "products_count": 8,
+            "product_list": [],
+            "pr_border": "none",
+            "product_des": "2",
+            "image_ratio": "portrait",
+            "image_size": false,
+            "show_vendor": false,
+            "col_dk": "4",
+            "col_tb": "3",
+            "col_mb": "2",
+            "space_items": "x",
+            "pagination": false,
+            "paginate_pos": "center",
+            "dis_pagination": 30,
+            "btn_label": "",
+            "btn_style": "",
+            "icon": "none",
+            "size": "m",
+            "btn_fw": "medium",
+            "font_size_btn": 14,
+            "padding_btn": 30,
+            "min_width_btn": 100,
+            "min_width_dt_btn": 100,
+            "min_height_btn": 40,
+            "loop": true,
+            "autoplay": 0,
+            "pauseOnHover": true,
+            "navUI": false,
+            "nav_position": "default",
+            "nav_visible": "always",
+            "nav_style": "default",
+            "nav_shape": "default",
+            "nav_size": "small",
+            "nav_hide_mobile": false,
+            "dotUI": false,
+            "pag_style": "default",
+            "pag_rounded": true,
+            "pag_space": 10,
+            "pag_mgt": 10,
+            "only_show_mobile": false,
+            "pag_hide_mobile": false
+          },
+          "blocks": {}
+        },
+        "pr-heading": {
+          "type": "section-heading",
+          "static": true,
+          "settings": {
+            "design_heading": "1",
+            "horizontal": false,
+            "alignment": "left",
+            "heading_gap": 0,
+            "margin_bottom": 30
+          },
+          "blocks": {
+            "heading_section_LYi4xE": {
+              "type": "_heading_section",
+              "settings": {
+                "heading": "منتجات الاكثر مبيعا",
+                "line_height": "",
+                "heading_size": "h4",
+                "text_color": "hdt-s-text"
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_section_LYi4xE"
+          ]
+        }
+      },
+      "block_order": [
+        "product_carousel_EzxMqn"
+      ],
+      "custom_css": [
+        ".hdt-container-heading {padding: 0 !important;}",
+        ".hdt-container {padding-bottom: 24px;}"
+      ],
+      "name": "t:sections.collection_products.name",
+      "settings": {
         "colors_by_section": false,
         "color_scheme": "",
         "background_opacity": 0,
         "section_layout": "container",
         "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_bottom": 24,
         "padding_rate": 50
       }
     }
@@ -447,11 +1551,17 @@
   "order": [
     "breadcrumb",
     "main-product",
+    "custom_liquid_jYRmxp",
+    "custom_liquid_xtRwpR",
+    "custom_liquid_C8Em6y",
+    "custom_section_Fjd8gE",
+    "custom_section_qMLTB9",
     "tabs",
     "sidebar",
-    "related-products",
     "recently-products",
     "175672037518982b98",
-    "custom_liquid_jYRmxp"
+    "video_slider_NNkhb4",
+    "related-products",
+    "featured_collection_Ldhf8P"
   ]
 }
