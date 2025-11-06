@@ -452,7 +452,7 @@
               "type": "heading",
               "name": "t:blocks.heading.name",
               "settings": {
-                "heading": "<h4>800 جرام</h4>",
+                "heading": "<h4>500 ملل</h4>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "line_height": "",
@@ -469,7 +469,7 @@
               "type": "text",
               "name": "t:blocks.text.name",
               "settings": {
-                "text": "<p>بقلاوة شعير محلاة بالعسل الطبيعي</p>",
+                "text": "<p>زيت زيتون عضوي</p>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
@@ -519,7 +519,7 @@
               "type": "heading",
               "name": "t:blocks.heading.name",
               "settings": {
-                "heading": "<h4>1150 جرام</h4>",
+                "heading": "<h4>500 جرام</h4>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "line_height": "",
@@ -536,7 +536,7 @@
               "type": "text",
               "name": "t:blocks.text.name",
               "settings": {
-                "text": "<p>تمر مجدول عالي الجودة محشو بالمكسرات</p>",
+                "text": "<p>عسل سدر كويتي</p>",
                 "hidden_br_mobile": false,
                 "hidden_on_mobile": false,
                 "ffamily": "",
