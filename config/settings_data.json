@@ -261,6 +261,14 @@
         "type": "shopify://apps/convercy/blocks/switcher_embed_block/f5c93801-24e1-4f0e-89db-62f45c9c55b5",
         "disabled": false,
         "settings": {}
+      },
+      "14391867418331573003": {
+        "type": "shopify://apps/goalify/blocks/progress-bar-embed/0834dd64-6591-4dfa-9cc4-bbb7ef032eed",
+        "disabled": false,
+        "settings": {
+          "n99gb_embed_css": "/* CSS Rules */",
+          "n99gb_embed_js": "/* JS Code */"
+        }
       }
     },
     "color_schemes": {
@@ -423,6 +431,27 @@
           "button_border": "#222222",
           "secondary_button_label": "#222222",
           "accent_color": "#519a4a",
+          "line_border": "#dddddd",
+          "overlay": "#000000",
+          "pr_text": "#222222",
+          "price": "#696969",
+          "sale_price": "#ec0101",
+          "input_primary": "#ffffff",
+          "input_secondary": "#686868"
+        }
+      },
+      "scheme-6cbefe3c-3938-45a4-aed2-d535ff672337": {
+        "settings": {
+          "text": "#ffffff",
+          "text2": "#ffffff",
+          "background": "#428445",
+          "background_gradient": "",
+          "background2": "#f2f2f2",
+          "button": "#222222",
+          "button_label": "#ffffff",
+          "button_border": "#222222",
+          "secondary_button_label": "#222222",
+          "accent_color": "#428445",
           "line_border": "#dddddd",
           "overlay": "#000000",
           "pr_text": "#222222",

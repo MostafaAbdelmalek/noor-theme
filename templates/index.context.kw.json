@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "index.json",
+  "context": {
+    "market": "kw"
+  },
+  "sections": {
+    "slideshow_EVrUzi": {
+      "settings": {},
+      "blocks": {
+        "slide_item_YBCE8n": {
+          "type": "_slide-item",
+          "disabled": false,
+          "blocks": {},
+          "block_order": [],
+          "settings": {
+            "image": "shopify://shop_images/1e0.webp",
+            "image_mb": null,
+            "url": "shopify://collections/الأكثر-طلبا",
+            "banner_target": false,
+            "color_scheme": "scheme-1",
+            "header-92c5b8934db9d7a6d08f79fd16a27902": null,
+            "content_position": "center-start",
+            "alignment": "left",
+            "header-fada33e3b5a5b629f305b6deb3848d31": null,
+            "content_position_mb": "center-start",
+            "alignment_mb": "left",
+            "header-23570a72a43bf7a1104f9b87003444b8": null,
+            "background_content": false,
+            "bg_opacity": 0,
+            "box_square": false,
+            "content_rounded": false,
+            "use_border_content": false,
+            "border_opacity": 0,
+            "border_style": "none",
+            "header-e3885a106986212aecbbd5949257d7ad": null,
+            "border_pd_dk": 0,
+            "padding_vertical": 30,
+            "padding_horizontal": 30,
+            "min_width_content": 350,
+            "header-e1d80259a946da99a89b7e41f9433718": null,
+            "border_pd": 0
+          }
+        }
+      },
+      "block_order": [
+        "slide_item_YBCE8n",
+        "slide_item_E3wjVg",
+        "slide_item_GJUjrM",
+        "slide_item_LW4R6G"
+      ]
+    }
+  }
+}

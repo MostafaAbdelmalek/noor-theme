@@ -1,0 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "header-group.json",
+  "context": {
+    "market": "kw"
+  },
+  "sections": {
+    "announcement_bar_QKnWCh": {
+      "disabled": false,
+      "settings": {
+        "fontsize": 15,
+        "design": "marquee",
+        "color_scheme": "scheme-6cbefe3c-3938-45a4-aed2-d535ff672337",
+        "speed": 0.2,
+        "pausable": true
+      },
+      "blocks": {
+        "announcement_izeF7X": {
+          "settings": {
+            "text": "توصيل مجاني لأي طلب فوق ٢٥ دينار 💖"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_izeF7X"
+      ]
+    }
+  }
+}
