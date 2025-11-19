@@ -399,6 +399,21 @@
         "padding_rate": 50
       }
     },
+    "custom_liquid_EtMzEK": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<style>\n.hdt-ratio {\n  outline: none !important;\n}\n.is-thumb-selected .hdt-ratio img {\n  border: 3px solid #5aa04a !important;\n}\n.hdt-ratio img {\n  border: 3px solid transparent !important;\n}\n.hdt-slider__viewport {\n  overflow: hidden !important;\n}\n</style>",
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
     "custom_section_qMLTB9": {
       "type": "custom-section",
       "blocks": {
@@ -1272,6 +1287,7 @@
     "custom_liquid_jYRmxp",
     "custom_liquid_xtRwpR",
     "custom_liquid_C8Em6y",
+    "custom_liquid_EtMzEK",
     "custom_section_qMLTB9",
     "tabs",
     "sidebar",

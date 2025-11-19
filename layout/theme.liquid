@@ -152,6 +152,42 @@
 
     <script src="{{ 'custom-js.js' | asset_url }}" defer="defer"></script>
   </body>
+
+  {% comment %} custom CSS for product page {% endcomment %}
+{% if template contains 'product' and product.template_suffix != blank %}
+  {% if product.compare_at_price > product.price %}
+    {% comment %} Discount & Price styling {% endcomment %}
+    <style>
+      .hdt-compare-at-price {
+        text-decoration: none;
+      }
+      .hdt-compare-at-price .cvc-money {
+        color: #565959 !important;
+        text-decoration: line-through;
+        font-weight: 600 !important;
+      }
+      .hdt-price .cvc-money {
+        color: #ec0101 !important;
+      }
+    </style>
+  {% endif %}
+    {% comment %} Slider overflow  {% endcomment %}
+    <style>
+      .hdt-ratio {
+        outline: none !important;
+      }
+      .is-thumb-selected .hdt-ratio img {
+        border: 3px solid #5aa04a !important;
+      }
+      .hdt-ratio img {
+        border: 3px solid transparent !important;
+      }
+      .hdt-slider__viewport {
+        overflow: hidden !important;
+      }
+    </style>
+{% endif %}
+
 </html>
 
   

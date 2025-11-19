@@ -399,6 +399,21 @@
         "padding_rate": 50
       }
     },
+    "custom_liquid_Hamcb3": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "<style>\n  .hdt-compare-at-price {\n    text-decoration: none;\n  }\n  .hdt-compare-at-price .cvc-money {\n    color: #565959 !important;\n    text-decoration: line-through;\n  }\n  .hdt-price .cvc-money {\n    color: #ec0101 !important;\n  }\n</style>",
+        "colors_by_section": false,
+        "color_scheme": "",
+        "background_opacity": 0,
+        "section_layout": "container",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_rate": 50
+      }
+    },
     "custom_section_eHnr8E": {
       "type": "custom-section",
       "blocks": {
@@ -1510,6 +1525,7 @@
     "custom_liquid_jYRmxp",
     "custom_liquid_xtRwpR",
     "custom_liquid_C8Em6y",
+    "custom_liquid_Hamcb3",
     "custom_section_eHnr8E",
     "custom_section_qMLTB9",
     "tabs",
